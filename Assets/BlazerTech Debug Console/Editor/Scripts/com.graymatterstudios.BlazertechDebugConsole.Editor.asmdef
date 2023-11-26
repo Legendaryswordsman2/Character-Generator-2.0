@@ -1,0 +1,16 @@
+{
+    "name": "com.graymatterstudios.blazertechDebugConsole",
+    "rootNamespace": "",
+    "references": [
+        "GUID:a08c6e8a3ad9ce643b584d9176618f48"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
