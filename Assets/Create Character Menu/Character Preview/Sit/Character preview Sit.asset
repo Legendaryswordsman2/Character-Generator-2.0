@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07eae659b2dd7cd4899d1c48cd7818a0, type: 3}
-  m_Name: Character preview Sit
+  m_Name: Character Preview Sit
   m_EditorClassIdentifier: 
   characterAnimationName: Sit Animation
   CharacterLeftController: {fileID: 0}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07eae659b2dd7cd4899d1c48cd7818a0, type: 3}
-  m_Name: Character preview Walk
+  m_Name: Character Preview Walk
   m_EditorClassIdentifier: 
   characterAnimationName: Walk Animation
   CharacterLeftController: {fileID: 9100000, guid: f7f3a144b052cd64cb9043b3f5fca8cb, type: 2}

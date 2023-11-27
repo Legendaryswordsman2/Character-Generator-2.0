@@ -2441,1267 +2441,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_111
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 384
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce479ed2b11e5fe4998fe3371791e333
-      internalID: 1915996235
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_112
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 384
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 078bc141ca583774496866b7fb796012
-      internalID: -101261785
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_113
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 384
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e177052092ee914ea0179b018490844
-      internalID: 2033523805
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_114
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 384
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b8ee06c043055f4a9d75b9a6af1b077
-      internalID: 416671769
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_115
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 384
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d6b98d8af1f2764c83780e3f6dae6d9
-      internalID: -887940952
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_116
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 384
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c7d30cd6f14339d4eb9718f8acadd60c
-      internalID: -1702500545
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_117
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 384
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a102a162e39c4ca438261d4f141da41c
-      internalID: -1817692110
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_118
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 384
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f51c3b672b36954b81b43efd062cca8
-      internalID: 1922528464
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_119
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 384
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9974b0c9fe3643f4594e50329879a4d7
-      internalID: 309307586
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_120
-      rect:
-        serializedVersion: 2
-        x: 368
-        y: 384
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d0847bd6c54acdc47a4236167ef1c848
-      internalID: 245702457
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_121
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 384
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 818ff1d332af7a942bf41bd63ce325dd
-      internalID: 1351255754
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_122
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 384
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: adae40eaa89de9945b3972f250323a4f
-      internalID: -1589613524
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_123
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2087af06bcf9bac4899b3c6df4a46256
-      internalID: 498258190
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_124
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe3f5bec5a1b89240b0e84185d11f147
-      internalID: -1482275021
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_125
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ae229ed1763d4845a131acb12320bfb
-      internalID: -710243847
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_126
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cc929f3ee2f9c5f478b7d269664aad27
-      internalID: -655059953
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_127
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ce6426f1cdfee5449fda0ef34ff96a4
-      internalID: -1799298036
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_128
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5240535d934768f4e89da42cba98a837
-      internalID: -1099462443
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_129
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 772d3a2f709541e47a6bb06db19ddb2c
-      internalID: -886444316
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_130
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f2ea4a1999940734e8cd89107b75d09b
-      internalID: -116961221
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_131
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 21c56d27120b7954c966ee0f764bb774
-      internalID: 945877968
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_132
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3afe7ddfa3c7d43469d355f724ff839d
-      internalID: -1173965759
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_133
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a526dc2f3c5afd14da258a68a222725a
-      internalID: -1716654246
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_134
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 219b304febbcc144aa0e733d5b9a1a1d
-      internalID: 283396003
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_135
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1604df5b8d3c32f46a722e3fd4687e7d
-      internalID: -1226973210
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_136
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ebe82f69b25195438027eb48d1ce9fa
-      internalID: 1871106000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_137
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0da532b0f205784b9422ea623aae338
-      internalID: 1865903022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_138
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8f134bd3b68294244b4cc0d23bc95d6f
-      internalID: 1823333940
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_139
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d17a9044914661a4ab3a3d072b72628c
-      internalID: -1455679328
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_140
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c3cfd56da0cf90d4ead5735053453b59
-      internalID: -729324971
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_141
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6394a9f4e202dc54cbe99fdbda981a8c
-      internalID: -134472879
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_142
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 10af7538878bfe24eb744509b7f186aa
-      internalID: 1759870200
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_143
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: affb3f5cc3d5c394ca24be3c9d90b32d
-      internalID: -1018959349
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_144
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3d3c010d05e0e994e8099112931da8ff
-      internalID: 1629479944
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_145
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a8f819113798a0643863e76b04162d0c
-      internalID: -1796719898
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_146
-      rect:
-        serializedVersion: 2
-        x: 368
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0339db47e48c46f47a1def42267455b4
-      internalID: -1793803409
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_147
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f056f9efd61b27a4f80518cb4a8c1b4f
-      internalID: -100203487
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_148
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 27715f68964c54844864bab93e8e8dd0
-      internalID: -1439894524
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_149
-      rect:
-        serializedVersion: 2
-        x: 416
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a68eeb6f1d52564468bb324e51f82b01
-      internalID: 1266505800
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_150
-      rect:
-        serializedVersion: 2
-        x: 432
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 16ba5e8e4e897644bac235ccdc016189
-      internalID: -983591541
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_151
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3e1c1ff3771ecd49992b002248c4ad9
-      internalID: -1849416573
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_152
-      rect:
-        serializedVersion: 2
-        x: 464
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ac4031003a371e54da494780b38a9584
-      internalID: 11323771
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_153
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6477d3dc74d0faf428084effc6e46960
-      internalID: 659514407
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_154
-      rect:
-        serializedVersion: 2
-        x: 496
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 760306182fde0cc4ba908349c095f207
-      internalID: 1484731914
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_155
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4846bc44398a44b4f8ba7431362138a2
-      internalID: -661197049
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_156
-      rect:
-        serializedVersion: 2
-        x: 528
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 909a5fa27790ad94ba8e06433ecc37bb
-      internalID: 1378375454
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_157
-      rect:
-        serializedVersion: 2
-        x: 544
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f238c5b0494b2a4ea2e4664629023bf
-      internalID: -1989712793
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_158
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d14dbfaf3e1e96d4bae1c14afbf30608
-      internalID: 1397612186
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_159
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe9e0c4c08ff70d41ba867cef46b0b29
-      internalID: -526612687
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_160
-      rect:
-        serializedVersion: 2
-        x: 592
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 83033a5fa019a48439613327796a3dea
-      internalID: -194191118
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_161
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d8d8bfcb9ffdf8e499077af12ed11660
-      internalID: 553996695
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_162
-      rect:
-        serializedVersion: 2
-        x: 624
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6cc20df43f789e04996f525a0506cc67
-      internalID: 434042768
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_163
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ea842fa91ee1994580a73f9c663d26e
-      internalID: -754496052
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_164
-      rect:
-        serializedVersion: 2
-        x: 656
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 20009433bcb475e459e39211e409969b
-      internalID: -1924862810
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_165
-      rect:
-        serializedVersion: 2
-        x: 672
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 863d76d44ff06874b86999311afeabe3
-      internalID: -96555654
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_166
-      rect:
-        serializedVersion: 2
-        x: 688
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c139da7d2973a5943bf66f2c8bc11572
-      internalID: 1065740393
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_167
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7fec58dc98644c1458be43578a23d83c
-      internalID: 143887803
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_168
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ba74bbaf0368244fa2b86c5212415b0
-      internalID: 1788411524
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_169
-      rect:
-        serializedVersion: 2
-        x: 736
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c55bc93407eb60c41b9518aef5507a2e
-      internalID: 1237219110
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_170
-      rect:
-        serializedVersion: 2
-        x: 752
-        y: 352
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0d23fe8e4f07f8d46add3f53ae5ce2ac
-      internalID: 621216736
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_171
+      name: Character Preview Pick Up Right 1
       rect:
         serializedVersion: 2
         x: 0
@@ -3722,7 +2462,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_172
+      name: Character Preview Pick Up Right 2
       rect:
         serializedVersion: 2
         x: 16
@@ -3743,7 +2483,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_173
+      name: Character Preview Pick Up Right 3
       rect:
         serializedVersion: 2
         x: 32
@@ -3764,7 +2504,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_174
+      name: Character Preview Pick Up Right 4
       rect:
         serializedVersion: 2
         x: 48
@@ -3785,7 +2525,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_175
+      name: Character Preview Pick Up Right 5
       rect:
         serializedVersion: 2
         x: 64
@@ -3806,7 +2546,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_176
+      name: Character Preview Pick Up Right 6
       rect:
         serializedVersion: 2
         x: 80
@@ -3827,7 +2567,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_177
+      name: Character Preview Pick Up Right 7
       rect:
         serializedVersion: 2
         x: 96
@@ -3848,7 +2588,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_178
+      name: Character Preview Pick Up Right 8
       rect:
         serializedVersion: 2
         x: 112
@@ -3869,7 +2609,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_179
+      name: Character Preview Pick Up Right 9
       rect:
         serializedVersion: 2
         x: 128
@@ -3890,7 +2630,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_180
+      name: Character Preview Pick Up Right 10
       rect:
         serializedVersion: 2
         x: 144
@@ -3911,7 +2651,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_181
+      name: Character Preview Pick Up Right 11
       rect:
         serializedVersion: 2
         x: 160
@@ -3932,7 +2672,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_182
+      name: Character Preview Pick Up Right 12
       rect:
         serializedVersion: 2
         x: 176
@@ -3953,7 +2693,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_183
+      name: Character Preview Pick Up Up 1
       rect:
         serializedVersion: 2
         x: 192
@@ -3974,7 +2714,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_184
+      name: Character Preview Pick Up Up 2
       rect:
         serializedVersion: 2
         x: 208
@@ -3995,7 +2735,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_185
+      name: Character Preview Pick Up Up 3
       rect:
         serializedVersion: 2
         x: 224
@@ -4016,7 +2756,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_186
+      name: Character Preview Pick Up Up 4
       rect:
         serializedVersion: 2
         x: 240
@@ -4037,7 +2777,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_187
+      name: Character Preview Pick Up Up 5
       rect:
         serializedVersion: 2
         x: 256
@@ -4058,7 +2798,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_188
+      name: Character Preview Pick Up Up 6
       rect:
         serializedVersion: 2
         x: 272
@@ -4079,7 +2819,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_189
+      name: Character Preview Pick Up Up 7
       rect:
         serializedVersion: 2
         x: 288
@@ -4100,7 +2840,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_190
+      name: Character Preview Pick Up Up 8
       rect:
         serializedVersion: 2
         x: 304
@@ -4121,7 +2861,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_191
+      name: Character Preview Pick Up Up 9
       rect:
         serializedVersion: 2
         x: 320
@@ -4142,7 +2882,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_192
+      name: Character Preview Pick Up Up 10
       rect:
         serializedVersion: 2
         x: 336
@@ -4163,7 +2903,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_193
+      name: Character Preview Pick Up Up 11
       rect:
         serializedVersion: 2
         x: 352
@@ -4184,7 +2924,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_194
+      name: Character Preview Pick Up Up 12
       rect:
         serializedVersion: 2
         x: 368
@@ -4205,7 +2945,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_195
+      name: Character Preview Pick Up Left 1
       rect:
         serializedVersion: 2
         x: 384
@@ -4226,7 +2966,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_196
+      name: Character Preview Pick Up Left 2
       rect:
         serializedVersion: 2
         x: 400
@@ -4247,7 +2987,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_197
+      name: Character Preview Pick Up Left 3
       rect:
         serializedVersion: 2
         x: 416
@@ -4268,7 +3008,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_198
+      name: Character Preview Pick Up Left 4
       rect:
         serializedVersion: 2
         x: 432
@@ -4289,7 +3029,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_199
+      name: Character Preview Pick Up Left 5
       rect:
         serializedVersion: 2
         x: 448
@@ -4310,7 +3050,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_200
+      name: Character Preview Pick Up Left 6
       rect:
         serializedVersion: 2
         x: 464
@@ -4331,7 +3071,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_201
+      name: Character Preview Pick Up Left 7
       rect:
         serializedVersion: 2
         x: 480
@@ -4352,7 +3092,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_202
+      name: Character Preview Pick Up Left 8
       rect:
         serializedVersion: 2
         x: 496
@@ -4373,7 +3113,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_203
+      name: Character Preview Pick Up Left 9
       rect:
         serializedVersion: 2
         x: 512
@@ -4394,7 +3134,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_204
+      name: Character Preview Pick Up Left 10
       rect:
         serializedVersion: 2
         x: 528
@@ -4415,7 +3155,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_205
+      name: Character Preview Pick Up Left 11
       rect:
         serializedVersion: 2
         x: 544
@@ -4436,7 +3176,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_206
+      name: Character Preview Pick Up Left 12
       rect:
         serializedVersion: 2
         x: 560
@@ -4457,7 +3197,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_207
+      name: Character Preview Pick Up Down 1
       rect:
         serializedVersion: 2
         x: 576
@@ -4478,7 +3218,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_208
+      name: Character Preview Pick Up Down 2
       rect:
         serializedVersion: 2
         x: 592
@@ -4499,7 +3239,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_209
+      name: Character Preview Pick Up Down 3
       rect:
         serializedVersion: 2
         x: 608
@@ -4520,7 +3260,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_210
+      name: Character Preview Pick Up Down 4
       rect:
         serializedVersion: 2
         x: 624
@@ -4541,7 +3281,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_211
+      name: Character Preview Pick Up Down 5
       rect:
         serializedVersion: 2
         x: 640
@@ -4562,7 +3302,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_212
+      name: Character Preview Pick Up Down 6
       rect:
         serializedVersion: 2
         x: 656
@@ -4583,7 +3323,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_213
+      name: Character Preview Pick Up Down 7
       rect:
         serializedVersion: 2
         x: 672
@@ -4604,7 +3344,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_214
+      name: Character Preview Pick Up Down 8
       rect:
         serializedVersion: 2
         x: 688
@@ -4625,7 +3365,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_215
+      name: Character Preview Pick Up Down 9
       rect:
         serializedVersion: 2
         x: 704
@@ -4646,7 +3386,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_216
+      name: Character Preview Pick Up Down 10
       rect:
         serializedVersion: 2
         x: 720
@@ -4667,7 +3407,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_217
+      name: Character Preview Pick Up Down 11
       rect:
         serializedVersion: 2
         x: 736
@@ -4688,7 +3428,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_218
+      name: Character Preview Pick Up Down 12
       rect:
         serializedVersion: 2
         x: 752
@@ -11379,6 +10119,54 @@ TextureImporter:
       Character Preview Idle Up 4: 1043088539
       Character Preview Idle Up 5: 1226082240
       Character Preview Idle Up 6: 9769206
+      Character Preview Pick Up Down 1: 2106381676
+      Character Preview Pick Up Down 10: 1408302763
+      Character Preview Pick Up Down 11: -216127609
+      Character Preview Pick Up Down 12: -429860120
+      Character Preview Pick Up Down 2: -404801420
+      Character Preview Pick Up Down 3: 997307973
+      Character Preview Pick Up Down 4: 520701216
+      Character Preview Pick Up Down 5: -1918773278
+      Character Preview Pick Up Down 6: 2108301995
+      Character Preview Pick Up Down 7: 2128132216
+      Character Preview Pick Up Down 8: -1414042961
+      Character Preview Pick Up Down 9: -254035807
+      Character Preview Pick Up Left 1: -1686284953
+      Character Preview Pick Up Left 10: 358433263
+      Character Preview Pick Up Left 11: 2001705680
+      Character Preview Pick Up Left 12: -776090700
+      Character Preview Pick Up Left 2: -1104673701
+      Character Preview Pick Up Left 3: 1614692417
+      Character Preview Pick Up Left 4: -1440932010
+      Character Preview Pick Up Left 5: -28877286
+      Character Preview Pick Up Left 6: 402967668
+      Character Preview Pick Up Left 7: -1841713017
+      Character Preview Pick Up Left 8: 460261075
+      Character Preview Pick Up Left 9: 981969674
+      Character Preview Pick Up Right 1: -1683129293
+      Character Preview Pick Up Right 10: -959152064
+      Character Preview Pick Up Right 11: 1019215274
+      Character Preview Pick Up Right 12: -1447927526
+      Character Preview Pick Up Right 2: 452086907
+      Character Preview Pick Up Right 3: -1710184863
+      Character Preview Pick Up Right 4: -1800220804
+      Character Preview Pick Up Right 5: -1365188346
+      Character Preview Pick Up Right 6: 1660337119
+      Character Preview Pick Up Right 7: 718493130
+      Character Preview Pick Up Right 8: -1039791572
+      Character Preview Pick Up Right 9: -1422503056
+      Character Preview Pick Up Up 1: -491688853
+      Character Preview Pick Up Up 10: -2088999018
+      Character Preview Pick Up Up 11: -576238722
+      Character Preview Pick Up Up 12: -24697892
+      Character Preview Pick Up Up 2: 216724615
+      Character Preview Pick Up Up 3: 1262482317
+      Character Preview Pick Up Up 4: -766106747
+      Character Preview Pick Up Up 5: -99948664
+      Character Preview Pick Up Up 6: -969870632
+      Character Preview Pick Up Up 7: -2050774792
+      Character Preview Pick Up Up 8: 1277837269
+      Character Preview Pick Up Up 9: -1514754782
       Character Preview Read 1: -167335473
       Character Preview Read 10: -763084092
       Character Preview Read 11: 1211606881
@@ -11441,12 +10229,6 @@ TextureImporter:
       Character Preview_120: 245702457
       Character Preview_121: 1351255754
       Character Preview_122: -1589613524
-      Character Preview_123: 498258190
-      Character Preview_124: -1482275021
-      Character Preview_125: -710243847
-      Character Preview_126: -655059953
-      Character Preview_127: -1799298036
-      Character Preview_128: -1099462443
       Character Preview_129: -886444316
       Character Preview_130: -116961221
       Character Preview_131: 945877968
@@ -11489,55 +10271,7 @@ TextureImporter:
       Character Preview_168: 1788411524
       Character Preview_169: 1237219110
       Character Preview_170: 621216736
-      Character Preview_171: -1683129293
-      Character Preview_172: 452086907
-      Character Preview_173: -1710184863
-      Character Preview_174: -1800220804
-      Character Preview_175: -1365188346
-      Character Preview_176: 1660337119
-      Character Preview_177: 718493130
-      Character Preview_178: -1039791572
-      Character Preview_179: -1422503056
-      Character Preview_180: -959152064
-      Character Preview_181: 1019215274
-      Character Preview_182: -1447927526
-      Character Preview_183: -491688853
-      Character Preview_184: 216724615
-      Character Preview_185: 1262482317
-      Character Preview_186: -766106747
-      Character Preview_187: -99948664
-      Character Preview_188: -969870632
-      Character Preview_189: -2050774792
-      Character Preview_190: 1277837269
-      Character Preview_191: -1514754782
-      Character Preview_192: -2088999018
-      Character Preview_193: -576238722
-      Character Preview_194: -24697892
-      Character Preview_195: -1686284953
-      Character Preview_196: -1104673701
-      Character Preview_197: 1614692417
-      Character Preview_198: -1440932010
-      Character Preview_199: -28877286
       Character Preview_2: -489093736
-      Character Preview_200: 402967668
-      Character Preview_201: -1841713017
-      Character Preview_202: 460261075
-      Character Preview_203: 981969674
-      Character Preview_204: 358433263
-      Character Preview_205: 2001705680
-      Character Preview_206: -776090700
-      Character Preview_207: 2106381676
-      Character Preview_208: -404801420
-      Character Preview_209: 997307973
-      Character Preview_210: 520701216
-      Character Preview_211: -1918773278
-      Character Preview_212: 2108301995
-      Character Preview_213: 2128132216
-      Character Preview_214: -1414042961
-      Character Preview_215: -254035807
-      Character Preview_216: 1408302763
-      Character Preview_217: -216127609
-      Character Preview_218: -429860120
       Character Preview_219: -1207018191
       Character Preview_220: -1266929567
       Character Preview_221: -200927157
@@ -11720,6 +10454,7 @@ TextureImporter:
       Character Preview_397: -1866286377
       Character Preview_398: -1114713904
       Character Preview_399: -1916103558
+      Character Preview_4: -1648279200
       Character Preview_400: -283055291
       Character Preview_401: -625846439
       Character Preview_402: 1706376828

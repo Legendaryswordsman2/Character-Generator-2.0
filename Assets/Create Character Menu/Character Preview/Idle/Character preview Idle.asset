@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07eae659b2dd7cd4899d1c48cd7818a0, type: 3}
-  m_Name: Character preview Idle
+  m_Name: Character Preview Idle
   m_EditorClassIdentifier: 
   characterAnimationName: Idle Animation
   CharacterLeftController: {fileID: 9100000, guid: 421e8d671ee87a5498a97e1e13908848, type: 2}
