@@ -110,90 +110,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Character Preview_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 608
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4107f22e9c8a23c49832dfdaecdafcd2
-      internalID: -1728012754
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 608
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 441c8b66e05b0f049bc9bea087d440e3
-      internalID: -1354226953
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 608
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a2fcdfc110fed84fb10710ab5053588
-      internalID: -489093736
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 608
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 81b8feb3ad97f6d44800d872c6fe2bee
-      internalID: 152718218
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Character Preview Idle Right 1
       rect:
         serializedVersion: 2
@@ -1202,237 +1118,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_52
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 512
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef73640619ef783449feeee077f1ad94
-      internalID: -1399161244
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_53
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 512
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 302efa61ecc74864ea01c715baa11364
-      internalID: 1930584084
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_54
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 512
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 933af8119f2604f448adcf72f97786d6
-      internalID: 802621143
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_55
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 512
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0eb3054ebab90445a5c73511d77db84
-      internalID: -1578073315
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_56
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 512
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 011d0551a933cdb4e944b4fccbdf8b1c
-      internalID: 1283964688
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_57
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 512
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63ebfab014829d140998a7bb0a38bb5a
-      internalID: 1152126631
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_58
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 512
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 859c7b563dbce2b4793654eb94ba5cd2
-      internalID: -4646383
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_59
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 512
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 378d3a98943e6eb488816144371e8134
-      internalID: -946784827
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_60
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 512
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 67d0a52f01536bc4fa452dd71d1e0ca5
-      internalID: 1910577204
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_61
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 512
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7455741ba554c8c4689bcbc7bed1f5a4
-      internalID: 1047415460
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_62
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 512
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f44a862f5396068409295d54e72dda04
-      internalID: 1071692456
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Character Preview Sit Right 1
       rect:
         serializedVersion: 2
@@ -1680,510 +1365,6 @@ TextureImporter:
       bones: []
       spriteID: 4087aac3e8b81d3489099c5f858f99f0
       internalID: -1343557702
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_75
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 448
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ca9c9091d1a45b4eb5e499f6b8b208e
-      internalID: 1204152767
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_76
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 448
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 84b09141bf3a77d438ae42d1740e21f1
-      internalID: 2130012131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_77
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 448
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05df0b470bfc52d4d99d23438f3d691e
-      internalID: -1704734751
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_78
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 448
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ecd882dff63dbfa42b2d33dac8f5dee6
-      internalID: 557063175
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_79
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 448
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2b933c92ef5bf8546826601e94c7ef85
-      internalID: -455541197
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_80
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 448
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e61e2d6dc2173f04a864dd314a154c32
-      internalID: 1092368700
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_81
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 448
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 952b92a5e9c9aaa4d93e26d54b51da06
-      internalID: 1521237614
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_82
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 448
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 292ef02b62cc28a4fa4d48b18fee7ed1
-      internalID: -272768593
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_83
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 448
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fba6d148141e12540bcb33179c5a56ee
-      internalID: 2054988283
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_84
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 448
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a49f100d54f0d6c419370cf0addab04e
-      internalID: -1267120488
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_85
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 448
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3785d94e3518a484c8e761dfd36825f6
-      internalID: -2094863771
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_86
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 448
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed85e7858fc6173479bd0e17d704a002
-      internalID: 217014400
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_87
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 416
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4bb402f3a13dd80469f6e94abab16dc1
-      internalID: 1284599131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_88
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 416
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 99f7bc4adad50c54baae2def9b4e69ef
-      internalID: 1651121982
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_89
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 416
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 72c39f92600aa4d468a7f06a46d3d1d6
-      internalID: 1980847927
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_90
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 416
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9fdbfa57033b690438146ff58a5f2d31
-      internalID: -1370553022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_91
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 416
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b0e340f02f6d0cd4ea05cf2deeb780aa
-      internalID: -1727489051
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_92
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 416
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 957e932b4ee68804d8485afb0c3a86d0
-      internalID: 1597207584
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_93
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 416
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d3635ed2f9ec5f64daaebf6955d6315c
-      internalID: 1453459538
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_94
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 416
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09102aeec2c6b0e4096dce87a5712b3e
-      internalID: 1890346102
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_95
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 416
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b87e5b5dda4e93459aaaa1ec063077e
-      internalID: 500029059
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_96
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 416
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d93edfe27713914681b298709be3c02
-      internalID: 1193656356
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_97
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 416
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2dd17dce4b10f84dbfe4e5c6cf96aa0
-      internalID: 651797127
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_98
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 416
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 56680e8089a13b74082fac47163aefee
-      internalID: 291944000
       vertices: []
       indices: 
       edges: []
@@ -3449,7 +2630,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_219
+      name: Character Preview Gift Right 1
       rect:
         serializedVersion: 2
         x: 0
@@ -3470,7 +2651,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_220
+      name: Character Preview Gift Right 2
       rect:
         serializedVersion: 2
         x: 16
@@ -3491,7 +2672,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_221
+      name: Character Preview Gift Right 3
       rect:
         serializedVersion: 2
         x: 32
@@ -3512,7 +2693,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_222
+      name: Character Preview Gift Right 4
       rect:
         serializedVersion: 2
         x: 48
@@ -3533,7 +2714,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_223
+      name: Character Preview Gift Right 5
       rect:
         serializedVersion: 2
         x: 64
@@ -3554,7 +2735,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_224
+      name: Character Preview Gift Right 6
       rect:
         serializedVersion: 2
         x: 80
@@ -3575,7 +2756,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_225
+      name: Character Preview Gift Right 7
       rect:
         serializedVersion: 2
         x: 96
@@ -3596,7 +2777,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_226
+      name: Character Preview Gift Right 8
       rect:
         serializedVersion: 2
         x: 112
@@ -3617,7 +2798,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_227
+      name: Character Preview Gift Right 9
       rect:
         serializedVersion: 2
         x: 128
@@ -3638,7 +2819,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_228
+      name: Character Preview Gift Right 10
       rect:
         serializedVersion: 2
         x: 144
@@ -3659,7 +2840,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_229
+      name: Character Preview Gift Up 1
       rect:
         serializedVersion: 2
         x: 160
@@ -3680,7 +2861,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_230
+      name: Character Preview Gift Up 2
       rect:
         serializedVersion: 2
         x: 176
@@ -3701,7 +2882,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_231
+      name: Character Preview Gift Up 3
       rect:
         serializedVersion: 2
         x: 192
@@ -3722,7 +2903,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_232
+      name: Character Preview Gift Up 4
       rect:
         serializedVersion: 2
         x: 208
@@ -3743,7 +2924,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_233
+      name: Character Preview Gift Up 5
       rect:
         serializedVersion: 2
         x: 224
@@ -3764,7 +2945,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_234
+      name: Character Preview Gift Up 6
       rect:
         serializedVersion: 2
         x: 240
@@ -3785,7 +2966,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_235
+      name: Character Preview Gift Up 7
       rect:
         serializedVersion: 2
         x: 256
@@ -3806,7 +2987,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_236
+      name: Character Preview Gift Up 8
       rect:
         serializedVersion: 2
         x: 272
@@ -3827,7 +3008,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_237
+      name: Character Preview Gift Up 9
       rect:
         serializedVersion: 2
         x: 288
@@ -3848,7 +3029,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_238
+      name: Character Preview Gift Up 10
       rect:
         serializedVersion: 2
         x: 304
@@ -3869,7 +3050,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_239
+      name: Character Preview Gift Left 1
       rect:
         serializedVersion: 2
         x: 320
@@ -3890,7 +3071,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_240
+      name: Character Preview Gift Left 2
       rect:
         serializedVersion: 2
         x: 336
@@ -3911,7 +3092,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_241
+      name: Character Preview Gift Left 3
       rect:
         serializedVersion: 2
         x: 352
@@ -3932,7 +3113,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_242
+      name: Character Preview Gift Left 4
       rect:
         serializedVersion: 2
         x: 368
@@ -3953,7 +3134,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_243
+      name: Character Preview Gift Left 5
       rect:
         serializedVersion: 2
         x: 384
@@ -3974,7 +3155,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_244
+      name: Character Preview Gift Left 6
       rect:
         serializedVersion: 2
         x: 400
@@ -3995,7 +3176,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_245
+      name: Character Preview Gift Left 7
       rect:
         serializedVersion: 2
         x: 416
@@ -4016,7 +3197,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_246
+      name: Character Preview Gift Left 8
       rect:
         serializedVersion: 2
         x: 432
@@ -4037,7 +3218,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_247
+      name: Character Preview Gift Left 9
       rect:
         serializedVersion: 2
         x: 448
@@ -4058,7 +3239,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_248
+      name: Character Preview Gift Left 10
       rect:
         serializedVersion: 2
         x: 464
@@ -4079,7 +3260,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_249
+      name: Character Preview Gift Down 1
       rect:
         serializedVersion: 2
         x: 480
@@ -4100,7 +3281,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_250
+      name: Character Preview Gift Down 2
       rect:
         serializedVersion: 2
         x: 496
@@ -4121,7 +3302,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_251
+      name: Character Preview Gift Down 3
       rect:
         serializedVersion: 2
         x: 512
@@ -4142,7 +3323,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_252
+      name: Character Preview Gift Down 4
       rect:
         serializedVersion: 2
         x: 528
@@ -4163,7 +3344,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_253
+      name: Character Preview Gift Down 5
       rect:
         serializedVersion: 2
         x: 544
@@ -4184,7 +3365,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_254
+      name: Character Preview Gift Down 6
       rect:
         serializedVersion: 2
         x: 560
@@ -4205,7 +3386,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_255
+      name: Character Preview Gift Down 7
       rect:
         serializedVersion: 2
         x: 576
@@ -4226,7 +3407,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_256
+      name: Character Preview Gift Down 8
       rect:
         serializedVersion: 2
         x: 592
@@ -4247,7 +3428,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_257
+      name: Character Preview Gift Down 9
       rect:
         serializedVersion: 2
         x: 608
@@ -4268,7 +3449,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_258
+      name: Character Preview Gift Down 10
       rect:
         serializedVersion: 2
         x: 624
@@ -4284,48 +3465,6 @@ TextureImporter:
       bones: []
       spriteID: 8725fbca02ee630409b79767ca6a85e5
       internalID: 557289476
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_259
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 288
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dde3cb2ff6db6ca44850d37b2d65f548
-      internalID: -553823680
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Character Preview_260
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 288
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b9ec0118797cfaa429eedd2e9f3a023d
-      internalID: -681186677
       vertices: []
       indices: 
       edges: []
@@ -10095,6 +9234,46 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Character Preview Gift Down 1: -1342942484
+      Character Preview Gift Down 10: 557289476
+      Character Preview Gift Down 2: -1691081925
+      Character Preview Gift Down 3: 518823732
+      Character Preview Gift Down 4: -1062063014
+      Character Preview Gift Down 5: -836508924
+      Character Preview Gift Down 6: -359820465
+      Character Preview Gift Down 7: -913174220
+      Character Preview Gift Down 8: 452266391
+      Character Preview Gift Down 9: -659796519
+      Character Preview Gift Left 1: 939381415
+      Character Preview Gift Left 10: -388218934
+      Character Preview Gift Left 2: -94636163
+      Character Preview Gift Left 3: -456408993
+      Character Preview Gift Left 4: -1076104313
+      Character Preview Gift Left 5: -1084568352
+      Character Preview Gift Left 6: 1757783063
+      Character Preview Gift Left 7: 1003715544
+      Character Preview Gift Left 8: 1798850578
+      Character Preview Gift Left 9: 1468144944
+      Character Preview Gift Right 1: -1207018191
+      Character Preview Gift Right 10: -985175362
+      Character Preview Gift Right 2: -1266929567
+      Character Preview Gift Right 3: -200927157
+      Character Preview Gift Right 4: 326832632
+      Character Preview Gift Right 5: 1408913864
+      Character Preview Gift Right 6: -155756358
+      Character Preview Gift Right 7: 400671416
+      Character Preview Gift Right 8: 1111551097
+      Character Preview Gift Right 9: 1205765567
+      Character Preview Gift Up 1: 1652465734
+      Character Preview Gift Up 10: -1560459655
+      Character Preview Gift Up 2: 1529925349
+      Character Preview Gift Up 3: -1522202997
+      Character Preview Gift Up 4: -1981414633
+      Character Preview Gift Up 5: 2050317991
+      Character Preview Gift Up 6: -2006733585
+      Character Preview Gift Up 7: 773985914
+      Character Preview Gift Up 8: 1346448445
+      Character Preview Gift Up 9: -1620094525
       Character Preview Idle Down 1: 1713674259
       Character Preview Idle Down 2: 1306568377
       Character Preview Idle Down 3: -1887936496
@@ -10272,46 +9451,6 @@ TextureImporter:
       Character Preview_169: 1237219110
       Character Preview_170: 621216736
       Character Preview_2: -489093736
-      Character Preview_219: -1207018191
-      Character Preview_220: -1266929567
-      Character Preview_221: -200927157
-      Character Preview_222: 326832632
-      Character Preview_223: 1408913864
-      Character Preview_224: -155756358
-      Character Preview_225: 400671416
-      Character Preview_226: 1111551097
-      Character Preview_227: 1205765567
-      Character Preview_228: -985175362
-      Character Preview_229: 1652465734
-      Character Preview_230: 1529925349
-      Character Preview_231: -1522202997
-      Character Preview_232: -1981414633
-      Character Preview_233: 2050317991
-      Character Preview_234: -2006733585
-      Character Preview_235: 773985914
-      Character Preview_236: 1346448445
-      Character Preview_237: -1620094525
-      Character Preview_238: -1560459655
-      Character Preview_239: 939381415
-      Character Preview_240: -94636163
-      Character Preview_241: -456408993
-      Character Preview_242: -1076104313
-      Character Preview_243: -1084568352
-      Character Preview_244: 1757783063
-      Character Preview_245: 1003715544
-      Character Preview_246: 1798850578
-      Character Preview_247: 1468144944
-      Character Preview_248: -388218934
-      Character Preview_249: -1342942484
-      Character Preview_250: -1691081925
-      Character Preview_251: 518823732
-      Character Preview_252: -1062063014
-      Character Preview_253: -836508924
-      Character Preview_254: -359820465
-      Character Preview_255: -913174220
-      Character Preview_256: 452266391
-      Character Preview_257: -659796519
-      Character Preview_258: 557289476
       Character Preview_259: -553823680
       Character Preview_260: -681186677
       Character Preview_261: 1072626681
