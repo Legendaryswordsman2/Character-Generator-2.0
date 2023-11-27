@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07eae659b2dd7cd4899d1c48cd7818a0, type: 3}
+  m_Name: Character preview Walk
+  m_EditorClassIdentifier: 
+  characterAnimationName: Walk Animation
+  CharacterLeftController: {fileID: 9100000, guid: f7f3a144b052cd64cb9043b3f5fca8cb, type: 2}
+  CharacterDownController: {fileID: 9100000, guid: 335d58c64feaf8a43896ee98f07f46b3, type: 2}
+  CharacterUpController: {fileID: 9100000, guid: 88bbc57ffebc62f4d85181823d1aadc0, type: 2}
+  CharacterRightController: {fileID: 9100000, guid: 27a764d798285004281ec50e06750f2c, type: 2}

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07eae659b2dd7cd4899d1c48cd7818a0, type: 3}
+  m_Name: Character preview Sit
+  m_EditorClassIdentifier: 
+  characterAnimationName: Sit Animation
+  CharacterLeftController: {fileID: 0}
+  CharacterDownController: {fileID: 9100000, guid: 14fe9d9f3e3003a4185d43338155aa40, type: 2}
+  CharacterUpController: {fileID: 9100000, guid: 756889811b91f7e45bdd58f693cf74a9, type: 2}
+  CharacterRightController: {fileID: 0}
