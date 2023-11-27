@@ -236,6 +236,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: m_Colors.m_FadeDuration
       value: 0.05
       objectReference: {fileID: 0}
@@ -428,7 +432,7 @@ PrefabInstance:
     - target: {fileID: 6169145871995385837, guid: 0d1b7115e037a464f856c820d832b2f8, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 1bee79d8486fae64f93892fc60d65c24, type: 2}
+      objectReference: {fileID: 9100000, guid: 657d68dd79c22af43a343d1fb6531112, type: 2}
     - target: {fileID: 7037733722321424372, guid: 0d1b7115e037a464f856c820d832b2f8, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1445,7 +1449,7 @@ PrefabInstance:
     - target: {fileID: 3278436614134557975, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: characterPreviewAnimation
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 17c0e75b74ffe934d87a974234ecce78, type: 2}
     - target: {fileID: 3278436614134557975, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: characterPreviewAnimationManager
       value: 
@@ -1465,6 +1469,10 @@ PrefabInstance:
     - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: m_Colors.m_FadeDuration
@@ -1601,6 +1609,10 @@ PrefabInstance:
     - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: m_Colors.m_FadeDuration
@@ -1927,6 +1939,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: m_Colors.m_FadeDuration
       value: 0.05
       objectReference: {fileID: 0}
@@ -2031,7 +2047,7 @@ PrefabInstance:
     - target: {fileID: 3278436614134557975, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: characterPreviewAnimation
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: debf0b05ddcc3e24ea01dddb289c20bb, type: 2}
     - target: {fileID: 3278436614134557975, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: characterPreviewAnimationManager
       value: 
@@ -2042,15 +2058,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4084181428822359646, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: m_text
-      value: Punch Animation
+      value: Throw Animation
       objectReference: {fileID: 0}
     - target: {fileID: 4084181428822359646, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: m_fontSize
-      value: 25.8
+      value: 25.35
       objectReference: {fileID: 0}
     - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: m_Colors.m_FadeDuration
@@ -2184,6 +2204,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: m_Colors.m_FadeDuration
       value: 0.05
       objectReference: {fileID: 0}
@@ -2312,6 +2336,10 @@ PrefabInstance:
     - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: m_Colors.m_FadeDuration
@@ -2445,6 +2473,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: m_Colors.m_FadeDuration
       value: 0.05
       objectReference: {fileID: 0}
@@ -2571,6 +2603,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: m_Colors.m_FadeDuration
       value: 0.05
       objectReference: {fileID: 0}
@@ -2675,7 +2711,7 @@ PrefabInstance:
     - target: {fileID: 6169145871995385837, guid: 0d1b7115e037a464f856c820d832b2f8, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 60bffd8077aa6ec428353a7ddc79a604, type: 2}
+      objectReference: {fileID: 9100000, guid: c4e1172e743fef948a093ff0a2caeb8a, type: 2}
     - target: {fileID: 7037733722321424372, guid: 0d1b7115e037a464f856c820d832b2f8, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3108,7 +3144,7 @@ PrefabInstance:
     - target: {fileID: 6169145871995385837, guid: 0d1b7115e037a464f856c820d832b2f8, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 09928cc6feaaf8c42ba9a2e9b6e0e4d4, type: 2}
+      objectReference: {fileID: 9100000, guid: a3d5ddf48c7b0ed4d88a63e4f16c1af0, type: 2}
     - target: {fileID: 8791641520818994432, guid: 0d1b7115e037a464f856c820d832b2f8, type: 3}
       propertyPath: m_Name
       value: Character Preview Down
@@ -3731,6 +3767,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character Animation Button
       objectReference: {fileID: 0}
+    - target: {fileID: 9113139806713481265, guid: 90582517470cd704cbe73b020c724415, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3827,7 +3867,7 @@ PrefabInstance:
     - target: {fileID: 6169145871995385837, guid: 0d1b7115e037a464f856c820d832b2f8, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 2c7fb61d5f2f41949a83094c847dce19, type: 2}
+      objectReference: {fileID: 9100000, guid: 4f2360d4766ee374d896390e53f931a6, type: 2}
     - target: {fileID: 7037733722321424372, guid: 0d1b7115e037a464f856c820d832b2f8, type: 3}
       propertyPath: m_Sprite
       value: 

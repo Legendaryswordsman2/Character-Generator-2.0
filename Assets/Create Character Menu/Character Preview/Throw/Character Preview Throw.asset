@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07eae659b2dd7cd4899d1c48cd7818a0, type: 3}
+  m_Name: Character Preview Throw
+  m_EditorClassIdentifier: 
+  characterAnimationName: Throw Animation
+  CharacterLeftController: {fileID: 9100000, guid: f69e66a32e9171944ac793f27cf9bbf9, type: 2}
+  CharacterDownController: {fileID: 9100000, guid: 405cefcc3ae431d4cb1bfa306b8c9151, type: 2}
+  CharacterUpController: {fileID: 9100000, guid: 4046ba8a31993784a8ce4350dd9bb201, type: 2}
+  CharacterRightController: {fileID: 9100000, guid: a3607b12ce965e540936364f833306a4, type: 2}

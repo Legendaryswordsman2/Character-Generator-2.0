@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07eae659b2dd7cd4899d1c48cd7818a0, type: 3}
+  m_Name: Character Preview Hurt
+  m_EditorClassIdentifier: 
+  characterAnimationName: Hurt Animation
+  CharacterLeftController: {fileID: 9100000, guid: c4e1172e743fef948a093ff0a2caeb8a, type: 2}
+  CharacterDownController: {fileID: 9100000, guid: a3d5ddf48c7b0ed4d88a63e4f16c1af0, type: 2}
+  CharacterUpController: {fileID: 9100000, guid: 657d68dd79c22af43a343d1fb6531112, type: 2}
+  CharacterRightController: {fileID: 9100000, guid: 4f2360d4766ee374d896390e53f931a6, type: 2}
