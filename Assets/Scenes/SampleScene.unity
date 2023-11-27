@@ -2162,7 +2162,7 @@ PrefabInstance:
     - target: {fileID: 3278436614134557975, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: characterPreviewAnimation
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: e3690a8c5cd5d994a9a4ba2fa6ac8bbc, type: 2}
     - target: {fileID: 3278436614134557975, guid: 90582517470cd704cbe73b020c724415, type: 3}
       propertyPath: characterPreviewAnimationManager
       value: 
@@ -3108,7 +3108,7 @@ PrefabInstance:
     - target: {fileID: 6169145871995385837, guid: 0d1b7115e037a464f856c820d832b2f8, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 335d58c64feaf8a43896ee98f07f46b3, type: 2}
+      objectReference: {fileID: 9100000, guid: a2634109ee1ead04babf6073e2f48086, type: 2}
     - target: {fileID: 8791641520818994432, guid: 0d1b7115e037a464f856c820d832b2f8, type: 3}
       propertyPath: m_Name
       value: Character Preview Down

@@ -2189,7 +2189,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_99
+      name: Character Preview Read 1
       rect:
         serializedVersion: 2
         x: 0
@@ -2210,7 +2210,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_100
+      name: Character Preview Read 2
       rect:
         serializedVersion: 2
         x: 16
@@ -2231,7 +2231,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_101
+      name: Character Preview Read 3
       rect:
         serializedVersion: 2
         x: 32
@@ -2252,7 +2252,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_102
+      name: Character Preview Read 4
       rect:
         serializedVersion: 2
         x: 48
@@ -2273,7 +2273,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_103
+      name: Character Preview Read 5
       rect:
         serializedVersion: 2
         x: 64
@@ -2294,7 +2294,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_104
+      name: Character Preview Read 6
       rect:
         serializedVersion: 2
         x: 80
@@ -2315,7 +2315,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_105
+      name: Character Preview Read 7
       rect:
         serializedVersion: 2
         x: 96
@@ -2336,7 +2336,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_106
+      name: Character Preview Read 8
       rect:
         serializedVersion: 2
         x: 112
@@ -2357,7 +2357,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_107
+      name: Character Preview Read 9
       rect:
         serializedVersion: 2
         x: 128
@@ -2378,7 +2378,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_108
+      name: Character Preview Read 10
       rect:
         serializedVersion: 2
         x: 144
@@ -2399,7 +2399,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_109
+      name: Character Preview Read 11
       rect:
         serializedVersion: 2
         x: 160
@@ -2420,7 +2420,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_110
+      name: Character Preview Read 12
       rect:
         serializedVersion: 2
         x: 176
@@ -11379,6 +11379,18 @@ TextureImporter:
       Character Preview Idle Up 4: 1043088539
       Character Preview Idle Up 5: 1226082240
       Character Preview Idle Up 6: 9769206
+      Character Preview Read 1: -167335473
+      Character Preview Read 10: -763084092
+      Character Preview Read 11: 1211606881
+      Character Preview Read 12: 1592235321
+      Character Preview Read 2: -2003469334
+      Character Preview Read 3: -1413217470
+      Character Preview Read 4: -1631428037
+      Character Preview Read 5: -1184601779
+      Character Preview Read 6: -252062062
+      Character Preview Read 7: -1275809833
+      Character Preview Read 8: 1276435395
+      Character Preview Read 9: 396884254
       Character Preview Sit Left 1: 1512939596
       Character Preview Sit Left 2: 1387388799
       Character Preview Sit Left 3: -2023007023
@@ -11417,17 +11429,6 @@ TextureImporter:
       Character Preview Walk Up 6: 1638902473
       Character Preview_0: -1728012754
       Character Preview_1: -1354226953
-      Character Preview_100: -2003469334
-      Character Preview_101: -1413217470
-      Character Preview_102: -1631428037
-      Character Preview_103: -1184601779
-      Character Preview_104: -252062062
-      Character Preview_105: -1275809833
-      Character Preview_106: 1276435395
-      Character Preview_107: 396884254
-      Character Preview_108: -763084092
-      Character Preview_109: 1211606881
-      Character Preview_110: 1592235321
       Character Preview_111: 1915996235
       Character Preview_112: -101261785
       Character Preview_113: 2033523805
@@ -11890,7 +11891,6 @@ TextureImporter:
       Character Preview_96: 1193656356
       Character Preview_97: 651797127
       Character Preview_98: 291944000
-      Character Preview_99: -167335473
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
