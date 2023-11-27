@@ -9,9 +9,12 @@ using UnityEngine.UI;
 public enum CharacterPieceType { Body, Eyes, Outfit, Hairstyle, Accessory}
 public class CharacterPieceDatabase : MonoBehaviour
 {
+    public static CharacterPieceDatabase Instance;
     [field: SerializeField] public CharacterPieceCollection[] CharacterPieces { get; private set; }
 
     public const string CharacterPiecesFolderName = "Character Pieces";
+
+    private void Awake() => Instance = this;
 
     public void AddCharacterPiece(Sprite piece, CharacterPieceType type)
     {

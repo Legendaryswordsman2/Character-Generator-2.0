@@ -10,11 +10,15 @@ using Cysharp.Threading.Tasks;
 public enum CharacterSize { Sixteen, Thirtytwo, Fortyeight }
 public class CharacterPieceGrabber : MonoBehaviour
 {
+    public static CharacterPieceGrabber Instance;
+
     [SerializeField] CharacterPieceDatabase characterPieceDatabase;
 
     List<Task> tasks;
 
     public static event EventHandler OnAllCharacterPiecesLoaded;
+
+    private void Awake() => Instance = this;
     private async void Start() => await Start_Task();
 
     async Task Start_Task()
