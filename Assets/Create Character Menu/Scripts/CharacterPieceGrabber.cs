@@ -13,9 +13,16 @@ public class CharacterPieceGrabber : MonoBehaviour
     [SerializeField] CharacterPieceDatabase characterPieceDatabase;
 
     List<Task> tasks;
-    private async void Awake()
+
+    public static event EventHandler OnAllCharacterPiecesLoaded;
+    private async void Start() => await Start_Task();
+
+    async Task Start_Task()
     {
-        tasks = new List<Task>
+        try
+        {
+
+            tasks = new List<Task>
         {
             GetCharacterpieceCollection(CharacterPieceType.Body),
             GetCharacterpieceCollection(CharacterPieceType.Eyes),
@@ -24,11 +31,19 @@ public class CharacterPieceGrabber : MonoBehaviour
             GetCharacterpieceCollection(CharacterPieceType.Accessory),
         };
 
-        // Wait for all portrait pieces to be added
-        await Task.WhenAll(tasks);
+            // Wait for all portrait pieces to be added
+            await Task.WhenAll(tasks);
 
-        Debug.Log("Complete");
+            Debug.Log("Complete");
+            OnAllCharacterPiecesLoaded?.Invoke(this, EventArgs.Empty);
+
+        }
+        catch
+        {
+            throw;
+        }
     }
+
     async Task GetCharacterpieceCollection(CharacterPieceType type)
     {
         string filePath = "";
