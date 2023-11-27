@@ -5822,7 +5822,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_373
+      name: Character Preview Hit Right 1
       rect:
         serializedVersion: 2
         x: 0
@@ -5843,7 +5843,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_374
+      name: Character Preview Hit Right 2
       rect:
         serializedVersion: 2
         x: 16
@@ -5864,7 +5864,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_375
+      name: Character Preview Hit Right 3
       rect:
         serializedVersion: 2
         x: 32
@@ -5885,7 +5885,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_376
+      name: Character Preview Hit Right 4
       rect:
         serializedVersion: 2
         x: 48
@@ -5906,7 +5906,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_377
+      name: Character Preview Hit Right 5
       rect:
         serializedVersion: 2
         x: 64
@@ -5927,7 +5927,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_378
+      name: Character Preview Hit Right 6
       rect:
         serializedVersion: 2
         x: 80
@@ -5948,7 +5948,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_379
+      name: Character Preview Hit Up 1
       rect:
         serializedVersion: 2
         x: 96
@@ -5969,7 +5969,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_380
+      name: Character Preview Hit Up 2
       rect:
         serializedVersion: 2
         x: 112
@@ -5990,7 +5990,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_381
+      name: Character Preview Hit Up 3
       rect:
         serializedVersion: 2
         x: 128
@@ -6011,7 +6011,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_382
+      name: Character Preview Hit Up 4
       rect:
         serializedVersion: 2
         x: 144
@@ -6032,7 +6032,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_383
+      name: Character Preview Hit Up 5
       rect:
         serializedVersion: 2
         x: 160
@@ -6053,7 +6053,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_384
+      name: Character Preview Hit Up 6
       rect:
         serializedVersion: 2
         x: 176
@@ -6074,7 +6074,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_385
+      name: Character Preview Hit Left 1
       rect:
         serializedVersion: 2
         x: 192
@@ -6095,7 +6095,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_386
+      name: Character Preview Hit Left 2
       rect:
         serializedVersion: 2
         x: 208
@@ -6116,7 +6116,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_387
+      name: Character Preview Hit Left 3
       rect:
         serializedVersion: 2
         x: 224
@@ -6137,7 +6137,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_388
+      name: Character Preview Hit Left 4
       rect:
         serializedVersion: 2
         x: 240
@@ -6158,7 +6158,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_389
+      name: Character Preview Hit Left 5
       rect:
         serializedVersion: 2
         x: 256
@@ -6179,7 +6179,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_390
+      name: Character Preview Hit Left 6
       rect:
         serializedVersion: 2
         x: 272
@@ -6200,7 +6200,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_391
+      name: Character Preview Hit Down 1
       rect:
         serializedVersion: 2
         x: 288
@@ -6221,7 +6221,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_392
+      name: Character Preview Hit Down 2
       rect:
         serializedVersion: 2
         x: 304
@@ -6242,7 +6242,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_393
+      name: Character Preview Hit Down 3
       rect:
         serializedVersion: 2
         x: 320
@@ -6263,7 +6263,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_394
+      name: Character Preview Hit Down 4
       rect:
         serializedVersion: 2
         x: 336
@@ -6284,7 +6284,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_395
+      name: Character Preview Hit Down 5
       rect:
         serializedVersion: 2
         x: 352
@@ -6305,7 +6305,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_396
+      name: Character Preview Hit Down 6
       rect:
         serializedVersion: 2
         x: 368
@@ -9274,6 +9274,30 @@ TextureImporter:
       Character Preview Gift Up 7: 773985914
       Character Preview Gift Up 8: 1346448445
       Character Preview Gift Up 9: -1620094525
+      Character Preview Hit Down 1: -110072341
+      Character Preview Hit Down 2: 523378284
+      Character Preview Hit Down 3: -456464257
+      Character Preview Hit Down 4: 407263882
+      Character Preview Hit Down 5: -1873488314
+      Character Preview Hit Down 6: 1232886676
+      Character Preview Hit Left 1: 1052151524
+      Character Preview Hit Left 2: 1559004310
+      Character Preview Hit Left 3: 1507825386
+      Character Preview Hit Left 4: 271122864
+      Character Preview Hit Left 5: 8541337
+      Character Preview Hit Left 6: 2102657778
+      Character Preview Hit Right 1: 422930925
+      Character Preview Hit Right 2: -1678012489
+      Character Preview Hit Right 3: -1577528592
+      Character Preview Hit Right 4: -287353192
+      Character Preview Hit Right 5: -1559983569
+      Character Preview Hit Right 6: -1968918630
+      Character Preview Hit Up 1: 1406313809
+      Character Preview Hit Up 2: 376485119
+      Character Preview Hit Up 3: 613936822
+      Character Preview Hit Up 4: 1960939395
+      Character Preview Hit Up 5: 935757538
+      Character Preview Hit Up 6: 1362068625
       Character Preview Idle Down 1: 1713674259
       Character Preview Idle Down 2: 1306568377
       Character Preview Idle Down 3: -1887936496
@@ -9566,30 +9590,6 @@ TextureImporter:
       Character Preview_370: 5019092
       Character Preview_371: 898456222
       Character Preview_372: -890868003
-      Character Preview_373: 422930925
-      Character Preview_374: -1678012489
-      Character Preview_375: -1577528592
-      Character Preview_376: -287353192
-      Character Preview_377: -1559983569
-      Character Preview_378: -1968918630
-      Character Preview_379: 1406313809
-      Character Preview_380: 376485119
-      Character Preview_381: 613936822
-      Character Preview_382: 1960939395
-      Character Preview_383: 935757538
-      Character Preview_384: 1362068625
-      Character Preview_385: 1052151524
-      Character Preview_386: 1559004310
-      Character Preview_387: 1507825386
-      Character Preview_388: 271122864
-      Character Preview_389: 8541337
-      Character Preview_390: 2102657778
-      Character Preview_391: -110072341
-      Character Preview_392: 523378284
-      Character Preview_393: -456464257
-      Character Preview_394: 407263882
-      Character Preview_395: -1873488314
-      Character Preview_396: 1232886676
       Character Preview_397: -1866286377
       Character Preview_398: -1114713904
       Character Preview_399: -1916103558
