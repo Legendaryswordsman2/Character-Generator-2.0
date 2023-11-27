@@ -3470,7 +3470,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_261
+      name: Character Preview Lift Right 1
       rect:
         serializedVersion: 2
         x: 0
@@ -3491,7 +3491,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_262
+      name: Character Preview Lift Right 2
       rect:
         serializedVersion: 2
         x: 16
@@ -3512,7 +3512,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_263
+      name: Character Preview Lift Right 3
       rect:
         serializedVersion: 2
         x: 32
@@ -3533,7 +3533,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_264
+      name: Character Preview Lift Right 4
       rect:
         serializedVersion: 2
         x: 48
@@ -3554,7 +3554,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_265
+      name: Character Preview Lift Right 5
       rect:
         serializedVersion: 2
         x: 64
@@ -3575,7 +3575,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_266
+      name: Character Preview Lift Right 6
       rect:
         serializedVersion: 2
         x: 80
@@ -3596,7 +3596,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_267
+      name: Character Preview Lift Right 7
       rect:
         serializedVersion: 2
         x: 96
@@ -3617,7 +3617,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_268
+      name: Character Preview Lift Right 8
       rect:
         serializedVersion: 2
         x: 112
@@ -3638,7 +3638,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_269
+      name: Character Preview Lift Right 9
       rect:
         serializedVersion: 2
         x: 128
@@ -3659,7 +3659,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_270
+      name: Character Preview Lift Right 10
       rect:
         serializedVersion: 2
         x: 144
@@ -3680,7 +3680,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_271
+      name: Character Preview Lift Right 11
       rect:
         serializedVersion: 2
         x: 160
@@ -3701,7 +3701,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_272
+      name: Character Preview Lift Right 12
       rect:
         serializedVersion: 2
         x: 176
@@ -3722,7 +3722,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_273
+      name: Character Preview Lift Right 13
       rect:
         serializedVersion: 2
         x: 192
@@ -3743,7 +3743,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_274
+      name: Character Preview Lift Right 14
       rect:
         serializedVersion: 2
         x: 208
@@ -3764,7 +3764,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_275
+      name: Character Preview Lift Up 1
       rect:
         serializedVersion: 2
         x: 224
@@ -3785,7 +3785,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_276
+      name: Character Preview Lift Up 2
       rect:
         serializedVersion: 2
         x: 240
@@ -3806,7 +3806,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_277
+      name: Character Preview Lift Up 3
       rect:
         serializedVersion: 2
         x: 256
@@ -3827,7 +3827,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_278
+      name: Character Preview Lift Up 4
       rect:
         serializedVersion: 2
         x: 272
@@ -3848,7 +3848,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_279
+      name: Character Preview Lift Up 5
       rect:
         serializedVersion: 2
         x: 288
@@ -3869,7 +3869,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_280
+      name: Character Preview Lift Up 6
       rect:
         serializedVersion: 2
         x: 304
@@ -3890,7 +3890,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_281
+      name: Character Preview Lift Up 7
       rect:
         serializedVersion: 2
         x: 320
@@ -3911,7 +3911,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_282
+      name: Character Preview Lift Up 8
       rect:
         serializedVersion: 2
         x: 336
@@ -3932,7 +3932,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_283
+      name: Character Preview Lift Up 9
       rect:
         serializedVersion: 2
         x: 352
@@ -3953,7 +3953,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_284
+      name: Character Preview Lift Up 10
       rect:
         serializedVersion: 2
         x: 368
@@ -3974,7 +3974,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_285
+      name: Character Preview Lift Up 11
       rect:
         serializedVersion: 2
         x: 384
@@ -3995,7 +3995,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_286
+      name: Character Preview Lift Up 12
       rect:
         serializedVersion: 2
         x: 400
@@ -4016,7 +4016,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_287
+      name: Character Preview Lift Up 13
       rect:
         serializedVersion: 2
         x: 416
@@ -4037,7 +4037,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_288
+      name: Character Preview Lift Up 14
       rect:
         serializedVersion: 2
         x: 432
@@ -4058,7 +4058,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_289
+      name: Character Preview Lift Left 1
       rect:
         serializedVersion: 2
         x: 448
@@ -4079,7 +4079,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_290
+      name: Character Preview Lift Left 2
       rect:
         serializedVersion: 2
         x: 464
@@ -4100,7 +4100,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_291
+      name: Character Preview Lift Left 3
       rect:
         serializedVersion: 2
         x: 480
@@ -4121,7 +4121,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_292
+      name: Character Preview Lift Left 4
       rect:
         serializedVersion: 2
         x: 496
@@ -4142,7 +4142,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_293
+      name: Character Preview Lift Left 5
       rect:
         serializedVersion: 2
         x: 512
@@ -4163,7 +4163,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_294
+      name: Character Preview Lift Left 6
       rect:
         serializedVersion: 2
         x: 528
@@ -4184,7 +4184,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_295
+      name: Character Preview Lift Left 7
       rect:
         serializedVersion: 2
         x: 544
@@ -4205,7 +4205,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_296
+      name: Character Preview Lift Left 8
       rect:
         serializedVersion: 2
         x: 560
@@ -4226,7 +4226,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_297
+      name: Character Preview Lift Left 9
       rect:
         serializedVersion: 2
         x: 576
@@ -4247,7 +4247,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_298
+      name: Character Preview Lift Left 10
       rect:
         serializedVersion: 2
         x: 592
@@ -4268,7 +4268,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_299
+      name: Character Preview Lift Left 11
       rect:
         serializedVersion: 2
         x: 608
@@ -4289,7 +4289,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_300
+      name: Character Preview Lift Left 12
       rect:
         serializedVersion: 2
         x: 624
@@ -4310,7 +4310,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_301
+      name: Character Preview Lift Left 13
       rect:
         serializedVersion: 2
         x: 640
@@ -4331,7 +4331,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_302
+      name: Character Preview Lift Left 14
       rect:
         serializedVersion: 2
         x: 656
@@ -4352,7 +4352,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_303
+      name: Character Preview Lift Down 1
       rect:
         serializedVersion: 2
         x: 672
@@ -4373,7 +4373,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_304
+      name: Character Preview Lift Down 2
       rect:
         serializedVersion: 2
         x: 688
@@ -4394,7 +4394,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_305
+      name: Character Preview Lift Down 3
       rect:
         serializedVersion: 2
         x: 704
@@ -4415,7 +4415,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_306
+      name: Character Preview Lift Down 4
       rect:
         serializedVersion: 2
         x: 720
@@ -4436,7 +4436,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_307
+      name: Character Preview Lift Down 5
       rect:
         serializedVersion: 2
         x: 736
@@ -4457,7 +4457,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_308
+      name: Character Preview Lift Down 6
       rect:
         serializedVersion: 2
         x: 752
@@ -4478,7 +4478,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_309
+      name: Character Preview Lift Down 7
       rect:
         serializedVersion: 2
         x: 768
@@ -4499,7 +4499,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_310
+      name: Character Preview Lift Down 8
       rect:
         serializedVersion: 2
         x: 784
@@ -4520,7 +4520,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_311
+      name: Character Preview Lift Down 9
       rect:
         serializedVersion: 2
         x: 800
@@ -4541,7 +4541,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_312
+      name: Character Preview Lift Down 10
       rect:
         serializedVersion: 2
         x: 816
@@ -4562,7 +4562,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_313
+      name: Character Preview Lift Down 11
       rect:
         serializedVersion: 2
         x: 832
@@ -4583,7 +4583,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_314
+      name: Character Preview Lift Down 12
       rect:
         serializedVersion: 2
         x: 848
@@ -4604,7 +4604,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_315
+      name: Character Preview Lift Down 13
       rect:
         serializedVersion: 2
         x: 864
@@ -4625,7 +4625,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Character Preview_316
+      name: Character Preview Lift Down 14
       rect:
         serializedVersion: 2
         x: 880
@@ -9298,6 +9298,62 @@ TextureImporter:
       Character Preview Idle Up 4: 1043088539
       Character Preview Idle Up 5: 1226082240
       Character Preview Idle Up 6: 9769206
+      Character Preview Lift Down 1: -654684515
+      Character Preview Lift Down 10: 2121962011
+      Character Preview Lift Down 11: -470251629
+      Character Preview Lift Down 12: -1021365883
+      Character Preview Lift Down 13: 1118888883
+      Character Preview Lift Down 14: -1508234773
+      Character Preview Lift Down 2: -904816226
+      Character Preview Lift Down 3: 1099245684
+      Character Preview Lift Down 4: 1177914402
+      Character Preview Lift Down 5: 1191305233
+      Character Preview Lift Down 6: 2010763438
+      Character Preview Lift Down 7: 552285214
+      Character Preview Lift Down 8: 1419444510
+      Character Preview Lift Down 9: -1918896086
+      Character Preview Lift Left 1: -72200698
+      Character Preview Lift Left 10: -488314612
+      Character Preview Lift Left 11: -1679037322
+      Character Preview Lift Left 12: -1027436284
+      Character Preview Lift Left 13: -1300414472
+      Character Preview Lift Left 14: -1168109980
+      Character Preview Lift Left 2: -632986298
+      Character Preview Lift Left 3: -546138299
+      Character Preview Lift Left 4: -306313377
+      Character Preview Lift Left 5: 205750431
+      Character Preview Lift Left 6: 2112519597
+      Character Preview Lift Left 7: -1688783552
+      Character Preview Lift Left 8: -2057848948
+      Character Preview Lift Left 9: -1930057380
+      Character Preview Lift Right 1: 1072626681
+      Character Preview Lift Right 10: -1610154883
+      Character Preview Lift Right 11: 603329841
+      Character Preview Lift Right 12: -670559789
+      Character Preview Lift Right 13: 102816986
+      Character Preview Lift Right 14: 422209692
+      Character Preview Lift Right 2: 539853271
+      Character Preview Lift Right 3: -769306098
+      Character Preview Lift Right 4: -953925857
+      Character Preview Lift Right 5: 675687306
+      Character Preview Lift Right 6: -214125069
+      Character Preview Lift Right 7: -720386128
+      Character Preview Lift Right 8: 768641993
+      Character Preview Lift Right 9: -65476936
+      Character Preview Lift Up 1: -748948550
+      Character Preview Lift Up 10: 1300187782
+      Character Preview Lift Up 11: -301466446
+      Character Preview Lift Up 12: 1979621322
+      Character Preview Lift Up 13: 1608082545
+      Character Preview Lift Up 14: 1621721369
+      Character Preview Lift Up 2: -1125895812
+      Character Preview Lift Up 3: -1236553741
+      Character Preview Lift Up 4: -1749848394
+      Character Preview Lift Up 5: 1114656532
+      Character Preview Lift Up 6: 316561089
+      Character Preview Lift Up 7: 1541715271
+      Character Preview Lift Up 8: 205349290
+      Character Preview Lift Up 9: -1706062697
       Character Preview Pick Up Down 1: 2106381676
       Character Preview Pick Up Down 10: 1408302763
       Character Preview Pick Up Down 11: -216127609
@@ -9453,63 +9509,7 @@ TextureImporter:
       Character Preview_2: -489093736
       Character Preview_259: -553823680
       Character Preview_260: -681186677
-      Character Preview_261: 1072626681
-      Character Preview_262: 539853271
-      Character Preview_263: -769306098
-      Character Preview_264: -953925857
-      Character Preview_265: 675687306
-      Character Preview_266: -214125069
-      Character Preview_267: -720386128
-      Character Preview_268: 768641993
-      Character Preview_269: -65476936
-      Character Preview_270: -1610154883
-      Character Preview_271: 603329841
-      Character Preview_272: -670559789
-      Character Preview_273: 102816986
-      Character Preview_274: 422209692
-      Character Preview_275: -748948550
-      Character Preview_276: -1125895812
-      Character Preview_277: -1236553741
-      Character Preview_278: -1749848394
-      Character Preview_279: 1114656532
-      Character Preview_280: 316561089
-      Character Preview_281: 1541715271
-      Character Preview_282: 205349290
-      Character Preview_283: -1706062697
-      Character Preview_284: 1300187782
-      Character Preview_285: -301466446
-      Character Preview_286: 1979621322
-      Character Preview_287: 1608082545
-      Character Preview_288: 1621721369
-      Character Preview_289: -72200698
-      Character Preview_290: -632986298
-      Character Preview_291: -546138299
-      Character Preview_292: -306313377
-      Character Preview_293: 205750431
-      Character Preview_294: 2112519597
-      Character Preview_295: -1688783552
-      Character Preview_296: -2057848948
-      Character Preview_297: -1930057380
-      Character Preview_298: -488314612
-      Character Preview_299: -1679037322
       Character Preview_3: 152718218
-      Character Preview_300: -1027436284
-      Character Preview_301: -1300414472
-      Character Preview_302: -1168109980
-      Character Preview_303: -654684515
-      Character Preview_304: -904816226
-      Character Preview_305: 1099245684
-      Character Preview_306: 1177914402
-      Character Preview_307: 1191305233
-      Character Preview_308: 2010763438
-      Character Preview_309: 552285214
-      Character Preview_310: 1419444510
-      Character Preview_311: -1918896086
-      Character Preview_312: 2121962011
-      Character Preview_313: -470251629
-      Character Preview_314: -1021365883
-      Character Preview_315: 1118888883
-      Character Preview_316: -1508234773
       Character Preview_317: 420196561
       Character Preview_318: -395497478
       Character Preview_319: -292902357

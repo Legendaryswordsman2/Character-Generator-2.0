@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07eae659b2dd7cd4899d1c48cd7818a0, type: 3}
+  m_Name: Character Preview Lift
+  m_EditorClassIdentifier: 
+  characterAnimationName: Lift Animation
+  CharacterLeftController: {fileID: 9100000, guid: c9bbb5a82baa61946b7d2afba232381c, type: 2}
+  CharacterDownController: {fileID: 9100000, guid: 5272c1d50e9e6af4eb887b8d6c14629f, type: 2}
+  CharacterUpController: {fileID: 9100000, guid: 122efb10881700f46b3a9e2e2602e222, type: 2}
+  CharacterRightController: {fileID: 9100000, guid: b23ed90884d1b7b438334de45f71855c, type: 2}
