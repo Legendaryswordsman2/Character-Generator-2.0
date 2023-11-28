@@ -17,6 +17,7 @@ public class CharacterPieceGrabber : MonoBehaviour
     List<Task> tasks;
 
     public static event EventHandler OnAllCharacterPiecesLoaded;
+    public static event EventHandler OnFailedToLoadCharacterPieces;
 
     private void Awake() => Instance = this;
     private async void Start() => await Start_Task();
@@ -25,6 +26,7 @@ public class CharacterPieceGrabber : MonoBehaviour
     {
         try
         {
+            if (!PerformErrorChecks()) return;
 
             tasks = new List<Task>
         {
@@ -46,6 +48,18 @@ public class CharacterPieceGrabber : MonoBehaviour
         {
             throw;
         }
+    }
+
+    bool PerformErrorChecks()
+    {
+        if (!Directory.Exists(Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.CharacterPiecesFolderName))
+        {
+            Debug.Log("Directory does not exist");
+            OnFailedToLoadCharacterPieces?.Invoke(this, EventArgs.Empty);
+            //SetupManager.Instance.DisplayError(ErrorType.MissingPortraitPiecesFolder);
+            return false;
+        }
+        return true;
     }
 
     async Task GetCharacterpieceCollection(CharacterPieceType type)
@@ -78,8 +92,8 @@ public class CharacterPieceGrabber : MonoBehaviour
         foreach (var file in d.GetFiles("*.png"))
         {
             // file.FullName is the full path to the file
-
-            Sprite sprite = await GetImage(file.FullName, Path.GetFileNameWithoutExtension(file.Name), CharacterSize.Sixteen);
+            string fileUrl = new Uri(file.FullName).AbsoluteUri;
+            Sprite sprite = await GetImage(fileUrl, Path.GetFileNameWithoutExtension(file.Name), CharacterSize.Sixteen);
             if (sprite == null) continue;
             characterPieceDatabase.AddCharacterPiece(sprite, type);
         }
