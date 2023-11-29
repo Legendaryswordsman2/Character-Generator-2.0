@@ -468,6 +468,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1103927611}
     m_Modifications:
+    - target: {fileID: 7199625009905629574, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010300048810, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010300048810, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010300048810, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010599296856, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010599296856, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7199625011393217995, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
       propertyPath: m_Name
       value: Accessory Dropdown
@@ -612,6 +636,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1527891618}
     m_Modifications:
+    - target: {fileID: 7199625009905629574, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000030517578
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010300048810, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010300048810, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010300048810, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010599296856, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010599296856, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7199625011393217995, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
       propertyPath: m_Name
       value: Eyes Dropdown
@@ -2875,6 +2923,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1527891618}
     m_Modifications:
+    - target: {fileID: 7199625009905629574, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000030517578
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010300048810, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010300048810, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010300048810, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010599296856, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010599296856, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7199625011393217995, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
       propertyPath: m_Name
       value: Outfit Dropdown
@@ -3204,6 +3276,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1103927611}
     m_Modifications:
+    - target: {fileID: 7199625009905629574, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010300048810, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010300048810, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010300048810, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010599296856, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010599296856, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7199625011393217995, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
       propertyPath: m_Name
       value: Hairstyle Dropdown
@@ -3489,6 +3585,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1527891618}
     m_Modifications:
+    - target: {fileID: 7199625009905629574, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000030517578
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010300048810, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010300048810, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010300048810, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010599296856, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625010599296856, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7199625011393217995, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
       propertyPath: m_Name
       value: Body Dropdown
