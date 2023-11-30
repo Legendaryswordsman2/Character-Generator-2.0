@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class SetupMessage : MonoBehaviour
 {
-    [SerializeField] TMP_Text text;
+    [SerializeField] TMP_Text titleText;
+    [SerializeField] TMP_Text detailsText;
 
     string[] textFrames = new string[4];
 
@@ -18,13 +19,13 @@ public class SetupMessage : MonoBehaviour
 
     private void Awake()
     {
-        textFrames[0] = text.text;
+        textFrames[0] = titleText.text;
 
-        textFrames[1] = text.text + ".";
+        textFrames[1] = titleText.text + ".";
 
-        textFrames[2] = text.text + "..";
+        textFrames[2] = titleText.text + "..";
 
-        textFrames[3] = text.text + "...";
+        textFrames[3] = titleText.text + "...";
 
         anim = GetComponent<Animator>();
     }
@@ -32,18 +33,26 @@ public class SetupMessage : MonoBehaviour
     private void OnEnable()
     {
         isActive = true;
+        CharacterPieceGrabber.OnNewSpriteLoaded += CharacterPieceGrabber_OnNewSpriteLoaded;
         CycleText();
+    }
+
+    private void CharacterPieceGrabber_OnNewSpriteLoaded(object sender, CharacterPieceGrabber.OnNewSpriteLoadedEventArgs e)
+    {
+        detailsText.text = e.Sprite.name + e.Extention;
     }
 
     private void OnDisable()
     {
         isActive = false;
+        CharacterPieceGrabber.OnNewSpriteLoaded -= CharacterPieceGrabber_OnNewSpriteLoaded;
     }
 
     public void OnFinishedSettingUp()
     {
         isActive = false;
-        text.text = "";
+        titleText.text = "";
+        detailsText.text = "";
         anim.SetTrigger("Trigger");
     }
 
@@ -52,7 +61,7 @@ public class SetupMessage : MonoBehaviour
         if (index == 4)
             index = 0;
 
-        text.text = textFrames[index];
+        titleText.text = textFrames[index];
         index++;
 
 

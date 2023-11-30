@@ -19,6 +19,20 @@ public class CharacterPieceGrabber : MonoBehaviour
     public static event EventHandler OnAllCharacterPiecesLoaded;
     public static event EventHandler OnFailedToLoadCharacterPieces;
 
+    public static event EventHandler<OnNewSpriteLoadedEventArgs> OnNewSpriteLoaded;
+
+    public class OnNewSpriteLoadedEventArgs
+    {
+        public Sprite Sprite;
+        public string Extention;
+
+        public OnNewSpriteLoadedEventArgs(Sprite sprite, string extention)
+        {
+            Sprite = sprite;
+            Extention = extention;
+        }
+    }
+
     private void Awake() => Instance = this;
     private async void Start() => await Start_Task();
 
@@ -28,17 +42,33 @@ public class CharacterPieceGrabber : MonoBehaviour
         {
             if (!PerformErrorChecks()) return;
 
-            tasks = new List<Task>
-        {
-            GetCharacterpieceCollection(CharacterPieceType.Body),
-            GetCharacterpieceCollection(CharacterPieceType.Eyes),
-            GetCharacterpieceCollection(CharacterPieceType.Outfit),
-            GetCharacterpieceCollection(CharacterPieceType.Hairstyle),
-            GetCharacterpieceCollection(CharacterPieceType.Accessory),
-        };
+        //    tasks = new List<Task>
+        //{
+        //    GetCharacterpieceCollection(CharacterPieceType.Body),
+        //    GetCharacterpieceCollection(CharacterPieceType.Eyes),
+        //    GetCharacterpieceCollection(CharacterPieceType.Outfit),
+        //    GetCharacterpieceCollection(CharacterPieceType.Hairstyle),
+        //    GetCharacterpieceCollection(CharacterPieceType.Accessory),
+        //};
 
             // Wait for all portrait pieces to be added
-            await Task.WhenAll(tasks);
+            //await Task.WhenAll(tasks);
+            //foreach (var task in tasks)
+            //{
+            //    await task;
+            //    await UniTask.Delay(1000);
+            //}
+
+            await GetCharacterpieceCollection(CharacterPieceType.Body);
+            //await UniTask.Delay(1000);
+            await GetCharacterpieceCollection(CharacterPieceType.Eyes);
+            //await UniTask.Delay(1000);
+            await GetCharacterpieceCollection(CharacterPieceType.Outfit);
+            //await UniTask.Delay(1000);
+            await GetCharacterpieceCollection(CharacterPieceType.Hairstyle);
+            //await UniTask.Delay(1000);
+            await GetCharacterpieceCollection(CharacterPieceType.Accessory);
+            //await UniTask.Delay(1000);
 
             Debug.Log("Complete");
             OnAllCharacterPiecesLoaded?.Invoke(this, EventArgs.Empty);
@@ -93,13 +123,15 @@ public class CharacterPieceGrabber : MonoBehaviour
         {
             // file.FullName is the full path to the file
             string fileUrl = new Uri(file.FullName).AbsoluteUri;
-            Sprite sprite = await GetImage(fileUrl, Path.GetFileNameWithoutExtension(file.Name), CharacterSize.Sixteen);
+            Sprite sprite = await GetImage(fileUrl, Path.GetFileNameWithoutExtension(file.Name), file.Extension, CharacterSize.Sixteen);
             if (sprite == null) continue;
             characterPieceDatabase.AddCharacterPiece(sprite, type);
         }
+
+        Debug.Log("Completed");
     }
 
-    public async Task<Sprite> GetImage(string filepath, string fileName, CharacterSize size)
+    public async Task<Sprite> GetImage(string filepath, string fileName, string extenion, CharacterSize size)
     {
         using UnityWebRequest uwr = UnityWebRequestTexture.GetTexture(filepath);
 
@@ -122,6 +154,8 @@ public class CharacterPieceGrabber : MonoBehaviour
             sprite.name = fileName;
             sprite.texture.name = fileName;
             sprite.texture.filterMode = FilterMode.Point;
+
+            OnNewSpriteLoaded?.Invoke(this, new OnNewSpriteLoadedEventArgs(sprite, extenion));
 
             return sprite;
         }
