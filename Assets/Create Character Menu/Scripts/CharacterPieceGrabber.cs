@@ -70,7 +70,7 @@ public class CharacterPieceGrabber : MonoBehaviour
             await GetCharacterpieceCollection(CharacterPieceType.Accessory);
             //await UniTask.Delay(1000);
 
-            Debug.Log("Complete");
+            Debug.Log("Successfully loaded all sprites");
             OnAllCharacterPiecesLoaded?.Invoke(this, EventArgs.Empty);
 
         }
@@ -127,8 +127,6 @@ public class CharacterPieceGrabber : MonoBehaviour
             if (sprite == null) continue;
             characterPieceDatabase.AddCharacterPiece(sprite, type);
         }
-
-        Debug.Log("Completed");
     }
 
     public async Task<Sprite> GetImage(string filepath, string fileName, string extenion, CharacterSize size)
