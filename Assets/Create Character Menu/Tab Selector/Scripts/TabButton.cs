@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] TabManager tabManager;
+    [SerializeField] GameObject tabReference;
 
     [Space]
 
@@ -28,6 +29,10 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         defaultSprite = image.sprite;
         defaultColor = image.color;
 
+        tabReference.SetActive(false);
+
+        tabManager.OnActiveTabChanged += TabManager_OnActiveTabChanged;
+
         //if (characterPreviewAnimation != null)
         //    text.text = characterPreviewAnimation.characterAnimationName;
         //else
@@ -36,8 +41,12 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         //}
     }
 
-    private void Start()
+    private void TabManager_OnActiveTabChanged(object sender, GameObject g)
     {
+        if (tabManager.ActiveTab == tabReference)
+            image.sprite = highlightedSprite;
+        else
+            image.sprite = defaultSprite;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -48,6 +57,9 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public void OnPointerExit(PointerEventData eventData)
     {
         //if (characterPreviewAnimationManager.CurrentCharacterAnimation != characterPreviewAnimation)
+
+        if (tabManager.ActiveTab == tabReference) return;
+
         image.sprite = defaultSprite;
         StopAllCoroutines();
         OnPointerUp(eventData);
@@ -55,12 +67,7 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        //if (characterPreviewAnimation != null && characterPreviewAnimationManager != null)
-        //    characterPreviewAnimationManager.SetCharacterAnimation(characterPreviewAnimation);
-    }
-
-    private void OnDestroy()
-    {
+        tabManager.ActiveTab = tabReference;
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -101,5 +108,10 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
                 yield return null;
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        tabManager.OnActiveTabChanged -= TabManager_OnActiveTabChanged;
     }
 }
