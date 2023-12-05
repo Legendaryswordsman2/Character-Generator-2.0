@@ -1616,6 +1616,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1103927611}
     m_Modifications:
+    - target: {fileID: 3754566055030766183, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: dropdownIndex
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3754566055030766183, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: dropdownManager
+      value: 
+      objectReference: {fileID: 1689463853}
     - target: {fileID: 7199625009905629574, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.000015258789
@@ -2036,6 +2044,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1527891618}
     m_Modifications:
+    - target: {fileID: 3754566055030766183, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: dropdownIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3754566055030766183, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: dropdownManager
+      value: 
+      objectReference: {fileID: 1689463853}
     - target: {fileID: 7199625009905629574, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.000030517578
@@ -6770,6 +6786,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1527891618}
     m_Modifications:
+    - target: {fileID: 3754566055030766183, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: dropdownIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3754566055030766183, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: dropdownManager
+      value: 
+      objectReference: {fileID: 1689463853}
     - target: {fileID: 7199625009905629574, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.000030517578
@@ -7132,47 +7156,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ebbbefe490f74459e0e9a5108df3c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterPiecesDropdownData:
+  characterSpritesheet: {fileID: 437519916, guid: 678972e60b3b838438ea737d023fcec3, type: 3}
+  <CharacterPiecesDropdownData>k__BackingField:
   - CollectionName: 0
     sprites: []
     dropdown: {fileID: 2119909299}
     includeNAOption: 0
     NAOptionSelectedDefault: 1
-    activeSprite: {fileID: 0}
+    <ActiveSprite>k__BackingField: {fileID: 0}
     activeSpriteIndex: 0
-    index: 0
   - CollectionName: 1
     sprites: []
     dropdown: {fileID: 422343544}
     includeNAOption: 0
     NAOptionSelectedDefault: 1
-    activeSprite: {fileID: 0}
+    <ActiveSprite>k__BackingField: {fileID: 0}
     activeSpriteIndex: 0
-    index: 0
   - CollectionName: 2
     sprites: []
     dropdown: {fileID: 1601551083}
-    includeNAOption: 0
+    includeNAOption: 1
     NAOptionSelectedDefault: 1
-    activeSprite: {fileID: 0}
+    <ActiveSprite>k__BackingField: {fileID: 0}
     activeSpriteIndex: 0
-    index: 0
   - CollectionName: 3
     sprites: []
     dropdown: {fileID: 1933579055}
-    includeNAOption: 0
+    includeNAOption: 1
     NAOptionSelectedDefault: 1
-    activeSprite: {fileID: 0}
+    <ActiveSprite>k__BackingField: {fileID: 0}
     activeSpriteIndex: 0
-    index: 0
   - CollectionName: 4
     sprites: []
     dropdown: {fileID: 693411174}
-    includeNAOption: 0
+    includeNAOption: 1
     NAOptionSelectedDefault: 1
-    activeSprite: {fileID: 0}
+    <ActiveSprite>k__BackingField: {fileID: 0}
     activeSpriteIndex: 0
-    index: 0
 --- !u!1 &1702898326
 GameObject:
   m_ObjectHideFlags: 0
@@ -7560,6 +7580,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1103927611}
     m_Modifications:
+    - target: {fileID: 3754566055030766183, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: dropdownIndex
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3754566055030766183, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: dropdownManager
+      value: 
+      objectReference: {fileID: 1689463853}
     - target: {fileID: 7199625009905629574, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.000015258789
@@ -8561,6 +8589,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1527891618}
     m_Modifications:
+    - target: {fileID: 3754566055030766183, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: dropdownManager
+      value: 
+      objectReference: {fileID: 1689463853}
     - target: {fileID: 7199625009905629574, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.000030517578
@@ -8668,6 +8700,34 @@ PrefabInstance:
     - target: {fileID: 7199625011393217996, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625011393217997, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625011393217997, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625011393217997, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1689463853}
+    - target: {fileID: 7199625011393217997, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625011393217997, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnDropdownUpdated
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625011393217997, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CharacterDropdownManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199625011393217997, guid: f34c9c2afbcd14743abdd3bea0b6b735, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

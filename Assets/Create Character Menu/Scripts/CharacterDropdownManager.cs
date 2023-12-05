@@ -8,13 +8,37 @@ using UnityEngine.UI;
 
 public class CharacterDropdownManager : MonoBehaviour
 {
-    [SerializeField] CharacterPieceCollectionDropdownData[] characterPiecesDropdownData;
+    [SerializeField] Sprite characterSpritesheet;
+
+    [field: SerializeField] public CharacterPieceCollectionDropdownData[] CharacterPiecesDropdownData { get; private set; }
 
     CharacterPieceDatabase characterPieceDatabase;
+
+    public event EventHandler OnDropdownValueChanged;
 
     private void Awake()
     {
         CharacterPieceGrabber.OnAllCharacterPiecesLoaded += CharacterPieceGrabber_OnAllCharacterPiecesLoaded;
+    }
+
+    public void OnDropdownUpdated(int index)
+    {
+        OnDropdownValueChanged?.Invoke(this, EventArgs.Empty);
+
+        List<Texture2D> textureToBeCombined = new();
+
+        //Texture2D[] texturesToBeCombined = new Texture2D[CharacterPiecesDropdownData.Length];
+
+        for (int i = 0; i < CharacterPiecesDropdownData.Length; i++)
+        {
+            if (CharacterPiecesDropdownData[i].ActiveSprite != null)
+                textureToBeCombined.Add(CharacterPiecesDropdownData[i].ActiveSprite.texture);
+        }
+
+        if (textureToBeCombined.Count <= 0) return;
+
+        //SpriteManager.CombineTextures_Static(textureToBeCombined);
+        SpriteManager.OverrideSprite(characterSpritesheet, SpriteManager.CombineTextures(textureToBeCombined));
     }
 
     private void CharacterPieceGrabber_OnAllCharacterPiecesLoaded(object sender, EventArgs e)
@@ -23,8 +47,8 @@ public class CharacterDropdownManager : MonoBehaviour
 
         for (int i = 0; i < characterPieceDatabase.CharacterPieces.Length; i++)
         {
-            characterPiecesDropdownData[i].sprites = characterPieceDatabase.CharacterPieces[i].Sprites;
-            InitializeDropdown(characterPiecesDropdownData[i]);
+            CharacterPiecesDropdownData[i].sprites = characterPieceDatabase.CharacterPieces[i].Sprites;
+            InitializeDropdown(CharacterPiecesDropdownData[i]);
         }
     }
 
@@ -64,20 +88,31 @@ public class CharacterDropdownManager : MonoBehaviour
         public bool includeNAOption = false;
         public bool NAOptionSelectedDefault = true;
 
-        [Space]
+        [field: Space]
 
-        [ReadOnly] public Sprite activeSprite;
+        [field: SerializeField, ReadOnly] public Sprite ActiveSprite { get; private set; }
         [ReadOnly] public int activeSpriteIndex;
-        [ReadOnly] public int index;
-
-        //[Space]
-
-        //public Image imageComponent;
-        //public Toggle canRandomizeToggle;
+        //[ReadOnly] public int index;
 
         public event EventHandler OnActivePortraitPieceChanged;
 
         public Action<int, int, bool> OnDropdownChangedMethod;
+
+        public void SetActiveSprite(int index)
+        {
+            if (includeNAOption)
+            {
+                if (index == 0)
+                    ActiveSprite = null;
+                else
+                    ActiveSprite = sprites[index - 1];
+            }
+            else
+            {
+                ActiveSprite = sprites[index];
+            }
+
+        }
 
         //public void Randomize()
         //{
