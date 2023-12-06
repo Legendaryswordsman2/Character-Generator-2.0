@@ -16,7 +16,7 @@ PlayerSettings:
   productName: Character Generator 2.0
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.22745098, g: 0.22745098, b: 0.3137255, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.4509804, g: 0.54901963, b: 0.65882355, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 0.6

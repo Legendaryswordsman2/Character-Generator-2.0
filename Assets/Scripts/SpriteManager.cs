@@ -34,28 +34,6 @@ public class SpriteManager : MonoBehaviour
     {
         Texture2D texture1 = Instantiate(_texture1);
 
-        //int startX = 0;
-        //int startY = 0;
-
-        //int startX = 0;
-        //int startY = 0;
-
-        //int endX = 896;
-        //int endY = 32;
-
-        //for (int x = startX; x < texture1.width; x++)
-        //{
-        //    for (int y = startY; y < texture1.height; y++)
-        //    {
-        //        Color s1Color = texture1.GetPixel(x, y);
-        //        Color s2Color = texture2.GetPixel(x - startX, y - startY);
-
-        //        Color final_color = Color.Lerp(s1Color, s2Color, s2Color.a / 1.0f);
-
-        //        texture1.SetPixel(x, y, final_color);
-        //    }
-        //}
-
         Color32[] pixels1 = texture1.GetPixels32();
         Color32[] pixels2 = texture2.GetPixels32();
 
@@ -74,20 +52,6 @@ public class SpriteManager : MonoBehaviour
         texture1.SetPixels32(pixels1);
         texture1.Apply();
 
-        //for (int x = startX; x < endX; x++)
-        //{
-        //    for (int y = startY; y < endY; y++)
-        //    {
-        //        Color s1Color = texture1.GetPixel(x, y);
-        //        Color s2Color = texture2.GetPixel(x, y);
-
-        //        Color final_color = Color.Lerp(s1Color, s2Color, s2Color.a / 1.0f);
-
-        //        texture1.SetPixel(x, y, final_color);
-        //    }
-        //}
-        //texture1.Apply();
-
         return texture1;
     }
 
@@ -95,8 +59,6 @@ public class SpriteManager : MonoBehaviour
     {
         int startX = 0;
         int startY = 0;
-
-        //spriteToOverride = spriteToOverrideWith;
 
         int width = spriteToOverride.width - startX;
         int height = spriteToOverride.height - startY;
@@ -117,10 +79,6 @@ public class SpriteManager : MonoBehaviour
 
         spriteToOverride.SetPixels32(pixelsOverride);
         spriteToOverride.Apply();
-
-        //Sprite combinedSprite = Sprite.Create(spriteToOverride, new Rect(0.0f, 0.0f, spriteToOverride.width, spriteToOverride.height), new Vector2(0.5f, 0.5f), 100.0f);
-
-        //return combinedSprite;
     }
 
     public static Sprite ConvertTextureToSprite(Texture2D texture)

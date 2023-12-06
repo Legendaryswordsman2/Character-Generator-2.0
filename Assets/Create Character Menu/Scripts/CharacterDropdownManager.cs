@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,8 +38,7 @@ public class CharacterDropdownManager : MonoBehaviour
 
         if (textureToBeCombined.Count <= 0) return;
 
-        //SpriteManager.CombineTextures_Static(textureToBeCombined);
-        //SpriteManager.OverrideSprite(characterSpritesheet.texture, textureToBeCombined[0]);
+        Debug.Log("Recreating Character");
         SpriteManager.OverrideSprite(characterSpritesheet.texture, SpriteManager.CombineTextures(textureToBeCombined).texture);
     }
 
@@ -49,8 +49,11 @@ public class CharacterDropdownManager : MonoBehaviour
         for (int i = 0; i < characterPieceDatabase.CharacterPieces.Length; i++)
         {
             CharacterPiecesDropdownData[i].sprites = characterPieceDatabase.CharacterPieces[i].Sprites;
+            CharacterPiecesDropdownData[i].SetActiveSprite(0);
             InitializeDropdown(CharacterPiecesDropdownData[i]);
         }
+
+        OnDropdownUpdated(0);
     }
 
     void InitializeDropdown(CharacterPieceCollectionDropdownData characterPiece)
@@ -123,10 +126,5 @@ public class CharacterDropdownManager : MonoBehaviour
 
         //    dropdown.value = numb;
         //}
-
-        public void InvokeOnActivePortraitPieceChanged()
-        {
-            OnActivePortraitPieceChanged?.Invoke(this, null);
-        }
     }
 }
