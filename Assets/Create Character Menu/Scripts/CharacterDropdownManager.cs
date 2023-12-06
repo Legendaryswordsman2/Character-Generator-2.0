@@ -38,7 +38,7 @@ public class CharacterDropdownManager : MonoBehaviour
 
         if (textureToBeCombined.Count <= 0) return;
 
-        Debug.Log("Recreating Character");
+        //Debug.Log("Recreating Character");
         SpriteManager.OverrideSprite(characterSpritesheet.texture, SpriteManager.CombineTextures(textureToBeCombined).texture);
     }
 
@@ -60,7 +60,7 @@ public class CharacterDropdownManager : MonoBehaviour
     {
         characterPiece.dropdown.ClearOptions();
 
-        if (characterPiece.includeNAOption)
+        if (characterPiece.IncludeNAOption)
             characterPiece.dropdown.options.Add(new TMP_Dropdown.OptionData() { text = characterPiece.CollectionName + " N/A" });
 
         for (int i = 0; i < characterPiece.sprites.Count; i++)
@@ -68,7 +68,11 @@ public class CharacterDropdownManager : MonoBehaviour
             characterPiece.dropdown.options.Add(new TMP_Dropdown.OptionData() { text = characterPiece.sprites[i].name.Replace('_', ' ') });
         }
 
-        characterPiece.dropdown.value = 0;
+        if (characterPiece.IncludeNAOption && !characterPiece.NADefault)
+            characterPiece.dropdown.value = 1;
+        else
+            characterPiece.dropdown.value = 0;
+
         characterPiece.dropdown.RefreshShownValue();
     }
 
@@ -87,15 +91,15 @@ public class CharacterDropdownManager : MonoBehaviour
 
         public TMP_Dropdown dropdown;
 
-        [Space]
+        [field: Space]
 
-        public bool includeNAOption = false;
-        public bool NAOptionSelectedDefault = true;
+        [field: SerializeField] public bool IncludeNAOption { get; private set; } = false;
+        [field: SerializeField, ShowIf("IncludeNAOption")] public bool NADefault { get; private set; } = true;
 
         [field: Space]
 
         [field: SerializeField, ReadOnly] public Sprite ActiveSprite { get; private set; }
-        [ReadOnly] public int activeSpriteIndex;
+        //[ReadOnly] public int activeSpriteIndex;
         //[ReadOnly] public int index;
 
         public event EventHandler OnActivePortraitPieceChanged;
@@ -104,7 +108,7 @@ public class CharacterDropdownManager : MonoBehaviour
 
         public void SetActiveSprite(int index)
         {
-            if (includeNAOption)
+            if (IncludeNAOption)
             {
                 if (index == 0)
                     ActiveSprite = null;

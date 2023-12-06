@@ -7161,36 +7161,36 @@ MonoBehaviour:
   - CollectionName: 0
     sprites: []
     dropdown: {fileID: 2119909299}
-    includeNAOption: 0
-    NAOptionSelectedDefault: 1
+    <IncludeNAOption>k__BackingField: 0
+    <NADefault>k__BackingField: 1
     <ActiveSprite>k__BackingField: {fileID: 0}
     activeSpriteIndex: 0
   - CollectionName: 1
     sprites: []
     dropdown: {fileID: 422343544}
-    includeNAOption: 0
-    NAOptionSelectedDefault: 1
+    <IncludeNAOption>k__BackingField: 0
+    <NADefault>k__BackingField: 1
     <ActiveSprite>k__BackingField: {fileID: 0}
     activeSpriteIndex: 0
   - CollectionName: 2
     sprites: []
     dropdown: {fileID: 1601551083}
-    includeNAOption: 1
-    NAOptionSelectedDefault: 1
+    <IncludeNAOption>k__BackingField: 1
+    <NADefault>k__BackingField: 1
     <ActiveSprite>k__BackingField: {fileID: 0}
     activeSpriteIndex: 0
   - CollectionName: 3
     sprites: []
     dropdown: {fileID: 1933579055}
-    includeNAOption: 1
-    NAOptionSelectedDefault: 1
+    <IncludeNAOption>k__BackingField: 1
+    <NADefault>k__BackingField: 1
     <ActiveSprite>k__BackingField: {fileID: 0}
     activeSpriteIndex: 0
   - CollectionName: 4
     sprites: []
     dropdown: {fileID: 693411174}
-    includeNAOption: 1
-    NAOptionSelectedDefault: 1
+    <IncludeNAOption>k__BackingField: 1
+    <NADefault>k__BackingField: 1
     <ActiveSprite>k__BackingField: {fileID: 0}
     activeSpriteIndex: 0
 --- !u!1 &1702898326

@@ -42,35 +42,13 @@ public class CharacterPieceGrabber : MonoBehaviour
         {
             if (!PerformErrorChecks()) return;
 
-        //    tasks = new List<Task>
-        //{
-        //    GetCharacterpieceCollection(CharacterPieceType.Body),
-        //    GetCharacterpieceCollection(CharacterPieceType.Eyes),
-        //    GetCharacterpieceCollection(CharacterPieceType.Outfit),
-        //    GetCharacterpieceCollection(CharacterPieceType.Hairstyle),
-        //    GetCharacterpieceCollection(CharacterPieceType.Accessory),
-        //};
-
-            // Wait for all portrait pieces to be added
-            //await Task.WhenAll(tasks);
-            //foreach (var task in tasks)
-            //{
-            //    await task;
-            //    await UniTask.Delay(1000);
-            //}
-
             await GetCharacterpieceCollection(CharacterPieceType.Body);
-            //await UniTask.Delay(1000);
             await GetCharacterpieceCollection(CharacterPieceType.Eyes);
-            //await UniTask.Delay(1000);
             await GetCharacterpieceCollection(CharacterPieceType.Outfit);
-            //await UniTask.Delay(1000);
             await GetCharacterpieceCollection(CharacterPieceType.Hairstyle);
-            //await UniTask.Delay(1000);
             await GetCharacterpieceCollection(CharacterPieceType.Accessory);
-            //await UniTask.Delay(1000);
 
-            Debug.Log("Successfully loaded all sprites");
+            Debug.Log("Successfully loaded all sprites with a total load time of: " + Time.realtimeSinceStartup);
             OnAllCharacterPiecesLoaded?.Invoke(this, EventArgs.Empty);
 
         }
@@ -99,23 +77,28 @@ public class CharacterPieceGrabber : MonoBehaviour
         switch (type)
         {
             case CharacterPieceType.Body:
-                filePath = Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.CharacterPiecesFolderName + "/Bodies/16x16";
+                filePath = Path.Combine(Directory.GetCurrentDirectory(), CharacterPieceDatabase.CharacterPiecesFolderName, "Bodies", "16x16");
+                //filePath = Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.CharacterPiecesFolderName + "/Bodies/16x16";
                 break;
             case CharacterPieceType.Eyes:
-                filePath = Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.CharacterPiecesFolderName + "/Eyes/16x16";
+                filePath = Path.Combine(Directory.GetCurrentDirectory(), CharacterPieceDatabase.CharacterPiecesFolderName, "Eyes", "16x16");
+                //filePath = Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.CharacterPiecesFolderName + "/Eyes/16x16";
                 break;
             case CharacterPieceType.Outfit:
-                filePath = Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.CharacterPiecesFolderName + "/Outfits/16x16";
+                filePath = Path.Combine(Directory.GetCurrentDirectory(), CharacterPieceDatabase.CharacterPiecesFolderName, "Outfits", "16x16");
+                //filePath = Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.CharacterPiecesFolderName + "/Outfits/16x16";
                 break;
             case CharacterPieceType.Hairstyle:
-                filePath = Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.CharacterPiecesFolderName + "/Hairstyles/16x16";
+                filePath = Path.Combine(Directory.GetCurrentDirectory(), CharacterPieceDatabase.CharacterPiecesFolderName, "Hairstyles", "16x16");
+                //filePath = Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.CharacterPiecesFolderName + "/Hairstyles/16x16";
                 break;
             case CharacterPieceType.Accessory:
-                filePath = Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.CharacterPiecesFolderName + "/Accessories/16x16";
+                filePath = Path.Combine(Directory.GetCurrentDirectory(), CharacterPieceDatabase.CharacterPiecesFolderName, "Accessories", "16x16");
+                //filePath = Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.CharacterPiecesFolderName + "/Accessories/16x16";
                 break;
         }
 
-        if (!CheckDirectory(filePath)) return;
+        if (!Directory.Exists(filePath)) return;
 
         DirectoryInfo d = new(filePath);
 
@@ -187,13 +170,5 @@ public class CharacterPieceGrabber : MonoBehaviour
         //}
 
         return true;
-    }
-
-    bool CheckDirectory(string path)
-    {
-        if (Directory.Exists(path))
-            return true;
-        else
-            return false;
     }
 }
