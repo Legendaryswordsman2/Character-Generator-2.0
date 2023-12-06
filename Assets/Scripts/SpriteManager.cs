@@ -20,6 +20,8 @@ public class SpriteManager : MonoBehaviour
 
         Texture2D finalTexture = texturesToBeCombined[0];
 
+        //Texture2D finalTexture = new(texturesToBeCombined[0].width, texturesToBeCombined[0].height);
+
         for (int i = 1; i < texturesToBeCombined.Count; i++)
         {
             finalTexture = CombineTwoTextures(finalTexture, texturesToBeCombined[i]);
@@ -32,46 +34,93 @@ public class SpriteManager : MonoBehaviour
     {
         Texture2D texture1 = Instantiate(_texture1);
 
-        int startX = 0;
-        int startY = 0;
+        //int startX = 0;
+        //int startY = 0;
 
-        for (int x = startX; x < texture1.width; x++)
+        //int startX = 0;
+        //int startY = 0;
+
+        //int endX = 896;
+        //int endY = 32;
+
+        //for (int x = startX; x < texture1.width; x++)
+        //{
+        //    for (int y = startY; y < texture1.height; y++)
+        //    {
+        //        Color s1Color = texture1.GetPixel(x, y);
+        //        Color s2Color = texture2.GetPixel(x - startX, y - startY);
+
+        //        Color final_color = Color.Lerp(s1Color, s2Color, s2Color.a / 1.0f);
+
+        //        texture1.SetPixel(x, y, final_color);
+        //    }
+        //}
+
+        Color32[] pixels1 = texture1.GetPixels32();
+        Color32[] pixels2 = texture2.GetPixels32();
+
+        int width = texture1.width;
+        int height = texture1.height;
+
+        for (int y = 0; y < height; y++)
         {
-            for (int y = startY; y < texture1.height; y++)
+            for (int x = 0; x < width; x++)
             {
-                Color s1Color = texture1.GetPixel(x, y);
-                Color s2Color = texture2.GetPixel(x - startX, y - startY);
-
-                Color final_color = Color.Lerp(s1Color, s2Color, s2Color.a / 1.0f);
-
-                texture1.SetPixel(x, y, final_color);
+                int index = y * width + x;
+                pixels1[index] = Color32.Lerp(pixels1[index], pixels2[index], pixels2[index].a / 255.0f);
             }
         }
+
+        texture1.SetPixels32(pixels1);
         texture1.Apply();
+
+        //for (int x = startX; x < endX; x++)
+        //{
+        //    for (int y = startY; y < endY; y++)
+        //    {
+        //        Color s1Color = texture1.GetPixel(x, y);
+        //        Color s2Color = texture2.GetPixel(x, y);
+
+        //        Color final_color = Color.Lerp(s1Color, s2Color, s2Color.a / 1.0f);
+
+        //        texture1.SetPixel(x, y, final_color);
+        //    }
+        //}
+        //texture1.Apply();
 
         return texture1;
     }
 
-    public static Sprite OverrideSprite(Sprite spriteToOverride, Sprite spriteToOverrideWith)
+    public static void OverrideSprite(Texture2D spriteToOverride, Texture2D spriteToOverrideWith)
     {
         int startX = 0;
         int startY = 0;
 
-        for (int x = startX; x < spriteToOverride.texture.width; x++)
+        //spriteToOverride = spriteToOverrideWith;
+
+        int width = spriteToOverride.width - startX;
+        int height = spriteToOverride.height - startY;
+
+        Color32[] pixelsOverride = spriteToOverride.GetPixels32();
+        Color32[] pixelsOverrideWith = spriteToOverrideWith.GetPixels32();
+
+        for (int y = 0; y < height; y++)
         {
-
-            for (int y = startY; y < spriteToOverride.texture.height; y++)
+            for (int x = 0; x < width; x++)
             {
-                Color s2Color = spriteToOverrideWith.texture.GetPixel(x - startX, y - startY);
+                int indexOverride = (y + startY) * spriteToOverride.width + (x + startX);
+                int indexOverrideWith = y * width + x;
 
-                spriteToOverride.texture.SetPixel(x, y, s2Color);
+                pixelsOverride[indexOverride] = pixelsOverrideWith[indexOverrideWith];
             }
         }
-        spriteToOverride.texture.Apply();
 
-        Sprite combinedSprite = Sprite.Create(spriteToOverride.texture, new Rect(0.0f, 0.0f, spriteToOverride.texture.width, spriteToOverride.texture.height), new Vector2(0.5f, 0.5f), 100.0f);
+        spriteToOverride.SetPixels32(pixelsOverride);
+        spriteToOverride.Apply();
 
-        return combinedSprite;
+        //Sprite combinedSprite = Sprite.Create(spriteToOverride, new Rect(0.0f, 0.0f, spriteToOverride.width, spriteToOverride.height), new Vector2(0.5f, 0.5f), 100.0f);
+
+        //return combinedSprite;
     }
 
     public static Sprite ConvertTextureToSprite(Texture2D texture)

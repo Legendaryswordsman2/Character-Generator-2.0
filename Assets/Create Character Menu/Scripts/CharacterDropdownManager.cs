@@ -38,7 +38,8 @@ public class CharacterDropdownManager : MonoBehaviour
         if (textureToBeCombined.Count <= 0) return;
 
         //SpriteManager.CombineTextures_Static(textureToBeCombined);
-        SpriteManager.OverrideSprite(characterSpritesheet, SpriteManager.CombineTextures(textureToBeCombined));
+        //SpriteManager.OverrideSprite(characterSpritesheet.texture, textureToBeCombined[0]);
+        SpriteManager.OverrideSprite(characterSpritesheet.texture, SpriteManager.CombineTextures(textureToBeCombined).texture);
     }
 
     private void CharacterPieceGrabber_OnAllCharacterPiecesLoaded(object sender, EventArgs e)
