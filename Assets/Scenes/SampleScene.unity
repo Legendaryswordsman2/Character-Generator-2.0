@@ -2192,9 +2192,10 @@ GameObject:
   - component: {fileID: 485691324}
   - component: {fileID: 485691327}
   - component: {fileID: 485691326}
-  - component: {fileID: 485691325}
+  - component: {fileID: 485691328}
+  - component: {fileID: 485691329}
   m_Layer: 5
-  m_Name: Try Character Button (1)
+  m_Name: Randomize Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2220,50 +2221,6 @@ RectTransform:
   m_AnchoredPosition: {x: 183, y: -89.1433}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &485691325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 485691323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 0
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.05
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 485691326}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &485691326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2302,6 +2259,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485691323}
   m_CullTransparentMesh: 1
+--- !u!114 &485691328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485691323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 580671379c1a1f7489aa2de50946964d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterDropdownManager: {fileID: 1689463853}
+  image: {fileID: 485691326}
+  highlightedSprite: {fileID: 21300000, guid: b8e329522b89fbe4696dbb63c64bc09e, type: 3}
+--- !u!114 &485691329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485691323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 485691326}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &512171280
 GameObject:
   m_ObjectHideFlags: 0
@@ -2860,6 +2876,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 26.2
       objectReference: {fileID: 0}
+    - target: {fileID: 2728380764714538727, guid: 5b51b9f5bac4d1e4583d1482e9889f60, type: 3}
+      propertyPath: characterPiece
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4126132892995045554, guid: 5b51b9f5bac4d1e4583d1482e9889f60, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3402,6 +3422,10 @@ PrefabInstance:
     - target: {fileID: 563513426746700654, guid: 5b51b9f5bac4d1e4583d1482e9889f60, type: 3}
       propertyPath: m_text
       value: Eyes
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728380764714538727, guid: 5b51b9f5bac4d1e4583d1482e9889f60, type: 3}
+      propertyPath: characterPiece
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4126132892995045554, guid: 5b51b9f5bac4d1e4583d1482e9889f60, type: 3}
       propertyPath: m_Pivot.x
@@ -7164,35 +7188,31 @@ MonoBehaviour:
     <IncludeNAOption>k__BackingField: 0
     <NADefault>k__BackingField: 1
     <ActiveSprite>k__BackingField: {fileID: 0}
-    activeSpriteIndex: 0
   - CollectionName: 1
     sprites: []
     dropdown: {fileID: 422343544}
     <IncludeNAOption>k__BackingField: 0
     <NADefault>k__BackingField: 1
     <ActiveSprite>k__BackingField: {fileID: 0}
-    activeSpriteIndex: 0
   - CollectionName: 2
     sprites: []
     dropdown: {fileID: 1601551083}
     <IncludeNAOption>k__BackingField: 1
     <NADefault>k__BackingField: 1
     <ActiveSprite>k__BackingField: {fileID: 0}
-    activeSpriteIndex: 0
   - CollectionName: 3
     sprites: []
     dropdown: {fileID: 1933579055}
     <IncludeNAOption>k__BackingField: 1
     <NADefault>k__BackingField: 1
     <ActiveSprite>k__BackingField: {fileID: 0}
-    activeSpriteIndex: 0
   - CollectionName: 4
     sprites: []
     dropdown: {fileID: 693411174}
     <IncludeNAOption>k__BackingField: 1
     <NADefault>k__BackingField: 1
     <ActiveSprite>k__BackingField: {fileID: 0}
-    activeSpriteIndex: 0
+  CanRecreateCharacter: 1
 --- !u!1 &1702898326
 GameObject:
   m_ObjectHideFlags: 0
@@ -7270,6 +7290,10 @@ PrefabInstance:
     - target: {fileID: 563513426746700654, guid: 5b51b9f5bac4d1e4583d1482e9889f60, type: 3}
       propertyPath: m_text
       value: Outfit
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728380764714538727, guid: 5b51b9f5bac4d1e4583d1482e9889f60, type: 3}
+      propertyPath: characterPiece
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4126132892995045554, guid: 5b51b9f5bac4d1e4583d1482e9889f60, type: 3}
       propertyPath: m_Pivot.x
@@ -8765,6 +8789,10 @@ PrefabInstance:
     - target: {fileID: 563513426746700654, guid: 5b51b9f5bac4d1e4583d1482e9889f60, type: 3}
       propertyPath: m_fontSize
       value: 21.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728380764714538727, guid: 5b51b9f5bac4d1e4583d1482e9889f60, type: 3}
+      propertyPath: characterPiece
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4126132892995045554, guid: 5b51b9f5bac4d1e4583d1482e9889f60, type: 3}
       propertyPath: m_Pivot.x

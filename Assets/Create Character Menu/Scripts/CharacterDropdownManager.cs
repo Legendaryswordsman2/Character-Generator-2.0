@@ -9,6 +9,8 @@ using UnityEngine.UI;
 
 public class CharacterDropdownManager : MonoBehaviour
 {
+    public static CharacterDropdownManager Instance;
+
     [SerializeField] Sprite characterSpritesheet;
 
     [field: SerializeField] public CharacterPieceCollectionDropdownData[] CharacterPiecesDropdownData { get; private set; }
@@ -17,13 +19,26 @@ public class CharacterDropdownManager : MonoBehaviour
 
     public event EventHandler OnDropdownValueChanged;
 
+    bool eventTriggeredThisFrame = false;
+
+    public bool CanRecreateCharacter = true;
+
     private void Awake()
     {
+        Instance = this;
+
         CharacterPieceGrabber.OnAllCharacterPiecesLoaded += CharacterPieceGrabber_OnAllCharacterPiecesLoaded;
     }
 
     public void OnDropdownUpdated(int index)
     {
+        RecreateCharacter();
+    }
+
+    public async void RecreateCharacter()
+    {
+        if (eventTriggeredThisFrame || !CanRecreateCharacter) return;
+
         OnDropdownValueChanged?.Invoke(this, EventArgs.Empty);
 
         List<Texture2D> textureToBeCombined = new();
@@ -40,6 +55,10 @@ public class CharacterDropdownManager : MonoBehaviour
 
         //Debug.Log("Recreating Character");
         SpriteManager.OverrideSprite(characterSpritesheet.texture, SpriteManager.CombineTextures(textureToBeCombined).texture);
+
+        eventTriggeredThisFrame = true;
+        await Task.Yield();
+        eventTriggeredThisFrame = false;
     }
 
     private void CharacterPieceGrabber_OnAllCharacterPiecesLoaded(object sender, EventArgs e)
@@ -50,7 +69,9 @@ public class CharacterDropdownManager : MonoBehaviour
         {
             CharacterPiecesDropdownData[i].sprites = characterPieceDatabase.CharacterPieces[i].Sprites;
             CharacterPiecesDropdownData[i].SetActiveSprite(0);
+            CharacterPiecesDropdownData[i].CanRandomize = PlayerPrefs.GetInt(CharacterPiecesDropdownData[i].CollectionName.ToString(), 1) == 1;
             InitializeDropdown(CharacterPiecesDropdownData[i]);
+
         }
 
         OnDropdownUpdated(0);
@@ -79,6 +100,11 @@ public class CharacterDropdownManager : MonoBehaviour
     private void OnDestroy()
     {
         CharacterPieceGrabber.OnAllCharacterPiecesLoaded -= CharacterPieceGrabber_OnAllCharacterPiecesLoaded;
+
+        for (int i = 0; i < CharacterPiecesDropdownData.Length; i++)
+        {
+            PlayerPrefs.SetInt(CharacterPiecesDropdownData[i].CollectionName.ToString(), CharacterPiecesDropdownData[i].CanRandomize ? 1 : 0);
+        }
     }
 
     [System.Serializable]
@@ -99,12 +125,8 @@ public class CharacterDropdownManager : MonoBehaviour
         [field: Space]
 
         [field: SerializeField, ReadOnly] public Sprite ActiveSprite { get; private set; }
-        //[ReadOnly] public int activeSpriteIndex;
-        //[ReadOnly] public int index;
 
-        public event EventHandler OnActivePortraitPieceChanged;
-
-        public Action<int, int, bool> OnDropdownChangedMethod;
+        public bool CanRandomize { get; set; } = true;
 
         public void SetActiveSprite(int index)
         {
@@ -122,13 +144,10 @@ public class CharacterDropdownManager : MonoBehaviour
 
         }
 
-        //public void Randomize()
-        //{
-        //    if (!canRandomizeToggle.isOn || sprites.Count == 0) return;
-
-        //    int numb = UnityEngine.Random.Range(0, sprites.Count);
-
-        //    dropdown.value = numb;
-        //}
+        public void Randomize()
+        {
+            if (CanRandomize && sprites.Count > 0)
+                dropdown.value = UnityEngine.Random.Range(0, sprites.Count);
+        }
     }
 }

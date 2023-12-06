@@ -33,7 +33,14 @@ public class CharacterAnimationButton : MonoBehaviour, IPointerEnterHandler, IPo
 
     private void Start()
     {
-        if (characterPreviewAnimation != null && characterPreviewAnimationManager != null)
+        if (characterPreviewAnimationManager == null) return;
+
+        if (characterPreviewAnimationManager.CurrentCharacterAnimation == characterPreviewAnimation)
+            image.sprite = highlightedSprite;
+        else
+            image.sprite = defaultSprite;
+
+        if (characterPreviewAnimation != null)
             characterPreviewAnimationManager.OnAnimationChanged += CharacterPreviewAnimationManager_OnAnimationChanged;
     }
 
