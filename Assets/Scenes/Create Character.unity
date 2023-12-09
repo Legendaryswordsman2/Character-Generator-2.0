@@ -7746,7 +7746,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ebbbefe490f74459e0e9a5108df3c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSpritesheet: {fileID: 437519916, guid: 678972e60b3b838438ea737d023fcec3, type: 3}
   <CharacterPiecesDropdownData>k__BackingField:
   - CollectionName: 0
     sprites: []

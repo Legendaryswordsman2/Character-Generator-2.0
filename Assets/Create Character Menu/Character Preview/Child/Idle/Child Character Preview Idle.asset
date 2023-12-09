@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07eae659b2dd7cd4899d1c48cd7818a0, type: 3}
+  m_Name: Child Character Preview Idle
+  m_EditorClassIdentifier: 
+  characterAnimationName: Idle Animation
+  CharacterLeftController: {fileID: 9100000, guid: e20416abbf9877c418ca8227def74af0, type: 2}
+  CharacterDownController: {fileID: 9100000, guid: 40efb57a812cd10458a477e307037e33, type: 2}
+  CharacterUpController: {fileID: 9100000, guid: 2cf8740ca997da145b89da2bb37f8989, type: 2}
+  CharacterRightController: {fileID: 9100000, guid: 8f6d06df3d8939e4985bff46872098ca, type: 2}
