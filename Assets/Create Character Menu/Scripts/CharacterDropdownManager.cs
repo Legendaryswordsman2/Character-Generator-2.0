@@ -11,9 +11,9 @@ public class CharacterDropdownManager : MonoBehaviour
 {
     public static CharacterDropdownManager Instance;
 
-    [SerializeField] Sprite characterSpritesheet;
-
     [field: SerializeField] public CharacterPieceCollectionDropdownData[] CharacterPiecesDropdownData { get; private set; }
+
+    [SerializeField] CharacterDropdown[] dropdowns;
 
     CharacterPieceDatabase characterPieceDatabase;
 
@@ -30,7 +30,7 @@ public class CharacterDropdownManager : MonoBehaviour
         CharacterPieceGrabber.OnAllCharacterPiecesLoaded += CharacterPieceGrabber_OnAllCharacterPiecesLoaded;
     }
 
-    public void OnDropdownUpdated(int index)
+    public void OnDropdownUpdated()
     {
         RecreateCharacter();
     }
@@ -43,18 +43,22 @@ public class CharacterDropdownManager : MonoBehaviour
 
         List<Texture2D> textureToBeCombined = new();
 
-        //Texture2D[] texturesToBeCombined = new Texture2D[CharacterPiecesDropdownData.Length];
-
-        for (int i = 0; i < CharacterPiecesDropdownData.Length; i++)
+        for (int i = 0; i < characterPieceDatabase.ActiveCharacterType.CharacterPieces.Length; i++)
         {
-            if (CharacterPiecesDropdownData[i].ActiveSprite != null)
-                textureToBeCombined.Add(CharacterPiecesDropdownData[i].ActiveSprite.texture);
+            if (characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].ActiveSprite != null)
+                textureToBeCombined.Add(characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].ActiveSprite.texture);
         }
+
+        //for (int i = 0; i < CharacterPiecesDropdownData.Length; i++)
+        //{
+        //    if (CharacterPiecesDropdownData[i].ActiveSprite != null)
+        //        textureToBeCombined.Add(CharacterPiecesDropdownData[i].ActiveSprite.texture);
+        //}
 
         if (textureToBeCombined.Count <= 0) return;
 
-        //Debug.Log("Recreating Character");
-        SpriteManager.OverrideSprite(characterSpritesheet.texture, SpriteManager.CombineTextures(textureToBeCombined).texture);
+        Debug.Log("Recreating Character");
+        SpriteManager.OverrideSprite(characterPieceDatabase.ActiveCharacterType.CharacterPreviewSpritesheet.texture, SpriteManager.CombineTextures(textureToBeCombined).texture);
 
         eventTriggeredThisFrame = true;
         await Task.Yield();
@@ -65,16 +69,31 @@ public class CharacterDropdownManager : MonoBehaviour
     {
         characterPieceDatabase = CharacterPieceDatabase.Instance;
 
-        for (int i = 0; i < characterPieceDatabase.CharacterPieces.Length; i++)
+        RefreshDropdowns();
+
+        //for (int i = 0; i < characterPieceDatabase.CharacterPieces.Length; i++)
+        //{
+        //    CharacterPiecesDropdownData[i].sprites = characterPieceDatabase.CharacterPieces[i].Sprites;
+        //    CharacterPiecesDropdownData[i].SetActiveSprite(0);
+        //    CharacterPiecesDropdownData[i].CanRandomize = PlayerPrefs.GetInt(CharacterPiecesDropdownData[i].CollectionName.ToString(), 1) == 1;
+        //    InitializeDropdown(CharacterPiecesDropdownData[i]);
+        //}
+
+        OnDropdownUpdated();
+    }
+
+    void RefreshDropdowns()
+    {
+        for (int i = 0; i < characterPieceDatabase.ActiveCharacterType.CharacterPieces.Length; i++)
         {
-            CharacterPiecesDropdownData[i].sprites = characterPieceDatabase.CharacterPieces[i].Sprites;
-            CharacterPiecesDropdownData[i].SetActiveSprite(0);
-            CharacterPiecesDropdownData[i].CanRandomize = PlayerPrefs.GetInt(CharacterPiecesDropdownData[i].CollectionName.ToString(), 1) == 1;
-            InitializeDropdown(CharacterPiecesDropdownData[i]);
+            if(i > dropdowns.Length - 1)
+            {
+                Debug.LogWarning("Not enough dropdowns");
+                return;
+            }
 
+            dropdowns[i].UpdateDropdown(characterPieceDatabase.ActiveCharacterType.CharacterPieces[i]);
         }
-
-        OnDropdownUpdated(0);
     }
 
     void InitializeDropdown(CharacterPieceCollectionDropdownData characterPiece)
@@ -95,6 +114,15 @@ public class CharacterDropdownManager : MonoBehaviour
             characterPiece.dropdown.value = 0;
 
         characterPiece.dropdown.RefreshShownValue();
+    }
+
+    public void RandomizeAllDropdowns()
+    {
+        for (int i = 0; i < dropdowns.Length; i++)
+        {
+            if (dropdowns[i].CharacterPiece.CanRandomize && dropdowns[i].CharacterPiece.Sprites.Count > 0)
+                dropdowns[i].Dropdown.value = UnityEngine.Random.Range(0, dropdowns[i].CharacterPiece.Sprites.Count);
+        }
     }
 
     private void OnDestroy()
@@ -130,6 +158,8 @@ public class CharacterDropdownManager : MonoBehaviour
 
         public void SetActiveSprite(int index)
         {
+            if (sprites.Count == 0) return;
+
             if (IncludeNAOption)
             {
                 if (index == 0)

@@ -24,6 +24,6 @@ public class RandomizeToggle : MonoBehaviour
 
     public void UpdateToggle(bool state)
     {
-        characterDropdownManager.CharacterPiecesDropdownData.FirstOrDefault(character => character.CollectionName == characterPiece).CanRandomize = state;
+        //characterDropdownManager.CharacterPiecesDropdownData.FirstOrDefault(character => character.CollectionName == characterPiece).CanRandomize = state;
     }
 }

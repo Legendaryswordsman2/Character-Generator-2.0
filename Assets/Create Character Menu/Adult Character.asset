@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37f955cc088c9a248a6b9c8147a0c51e, type: 3}
+  m_Name: Adult Character
+  m_EditorClassIdentifier: 
+  <CharacterTypeName>k__BackingField: Adult
+  <CharacterPreviewSpritesheet>k__BackingField: {fileID: 437519916, guid: 678972e60b3b838438ea737d023fcec3, type: 3}
+  <CharacterPieces>k__BackingField:
+  - CollectionName: Body
+    spriteLocation: Bodies
+    <IncludeNAOption>k__BackingField: 0
+    <NADefault>k__BackingField: 1
+    Sprites: []
+    <ActiveSprite>k__BackingField: {fileID: 0}
+  - CollectionName: Eyes
+    spriteLocation: Eyes
+    <IncludeNAOption>k__BackingField: 0
+    <NADefault>k__BackingField: 1
+    Sprites: []
+    <ActiveSprite>k__BackingField: {fileID: 0}
+  - CollectionName: Outfit
+    spriteLocation: Outfits
+    <IncludeNAOption>k__BackingField: 1
+    <NADefault>k__BackingField: 1
+    Sprites: []
+    <ActiveSprite>k__BackingField: {fileID: 0}
+  - CollectionName: Hairstyle
+    spriteLocation: Hairstyles
+    <IncludeNAOption>k__BackingField: 1
+    <NADefault>k__BackingField: 1
+    Sprites: []
+    <ActiveSprite>k__BackingField: {fileID: 0}
+  - CollectionName: Accessory
+    spriteLocation: Accessories
+    <IncludeNAOption>k__BackingField: 1
+    <NADefault>k__BackingField: 1
+    Sprites: []
+    <ActiveSprite>k__BackingField: {fileID: 0}

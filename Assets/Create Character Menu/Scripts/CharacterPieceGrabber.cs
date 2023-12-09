@@ -42,11 +42,19 @@ public class CharacterPieceGrabber : MonoBehaviour
         {
             if (!PerformErrorChecks()) return;
 
-            await GetCharacterpieceCollection(CharacterPieceType.Body);
-            await GetCharacterpieceCollection(CharacterPieceType.Eyes);
-            await GetCharacterpieceCollection(CharacterPieceType.Outfit);
-            await GetCharacterpieceCollection(CharacterPieceType.Hairstyle);
-            await GetCharacterpieceCollection(CharacterPieceType.Accessory);
+            foreach (CharacterTypeSO characterType in characterPieceDatabase.CharacterTypes)
+            {
+                await LoadCharacterPiecesFromType(characterType);
+            }
+
+            await LoadCharacterPiecesFromType(characterPieceDatabase.CharacterTypes[1]);
+            //await LoadCharacterPiecesFromType(characterPieceDatabase)
+
+            //await GetCharacterpieceCollection(CharacterPieceType.Body);
+            //await GetCharacterpieceCollection(CharacterPieceType.Eyes);
+            //await GetCharacterpieceCollection(CharacterPieceType.Outfit);
+            //await GetCharacterpieceCollection(CharacterPieceType.Hairstyle);
+            //await GetCharacterpieceCollection(CharacterPieceType.Accessory);
 
             Debug.Log("Successfully loaded all sprites with a total load time of: " + Time.realtimeSinceStartup);
             OnAllCharacterPiecesLoaded?.Invoke(this, EventArgs.Empty);
@@ -68,6 +76,34 @@ public class CharacterPieceGrabber : MonoBehaviour
             return false;
         }
         return true;
+    }
+
+    async Task LoadCharacterPiecesFromType(CharacterTypeSO characterType)
+    {
+        foreach (var item in characterType.CharacterPieces)
+        {
+            string filePath = "";
+
+            filePath = Path.Combine(Directory.GetCurrentDirectory(), CharacterPieceDatabase.CharacterPiecesFolderName, item.spriteLocation, "16x16");
+
+            if (!Directory.Exists(filePath)) 
+            {
+                Debug.LogWarning("Filepath does not exist: " +  filePath);
+                continue;
+            } 
+
+            DirectoryInfo d = new(filePath);
+
+            foreach (var file in d.GetFiles("*.png"))
+            {
+                // file.FullName is the full path to the file
+                string fileUrl = new Uri(file.FullName).AbsoluteUri;
+                Sprite sprite = await GetImage(fileUrl, Path.GetFileNameWithoutExtension(file.Name), file.Extension, CharacterSize.Sixteen);
+                if (sprite == null) continue;
+                item.Sprites.Add(sprite);
+                //characterPieceDatabase.AddCharacterPiece(sprite, type);
+            }
+        }
     }
 
     async Task GetCharacterpieceCollection(CharacterPieceType type)
@@ -108,7 +144,7 @@ public class CharacterPieceGrabber : MonoBehaviour
             string fileUrl = new Uri(file.FullName).AbsoluteUri;
             Sprite sprite = await GetImage(fileUrl, Path.GetFileNameWithoutExtension(file.Name), file.Extension, CharacterSize.Sixteen);
             if (sprite == null) continue;
-            characterPieceDatabase.AddCharacterPiece(sprite, type);
+            //characterPieceDatabase.AddCharacterPiece(sprite, type);
         }
     }
 

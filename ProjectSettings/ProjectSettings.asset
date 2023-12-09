@@ -158,7 +158,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.DefaultCompany.Character-Generator-2.0
+    Standalone: com.Gray-Matter-Studios.Character-Generator-2.0
   buildNumber:
     Standalone: 0
     VisionOS: 0
