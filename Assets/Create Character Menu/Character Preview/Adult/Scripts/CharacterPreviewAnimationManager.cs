@@ -7,7 +7,7 @@ public class CharacterPreviewAnimationManager : MonoBehaviour
 {
     public CharacterPreviewAnimationSetSO CurrentCharacterAnimation { get; private set; }
 
-    [SerializeField] CharacterPreviewAnimationSetSO defaultCharacterAnimation;
+    //[SerializeField] CharacterPreviewAnimationSetSO defaultCharacterAnimation;
 
     [Space]
 
@@ -25,10 +25,10 @@ public class CharacterPreviewAnimationManager : MonoBehaviour
 
     public event EventHandler<CharacterPreviewAnimationSetSO> OnAnimationChanged;
 
-    private void Start()
-    {
-        SetCharacterAnimation(defaultCharacterAnimation);
-    }
+    //private void Start()
+    //{
+    //    SetCharacterAnimation(defaultCharacterAnimation);
+    //}
 
     public void SetCharacterAnimation(CharacterPreviewAnimationSetSO newAnimation)
     {

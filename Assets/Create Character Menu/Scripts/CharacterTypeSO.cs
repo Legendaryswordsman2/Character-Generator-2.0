@@ -29,8 +29,13 @@ public class CharacterTypeSO : ScriptableObject
 
         [Tooltip("The localation on the users computer where the sprites are located")]
         public string spriteLocation;
+
+        [field: Space]
+
         [field: SerializeField] public bool IncludeNAOption { get; private set; } = false;
         [field: SerializeField, ShowIf("IncludeNAOption")] public bool NADefault { get; private set; } = true;
+
+        [Space]
 
         [ReadOnly] public List<Sprite> Sprites;
 

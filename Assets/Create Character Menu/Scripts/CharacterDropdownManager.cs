@@ -84,16 +84,27 @@ public class CharacterDropdownManager : MonoBehaviour
 
     void RefreshDropdowns()
     {
-        for (int i = 0; i < characterPieceDatabase.ActiveCharacterType.CharacterPieces.Length; i++)
-        {
-            if(i > dropdowns.Length - 1)
-            {
-                Debug.LogWarning("Not enough dropdowns");
-                return;
-            }
+        if (characterPieceDatabase.ActiveCharacterType.CharacterPieces.Length > dropdowns.Length)
+            Debug.LogWarning("Not enough dropdowns!");
 
-            dropdowns[i].UpdateDropdown(characterPieceDatabase.ActiveCharacterType.CharacterPieces[i]);
+        for (int i = 0; i < dropdowns.Length; i++)
+        {
+            if (characterPieceDatabase.ActiveCharacterType.CharacterPieces.Length - 1 >= i)
+                dropdowns[i].UpdateDropdown(characterPieceDatabase.ActiveCharacterType.CharacterPieces[i]);
+            else
+                dropdowns[i].gameObject.SetActive(false);
         }
+
+        //for (int i = 0; i < characterPieceDatabase.ActiveCharacterType.CharacterPieces.Length; i++)
+        //{
+        //    if (i > dropdowns.Length - 1)
+        //    {
+        //        Debug.LogWarning("Not enough dropdowns");
+        //        return;
+        //    }
+
+        //    dropdowns[i].UpdateDropdown(characterPieceDatabase.ActiveCharacterType.CharacterPieces[i]);
+        //}
     }
 
     void InitializeDropdown(CharacterPieceCollectionDropdownData characterPiece)

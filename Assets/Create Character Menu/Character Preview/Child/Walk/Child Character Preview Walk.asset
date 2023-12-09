@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07eae659b2dd7cd4899d1c48cd7818a0, type: 3}
-  m_Name: Child Character Preview Idle
+  m_Name: Child Character Preview Walk
   m_EditorClassIdentifier: 
   characterAnimationName: Walk Animation
-  CharacterLeftController: {fileID: 9100000, guid: e20416abbf9877c418ca8227def74af0, type: 2}
-  CharacterDownController: {fileID: 9100000, guid: 40efb57a812cd10458a477e307037e33, type: 2}
-  CharacterUpController: {fileID: 9100000, guid: 2cf8740ca997da145b89da2bb37f8989, type: 2}
-  CharacterRightController: {fileID: 9100000, guid: 8f6d06df3d8939e4985bff46872098ca, type: 2}
+  CharacterLeftController: {fileID: 9100000, guid: be24da8b646be7b4785ecc4b74c31a97, type: 2}
+  CharacterDownController: {fileID: 9100000, guid: 728dc2dee5128d04482192c6bd881b68, type: 2}
+  CharacterUpController: {fileID: 9100000, guid: 25e77d7d9252c194dad1833b75096578, type: 2}
+  CharacterRightController: {fileID: 9100000, guid: e271722483d7fc04bb34285f7ee6fda2, type: 2}
