@@ -17,7 +17,9 @@ public class RandomizeToggle : MonoBehaviour
     {
         characterDropdownManager = CharacterDropdownManager.Instance;
 
+        toggle.toggleTransition = UnityEngine.UI.Toggle.ToggleTransition.None;
         toggle.isOn = characterDropdownManager.CharacterPiecesDropdownData.FirstOrDefault(character => character.CollectionName == characterPiece).CanRandomize;
+        toggle.toggleTransition = UnityEngine.UI.Toggle.ToggleTransition.Fade;
     }
 
     public void UpdateToggle(bool state)
