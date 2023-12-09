@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,6 +38,8 @@ public class CharacterDropdown : MonoBehaviour
 
     public void UpdateDropdown(CharacterTypeSO.CharacterPieceCollection newCharacterPiece)
     {
+        gameObject.SetActive(true);
+
         CharacterPiece = newCharacterPiece;
 
         Dropdown.ClearOptions();
@@ -47,22 +50,30 @@ public class CharacterDropdown : MonoBehaviour
         for (int i = 0; i < CharacterPiece.Sprites.Count; i++)
             Dropdown.options.Add(new TMP_Dropdown.OptionData() { text = CharacterPiece.Sprites[i].name.Replace('_', ' ') });
 
-        if (CharacterPiece.IncludeNAOption && !CharacterPiece.NADefault)
+        if (CharacterPiece.DropdownIndex != 0)
         {
-            Dropdown.value = 1;
+            Dropdown.value = CharacterPiece.DropdownIndex;
+            CharacterPiece.SetActiveSprite(CharacterPiece.DropdownIndex);
         }
         else
-            Dropdown.value = 0;
+        {
+            if (CharacterPiece.IncludeNAOption && !CharacterPiece.NADefault)
+            {
+                Dropdown.value = 1;
+            }
+            else
+                Dropdown.value = 0;
 
-        CharacterPiece.SetActiveSprite(0);
+            CharacterPiece.SetActiveSprite(0);
+        }
 
         Dropdown.RefreshShownValue();
     }
 
     public void OnDropdownChanged(int index)
     {
+        CharacterPiece.DropdownIndex = index;
         CharacterPiece.SetActiveSprite(index);
-        //dropdownManager.CharacterPiecesDropdownData[dropdownIndex].SetActiveSprite(index);
 
         if (initialized)
             dropdownManager.OnDropdownUpdated();

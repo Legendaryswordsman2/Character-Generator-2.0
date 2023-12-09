@@ -57,7 +57,7 @@ public class CharacterDropdownManager : MonoBehaviour
 
         if (textureToBeCombined.Count <= 0) return;
 
-        Debug.Log("Recreating Character");
+        //Debug.Log("Recreating Character");
         SpriteManager.OverrideSprite(characterPieceDatabase.ActiveCharacterType.CharacterPreviewSpritesheet.texture, SpriteManager.CombineTextures(textureToBeCombined).texture);
 
         eventTriggeredThisFrame = true;
@@ -69,6 +69,8 @@ public class CharacterDropdownManager : MonoBehaviour
     {
         characterPieceDatabase = CharacterPieceDatabase.Instance;
 
+        characterPieceDatabase.OnActiveCharacterTypeChanged += CharacterPieceDatabase_OnActiveCharacterTypeChanged;
+
         RefreshDropdowns();
 
         //for (int i = 0; i < characterPieceDatabase.CharacterPieces.Length; i++)
@@ -79,6 +81,12 @@ public class CharacterDropdownManager : MonoBehaviour
         //    InitializeDropdown(CharacterPiecesDropdownData[i]);
         //}
 
+        OnDropdownUpdated();
+    }
+
+    private void CharacterPieceDatabase_OnActiveCharacterTypeChanged(object sender, CharacterTypeSO e)
+    {
+        RefreshDropdowns();
         OnDropdownUpdated();
     }
 
@@ -139,6 +147,8 @@ public class CharacterDropdownManager : MonoBehaviour
     private void OnDestroy()
     {
         CharacterPieceGrabber.OnAllCharacterPiecesLoaded -= CharacterPieceGrabber_OnAllCharacterPiecesLoaded;
+
+        characterPieceDatabase.OnActiveCharacterTypeChanged -= CharacterPieceDatabase_OnActiveCharacterTypeChanged;
 
         for (int i = 0; i < CharacterPiecesDropdownData.Length; i++)
         {

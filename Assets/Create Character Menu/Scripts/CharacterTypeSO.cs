@@ -14,11 +14,12 @@ public class CharacterTypeSO : ScriptableObject
 
     [field: SerializeField] public CharacterPieceCollection[] CharacterPieces { get; private set; }
 
-    public void ClearSprites()
+    public void Init()
     {
         foreach (CharacterPieceCollection characterPiece in CharacterPieces)
         {
             characterPiece.Sprites.Clear();
+            characterPiece.DropdownIndex = 0;
         }
     }
 
@@ -41,6 +42,8 @@ public class CharacterTypeSO : ScriptableObject
 
         [field: SerializeField, ReadOnly] public Sprite ActiveSprite { get; private set; }
         public bool CanRandomize { get; set; } = true;
+
+        public int DropdownIndex { get; set; } = 0;
 
         public event EventHandler<int> OnRandomizeDropdown;
 

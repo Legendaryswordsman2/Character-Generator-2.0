@@ -20,8 +20,14 @@ public class AnimationTabManager : MonoBehaviour
 
         RefreshSection();
 
-        if (activeSection != null) characterPreviewAnimationManager.SetCharacterAnimation(activeSection.DefaultAnimationSet);
+        characterPieceDatabase.OnActiveCharacterTypeChanged += CharacterPieceDatabase_OnActiveCharacterTypeChanged;
     }
+
+    private void CharacterPieceDatabase_OnActiveCharacterTypeChanged(object sender, CharacterTypeSO e)
+    {
+        RefreshSection();
+    }
+
     void RefreshSection()
     {
         foreach (AnimationSection section in characterTypeAnimationSections)
@@ -29,6 +35,13 @@ public class AnimationTabManager : MonoBehaviour
             section.Section.SetActive(section.SectionCharacterType == characterPieceDatabase.ActiveCharacterType);
             if (section.SectionCharacterType == characterPieceDatabase.ActiveCharacterType) activeSection = section;
         }
+
+        if (activeSection != null) characterPreviewAnimationManager.SetCharacterAnimation(activeSection.DefaultAnimationSet);
+    }
+
+    private void OnDestroy()
+    {
+        characterPieceDatabase.OnActiveCharacterTypeChanged -= CharacterPieceDatabase_OnActiveCharacterTypeChanged;
     }
 
     [System.Serializable]

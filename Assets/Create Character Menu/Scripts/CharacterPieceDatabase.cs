@@ -13,49 +13,38 @@ public class CharacterPieceDatabase : MonoBehaviour
 
     [field: SerializeField, ReadOnly] public CharacterTypeSO ActiveCharacterType { get; private set; }
     [field: SerializeField] public CharacterTypeSO[] CharacterTypes { get; private set; }
-    //[field: SerializeField] CharacterPieceCollection[] CharacterPieces { get; private set; }
 
     public const string CharacterPiecesFolderName = "Character Pieces";
+
+    public event EventHandler<CharacterTypeSO> OnActiveCharacterTypeChanged;
 
     private void Awake()
     {
         foreach (CharacterTypeSO characterType in CharacterTypes)
         {
-            characterType.ClearSprites();
+            characterType.Init();
         }
 
-        ActiveCharacterType = CharacterTypes[1];
+        ActiveCharacterType = CharacterTypes[0];
 
         Instance = this;
     }
 
-    //public void AddCharacterPiece(Sprite piece, CharacterPieceType type)
-    //{
-    //    switch (type)
-    //    {
-    //        case CharacterPieceType.Body:
-    //            CharacterPieces[0].Sprites.Add(piece);
-    //            break;
-    //        case CharacterPieceType.Eyes:
-    //            CharacterPieces[1].Sprites.Add(piece);
-    //            break;
-    //        case CharacterPieceType.Outfit:
-    //            CharacterPieces[2].Sprites.Add(piece);
-    //            break;
-    //        case CharacterPieceType.Hairstyle:
-    //            CharacterPieces[3].Sprites.Add(piece);
-    //            break;
-    //        case CharacterPieceType.Accessory:
-    //            CharacterPieces[4].Sprites.Add(piece);
-    //            break;
-    //    }
-    //}
+    public void SetActiveCharacterType(CharacterTypeSO characterType)
+    {
+        if (characterType == ActiveCharacterType) return;
+
+        //Debug.Log("Set New Character Type");
+        ActiveCharacterType = characterType;
+
+        OnActiveCharacterTypeChanged?.Invoke(this, ActiveCharacterType);
+    }
 
     private void OnDestroy()
     {
         foreach (CharacterTypeSO characterType in CharacterTypes)
         {
-            characterType.ClearSprites();
+            characterType.Init();
         }
     }
 
