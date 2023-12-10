@@ -8,6 +8,7 @@ using UnityEngine.Networking;
 using Cysharp.Threading.Tasks;
 
 public enum CharacterSize { Sixteen, Thirtytwo, Fortyeight }
+public enum LoadFailedType { DirectoryMissing, UnknownError }
 public class CharacterPieceGrabber : MonoBehaviour
 {
     public static CharacterPieceGrabber Instance;
@@ -17,7 +18,7 @@ public class CharacterPieceGrabber : MonoBehaviour
     List<Task> tasks;
 
     public static event EventHandler OnAllCharacterPiecesLoaded;
-    public static event EventHandler OnFailedToLoadCharacterPieces;
+    public static event EventHandler<LoadFailedType> OnFailedToLoadCharacterPieces;
 
     public static event EventHandler<OnNewSpriteLoadedEventArgs> OnNewSpriteLoaded;
 
@@ -42,19 +43,19 @@ public class CharacterPieceGrabber : MonoBehaviour
         {
             if (!PerformErrorChecks()) return;
 
-            foreach (CharacterTypeSO characterType in characterPieceDatabase.CharacterTypes)
+            try
             {
-                await LoadCharacterPiecesFromType(characterType);
+                foreach (CharacterTypeSO characterType in characterPieceDatabase.CharacterTypes)
+                {
+                    await LoadCharacterPiecesFromType(characterType);
+                }
             }
-
-            //await LoadCharacterPiecesFromType(characterPieceDatabase.CharacterTypes[1]);
-            //await LoadCharacterPiecesFromType(characterPieceDatabase)
-
-            //await GetCharacterpieceCollection(CharacterPieceType.Body);
-            //await GetCharacterpieceCollection(CharacterPieceType.Eyes);
-            //await GetCharacterpieceCollection(CharacterPieceType.Outfit);
-            //await GetCharacterpieceCollection(CharacterPieceType.Hairstyle);
-            //await GetCharacterpieceCollection(CharacterPieceType.Accessory);
+            catch (Exception exception)
+            {
+                Debug.LogException(exception);
+                OnFailedToLoadCharacterPieces?.Invoke(this, LoadFailedType.UnknownError);
+                throw;
+            }
 
             Debug.Log("Successfully loaded all sprites with a total load time of: " + Time.realtimeSinceStartup);
             OnAllCharacterPiecesLoaded?.Invoke(this, EventArgs.Empty);
@@ -70,9 +71,8 @@ public class CharacterPieceGrabber : MonoBehaviour
     {
         if (!Directory.Exists(Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.CharacterPiecesFolderName))
         {
-            Debug.Log("Directory does not exist");
-            OnFailedToLoadCharacterPieces?.Invoke(this, EventArgs.Empty);
-            //SetupManager.Instance.DisplayError(ErrorType.MissingPortraitPiecesFolder);
+            Debug.LogError("Directory does not exist: " + Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.CharacterPiecesFolderName);
+            OnFailedToLoadCharacterPieces?.Invoke(this, LoadFailedType.DirectoryMissing);
             return false;
         }
         return true;
@@ -86,11 +86,11 @@ public class CharacterPieceGrabber : MonoBehaviour
 
             filePath = Path.Combine(Directory.GetCurrentDirectory(), CharacterPieceDatabase.CharacterPiecesFolderName, item.spriteLocation, "16x16");
 
-            if (!Directory.Exists(filePath)) 
+            if (!Directory.Exists(filePath))
             {
-                Debug.LogWarning("Filepath does not exist: " +  filePath);
+                Debug.LogWarning("Filepath does not exist: " + filePath);
                 continue;
-            } 
+            }
 
             DirectoryInfo d = new(filePath);
 
@@ -100,51 +100,16 @@ public class CharacterPieceGrabber : MonoBehaviour
                 string fileUrl = new Uri(file.FullName).AbsoluteUri;
                 Sprite sprite = await GetImage(fileUrl, Path.GetFileNameWithoutExtension(file.Name), file.Extension, CharacterSize.Sixteen);
                 if (sprite == null) continue;
+
+                if (sprite.texture.width != characterType.SpriteSize.x || sprite.texture.height != characterType.SpriteSize.y)
+                {
+                    Debug.Log("Sprite (" + sprite.name + file.Extension + ") has an incorrect size and cannot be loaded");
+                    continue;
+                }
+
                 item.Sprites.Add(sprite);
                 //characterPieceDatabase.AddCharacterPiece(sprite, type);
             }
-        }
-    }
-
-    async Task GetCharacterpieceCollection(CharacterPieceType type)
-    {
-        string filePath = "";
-
-        switch (type)
-        {
-            case CharacterPieceType.Body:
-                filePath = Path.Combine(Directory.GetCurrentDirectory(), CharacterPieceDatabase.CharacterPiecesFolderName, "Bodies", "16x16");
-                //filePath = Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.CharacterPiecesFolderName + "/Bodies/16x16";
-                break;
-            case CharacterPieceType.Eyes:
-                filePath = Path.Combine(Directory.GetCurrentDirectory(), CharacterPieceDatabase.CharacterPiecesFolderName, "Eyes", "16x16");
-                //filePath = Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.CharacterPiecesFolderName + "/Eyes/16x16";
-                break;
-            case CharacterPieceType.Outfit:
-                filePath = Path.Combine(Directory.GetCurrentDirectory(), CharacterPieceDatabase.CharacterPiecesFolderName, "Outfits", "16x16");
-                //filePath = Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.CharacterPiecesFolderName + "/Outfits/16x16";
-                break;
-            case CharacterPieceType.Hairstyle:
-                filePath = Path.Combine(Directory.GetCurrentDirectory(), CharacterPieceDatabase.CharacterPiecesFolderName, "Hairstyles", "16x16");
-                //filePath = Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.CharacterPiecesFolderName + "/Hairstyles/16x16";
-                break;
-            case CharacterPieceType.Accessory:
-                filePath = Path.Combine(Directory.GetCurrentDirectory(), CharacterPieceDatabase.CharacterPiecesFolderName, "Accessories", "16x16");
-                //filePath = Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.CharacterPiecesFolderName + "/Accessories/16x16";
-                break;
-        }
-
-        if (!Directory.Exists(filePath)) return;
-
-        DirectoryInfo d = new(filePath);
-
-        foreach (var file in d.GetFiles("*.png"))
-        {
-            // file.FullName is the full path to the file
-            string fileUrl = new Uri(file.FullName).AbsoluteUri;
-            Sprite sprite = await GetImage(fileUrl, Path.GetFileNameWithoutExtension(file.Name), file.Extension, CharacterSize.Sixteen);
-            if (sprite == null) continue;
-            //characterPieceDatabase.AddCharacterPiece(sprite, type);
         }
     }
 

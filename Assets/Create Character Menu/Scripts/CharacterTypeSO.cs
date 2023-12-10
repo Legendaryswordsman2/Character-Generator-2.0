@@ -12,6 +12,12 @@ public class CharacterTypeSO : ScriptableObject
 
     [field: SerializeField] public Sprite CharacterPreviewSpritesheet { get; private set; }
 
+    [field: Space]
+
+    [field: SerializeField] public Vector2 SpriteSize { get; private set; }
+
+    [field: Space]
+
     [field: SerializeField] public CharacterPieceCollection[] CharacterPieces { get; private set; }
 
     public void Init()

@@ -148,7 +148,8 @@ public class CharacterDropdownManager : MonoBehaviour
     {
         CharacterPieceGrabber.OnAllCharacterPiecesLoaded -= CharacterPieceGrabber_OnAllCharacterPiecesLoaded;
 
-        characterPieceDatabase.OnActiveCharacterTypeChanged -= CharacterPieceDatabase_OnActiveCharacterTypeChanged;
+        if (characterPieceDatabase != null)
+            characterPieceDatabase.OnActiveCharacterTypeChanged -= CharacterPieceDatabase_OnActiveCharacterTypeChanged;
 
         for (int i = 0; i < CharacterPiecesDropdownData.Length; i++)
         {
