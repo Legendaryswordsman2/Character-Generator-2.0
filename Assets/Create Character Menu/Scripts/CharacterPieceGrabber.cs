@@ -47,7 +47,7 @@ public class CharacterPieceGrabber : MonoBehaviour
                 await LoadCharacterPiecesFromType(characterType);
             }
 
-            await LoadCharacterPiecesFromType(characterPieceDatabase.CharacterTypes[1]);
+            //await LoadCharacterPiecesFromType(characterPieceDatabase.CharacterTypes[1]);
             //await LoadCharacterPiecesFromType(characterPieceDatabase)
 
             //await GetCharacterpieceCollection(CharacterPieceType.Body);

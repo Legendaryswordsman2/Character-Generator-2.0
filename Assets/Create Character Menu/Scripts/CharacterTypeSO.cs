@@ -16,10 +16,27 @@ public class CharacterTypeSO : ScriptableObject
 
     public void Init()
     {
+        ClearSprites();
+        foreach (CharacterPieceCollection characterPiece in CharacterPieces)
+        {
+            characterPiece.DropdownIndex = 0;
+            characterPiece.CanRandomize = PlayerPrefs.GetInt(characterPiece.spriteLocation, 1) == 1;
+        }
+    }
+
+    public void ClearSprites()
+    {
         foreach (CharacterPieceCollection characterPiece in CharacterPieces)
         {
             characterPiece.Sprites.Clear();
-            characterPiece.DropdownIndex = 0;
+        }
+    }
+
+    public void SaveRandomizeToggles()
+    {
+        foreach (CharacterPieceCollection characterPiece in CharacterPieces)
+        {
+            PlayerPrefs.SetInt(characterPiece.spriteLocation, characterPiece.CanRandomize ? 1 : 0);
         }
     }
 
@@ -45,8 +62,6 @@ public class CharacterTypeSO : ScriptableObject
 
         public int DropdownIndex { get; set; } = 0;
 
-        public event EventHandler<int> OnRandomizeDropdown;
-
         public void SetActiveSprite(int index)
         {
             if (Sprites.Count == 0) return;
@@ -63,13 +78,6 @@ public class CharacterTypeSO : ScriptableObject
                 ActiveSprite = Sprites[index];
             }
 
-        }
-
-        public void Randomize()
-        {
-            if (CanRandomize && Sprites.Count > 0)
-                OnRandomizeDropdown?.Invoke(this, UnityEngine.Random.Range(0, Sprites.Count));
-            //dropdown.value = UnityEngine.Random.Range(0, Sprites.Count);
         }
     }
 }

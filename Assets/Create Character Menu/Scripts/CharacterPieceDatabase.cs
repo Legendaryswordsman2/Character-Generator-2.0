@@ -44,7 +44,8 @@ public class CharacterPieceDatabase : MonoBehaviour
     {
         foreach (CharacterTypeSO characterType in CharacterTypes)
         {
-            characterType.Init();
+            characterType.ClearSprites();
+            characterType.SaveRandomizeToggles();
         }
     }
 
