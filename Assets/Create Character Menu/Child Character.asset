@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <CharacterTypeName>k__BackingField: Child
   <CharacterPreviewSpritesheet>k__BackingField: {fileID: -1122188785, guid: ba431cada7be26842be54c1876018783, type: 3}
-  <SpriteSize>k__BackingField: {x: 384, y: 128}
+  <SpriteSize_16x16>k__BackingField: {x: 384, y: 128}
+  <SpriteSize_32x32>k__BackingField: {x: 0, y: 0}
+  <SpriteSize_48x48>k__BackingField: {x: 0, y: 0}
   <CharacterPieces>k__BackingField:
   - CollectionName: Body
     spriteLocation: Bodies_kids

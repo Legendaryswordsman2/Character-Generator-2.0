@@ -98,14 +98,14 @@ public class CharacterPieceGrabber : MonoBehaviour
             {
                 // file.FullName is the full path to the file
                 string fileUrl = new Uri(file.FullName).AbsoluteUri;
-                Sprite sprite = await GetImage(fileUrl, Path.GetFileNameWithoutExtension(file.Name), file.Extension, CharacterSize.Sixteen);
+                Sprite sprite = await GetImage(fileUrl, Path.GetFileNameWithoutExtension(file.Name), file.Extension, CharacterSize.Sixteen, characterType);
                 if (sprite == null) continue;
 
-                if (sprite.texture.width != characterType.SpriteSize.x || sprite.texture.height != characterType.SpriteSize.y)
-                {
-                    Debug.Log("Sprite (" + sprite.name + file.Extension + ") has an incorrect size and cannot be loaded");
-                    continue;
-                }
+                //if (sprite.texture.width != characterType.SpriteSize.x || sprite.texture.height != characterType.SpriteSize.y)
+                //{
+                //    Debug.Log("Sprite (" + sprite.name + file.Extension + ") has an incorrect size and cannot be loaded");
+                //    continue;
+                //}
 
                 item.Sprites.Add(sprite);
                 //characterPieceDatabase.AddCharacterPiece(sprite, type);
@@ -113,7 +113,7 @@ public class CharacterPieceGrabber : MonoBehaviour
         }
     }
 
-    public async Task<Sprite> GetImage(string filepath, string fileName, string extenion, CharacterSize size)
+    public async Task<Sprite> GetImage(string filepath, string fileName, string extenion, CharacterSize size, CharacterTypeSO characterType)
     {
         using UnityWebRequest uwr = UnityWebRequestTexture.GetTexture(filepath);
 
@@ -129,7 +129,30 @@ public class CharacterPieceGrabber : MonoBehaviour
             // Get downloaded asset bundle
             Texture2D texture = DownloadHandlerTexture.GetContent(uwr);
 
-            if (!ConfirmImageSize(texture)) return null;
+            switch (size)
+            {
+                case CharacterSize.Sixteen:
+                    if (texture.width != characterType.SpriteSize_16x16.x || texture.height != characterType.SpriteSize_16x16.y)
+                    {
+                        Debug.Log("Sprite (" + fileName + extenion + ") has an incorrect size and cannot be loaded (16x16)");
+                        return null;
+                    }
+                    break;
+                case CharacterSize.Thirtytwo:
+                    if (texture.width != characterType.SpriteSize_32x32.x || texture.height != characterType.SpriteSize_32x32.y)
+                    {
+                        Debug.Log("Sprite (" + fileName + extenion + ") has an incorrect size and cannot be loaded (32x32)");
+                        return null;
+                    }
+                    break;
+                case CharacterSize.Fortyeight:
+                    if (texture.width != characterType.SpriteSize_48x48.x || texture.height != characterType.SpriteSize_48x48.y)
+                    {
+                        Debug.Log("Sprite (" + fileName + extenion + ") has an incorrect size and cannot be loaded (48x48)");
+                        return null;
+                    }
+                    break;
+            }
 
             Sprite sprite = Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 16f);
 
@@ -141,35 +164,5 @@ public class CharacterPieceGrabber : MonoBehaviour
 
             return sprite;
         }
-    }
-
-    bool ConfirmImageSize(Texture2D texture)
-    {
-        //switch (size)
-        //{
-        //    case CharacterSize.Sixteen:
-        //        if (texture.width != sixteenXSixsteenImageSize.width || texture.height != sixteenXSixsteenImageSize.height)
-        //        {
-        //            Debug.LogWarning("IncorrectSizeException: Tried to get image of size 16x16 (Image name: " + fileName + ") but it's size is incorrect (" + texture.width + " | " + texture.height + ")");
-        //            return false;
-        //        }
-        //        break;
-        //    case CharacterSize.Thirtytwo:
-        //        if (texture.width != thirtyTwoXThirtyTwoImageSize.width || texture.height != thirtyTwoXThirtyTwoImageSize.height)
-        //        {
-        //            Debug.LogWarning("IncorrectSizeException: Tried to get image of size 32x32 (Image name: " + fileName + ") but it's size is incorrect");
-        //            return false;
-        //        }
-        //        break;
-        //    case CharacterSize.Fortyeight:
-        //        if (texture.width != fortyEightXFortyEightImageSize.width || texture.height != fortyEightXFortyEightImageSize.height)
-        //        {
-        //            Debug.LogWarning("IncorrectSizeException: Tried to get image of size 48x48 (Image name: " + fileName + ") but it's size is incorrect");
-        //            return false;
-        //        }
-        //        break;
-        //}
-
-        return true;
     }
 }

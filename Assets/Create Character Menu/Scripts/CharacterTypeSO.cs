@@ -14,7 +14,9 @@ public class CharacterTypeSO : ScriptableObject
 
     [field: Space]
 
-    [field: SerializeField] public Vector2 SpriteSize { get; private set; }
+    [field: SerializeField] public Vector2 SpriteSize_16x16 { get; private set; }
+    [field: SerializeField] public Vector2 SpriteSize_32x32 { get; private set; }
+    [field: SerializeField] public Vector2 SpriteSize_48x48 { get; private set; }
 
     [field: Space]
 
