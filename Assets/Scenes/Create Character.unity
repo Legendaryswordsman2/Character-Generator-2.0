@@ -2888,7 +2888,7 @@ MonoBehaviour:
   - {fileID: 3798328174605831883}
   - {fileID: 7199625009978712268}
   - {fileID: 1521682070}
-  nameInputField: {fileID: 1911367498}
+  fileNameInputField: {fileID: 1911367498}
   sizeDropdown: {fileID: 3565683680007033134}
   saveCharacterButton: {fileID: 3798328174423830453}
 --- !u!1 &477658477

@@ -98,7 +98,10 @@ public class CharacterDropdownManager : MonoBehaviour
         for (int i = 0; i < dropdowns.Length; i++)
         {
             if (characterPieceDatabase.ActiveCharacterType.CharacterPieces.Length - 1 >= i)
+            {
+                CharacterPiecesDropdownData[i].sprites = characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].Sprites;
                 dropdowns[i].UpdateDropdown(characterPieceDatabase.ActiveCharacterType.CharacterPieces[i]);
+            }
             else
                 dropdowns[i].gameObject.SetActive(false);
         }
@@ -113,26 +116,6 @@ public class CharacterDropdownManager : MonoBehaviour
 
         //    dropdowns[i].UpdateDropdown(characterPieceDatabase.ActiveCharacterType.CharacterPieces[i]);
         //}
-    }
-
-    void InitializeDropdown(CharacterPieceCollectionDropdownData characterPiece)
-    {
-        characterPiece.dropdown.ClearOptions();
-
-        if (characterPiece.IncludeNAOption)
-            characterPiece.dropdown.options.Add(new TMP_Dropdown.OptionData() { text = characterPiece.CollectionName + " N/A" });
-
-        for (int i = 0; i < characterPiece.sprites.Count; i++)
-        {
-            characterPiece.dropdown.options.Add(new TMP_Dropdown.OptionData() { text = characterPiece.sprites[i].name.Replace('_', ' ') });
-        }
-
-        if (characterPiece.IncludeNAOption && !characterPiece.NADefault)
-            characterPiece.dropdown.value = 1;
-        else
-            characterPiece.dropdown.value = 0;
-
-        characterPiece.dropdown.RefreshShownValue();
     }
 
     public void RandomizeAllDropdowns()
@@ -150,11 +133,6 @@ public class CharacterDropdownManager : MonoBehaviour
 
         if (characterPieceDatabase != null)
             characterPieceDatabase.OnActiveCharacterTypeChanged -= CharacterPieceDatabase_OnActiveCharacterTypeChanged;
-
-        for (int i = 0; i < CharacterPiecesDropdownData.Length; i++)
-        {
-            PlayerPrefs.SetInt(CharacterPiecesDropdownData[i].CollectionName.ToString(), CharacterPiecesDropdownData[i].CanRandomize ? 1 : 0);
-        }
     }
 
     [System.Serializable]
@@ -166,40 +144,5 @@ public class CharacterDropdownManager : MonoBehaviour
         [Space]
 
         public TMP_Dropdown dropdown;
-
-        [field: Space]
-
-        [field: SerializeField] public bool IncludeNAOption { get; private set; } = false;
-        [field: SerializeField, ShowIf("IncludeNAOption")] public bool NADefault { get; private set; } = true;
-
-        [field: Space]
-
-        [field: SerializeField, ReadOnly] public Sprite ActiveSprite { get; private set; }
-
-        public bool CanRandomize { get; set; } = true;
-
-        public void SetActiveSprite(int index)
-        {
-            if (sprites.Count == 0) return;
-
-            if (IncludeNAOption)
-            {
-                if (index == 0)
-                    ActiveSprite = null;
-                else
-                    ActiveSprite = sprites[index - 1];
-            }
-            else
-            {
-                ActiveSprite = sprites[index];
-            }
-
-        }
-
-        public void Randomize()
-        {
-            if (CanRandomize && sprites.Count > 0)
-                dropdown.value = UnityEngine.Random.Range(0, sprites.Count);
-        }
     }
 }

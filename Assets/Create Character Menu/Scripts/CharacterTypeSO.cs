@@ -53,7 +53,7 @@ public class CharacterTypeSO : ScriptableObject
     {
         public string CollectionName;
 
-        [Tooltip("The localation on the users computer where the sprites are located")]
+        [Tooltip("The location on the users computer where the sprites are located")]
         public string spriteLocation;
 
         [field: Space]
@@ -66,6 +66,7 @@ public class CharacterTypeSO : ScriptableObject
         [ReadOnly] public List<Sprite> Sprites;
 
         [field: SerializeField, ReadOnly] public Sprite ActiveSprite { get; private set; }
+
         public bool CanRandomize { get; set; } = true;
 
         public int DropdownIndex { get; set; } = 0;
@@ -85,7 +86,6 @@ public class CharacterTypeSO : ScriptableObject
             {
                 ActiveSprite = Sprites[index];
             }
-
         }
     }
 }
