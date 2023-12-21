@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using System.Threading.Tasks;
 
 public class SaveCharacterManager : MonoBehaviour
 {
@@ -18,11 +19,15 @@ public class SaveCharacterManager : MonoBehaviour
 
     //CharacterDropdownManager characterDropdownManager;
     CharacterPieceDatabase characterPieceDatabase;
+    CharacterPieceGrabber characterPieceGrabber;
+
+    bool savingCharacter = false;
 
     private void Start()
     {
         //characterDropdownManager = CharacterDropdownManager.Instance;
         characterPieceDatabase = CharacterPieceDatabase.Instance;
+        characterPieceGrabber = CharacterPieceGrabber.Instance;
     }
     public void OpenPopup()
     {
@@ -47,6 +52,8 @@ public class SaveCharacterManager : MonoBehaviour
 
     public void ClosePopup()
     {
+        if (savingCharacter) return;
+
         LeanTween.cancel(gameObject);
         LeanTween.scale(gameObject, Vector2.zero, 0.075f).setOnComplete(() =>
         {
@@ -54,8 +61,10 @@ public class SaveCharacterManager : MonoBehaviour
         });
     }
 
-    public void SaveCharacter()
+    public async void SaveCharacter()
     {
+        savingCharacter = true;
+
         creatingCharacterOverlay.SetActive(true);
 
         fileNameInputField.interactable = false;
@@ -67,7 +76,7 @@ public class SaveCharacterManager : MonoBehaviour
             text.color = new Color(text.color.r, text.color.g, text.color.b, 0.5f);
         }
 
-        List<Texture2D> characterPiecesToBeCombined = GetPiecesToBeCombined();
+        List<Texture2D> characterPiecesToBeCombined = await GetPiecesToBeCombined();
 
         if (characterPiecesToBeCombined.Count <= 0)
         {
@@ -89,6 +98,7 @@ public class SaveCharacterManager : MonoBehaviour
 
         SaveCharacterToFile(finalTexture);
 
+        savingCharacter = false;
     }
 
     void SaveCharacterToFile(Texture2D texture)
@@ -112,7 +122,7 @@ public class SaveCharacterManager : MonoBehaviour
         ClosePopup();
     }
 
-    List<Texture2D> GetPiecesToBeCombined()
+    async Task<List<Texture2D>> GetPiecesToBeCombined()
     {
         List<Texture2D> characterPiecesToBeCombined = new();
 
@@ -138,19 +148,46 @@ public class SaveCharacterManager : MonoBehaviour
                 if (characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].ActiveSprite != null)
                     characterPiecesToBeCombined.Add(characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].ActiveSprite.texture);
             }
-
-            //for (int i = 0; i < characterDropdownManager.CharacterPiecesDropdownData.Length; i++)
-            //{
-            //    if (characterDropdownManager.CharacterPiecesDropdownData[i].dropdown.gameObject.activeSelf && characterDropdownManager.CharacterPiecesDropdownData[i].ActiveSprite != null)
-            //        characterPiecesToBeCombined.Add(characterDropdownManager.CharacterPiecesDropdownData[i].ActiveSprite.texture);
-            //}
         }
         else
         {
             // Load other size of sprites
+
+            string filePath = "";
+
+            for (int i = 0; i < characterPieceDatabase.ActiveCharacterType.CharacterPieces.Length; i++)
+            {
+                if (characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].ActiveSprite != null)
+                {
+                    filePath = Path.Combine(Directory.GetCurrentDirectory(),
+                        CharacterPieceDatabase.CharacterPiecesFolderName,
+                        characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].spriteLocation,
+                        GetCurrentSizeAsStringFromDropdown(),
+                        characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].ActiveSprite.name);
+
+                    characterPiecesToBeCombined.Add(await characterPieceGrabber.GetImageAsTexture2D(filePath + ".png",
+                        characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].ActiveSprite.name,
+                        ".png", characterSize, characterPieceDatabase.ActiveCharacterType));
+                }
+            }
         }
 
         return characterPiecesToBeCombined;
+    }
+
+    string GetCurrentSizeAsStringFromDropdown()
+    {
+        switch (sizeDropdown.value)
+        {
+            case 0:
+                return "16x16";
+            case 1:
+                return "32x32";
+            case 2:
+                return "48x48";
+            default:
+                return "";
+        }
     }
 
     private void Update()

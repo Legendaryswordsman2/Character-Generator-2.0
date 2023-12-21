@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 using Cysharp.Threading.Tasks;
+using UnityEditor;
 
 public enum CharacterSize { Sixteen, Thirtytwo, Fortyeight }
 public enum LoadFailedType { DirectoryMissing, UnknownError }
@@ -115,6 +116,13 @@ public class CharacterPieceGrabber : MonoBehaviour
 
     public async Task<Sprite> GetImage(string filepath, string fileName, string extenion, CharacterSize size, CharacterTypeSO characterType)
     {
+        if (!File.Exists(Uri.UnescapeDataString(new Uri(filepath).LocalPath)))
+        {
+            Debug.LogWarning($"Can't find sprite ({fileName}) at: {filepath} ({size})");
+            //LastFailedToGetSpriteName = fileName;
+            return null;
+        }
+
         using UnityWebRequest uwr = UnityWebRequestTexture.GetTexture(filepath);
 
         await uwr.SendWebRequest();
@@ -163,6 +171,72 @@ public class CharacterPieceGrabber : MonoBehaviour
             OnNewSpriteLoaded?.Invoke(this, new OnNewSpriteLoadedEventArgs(sprite, extenion));
 
             return sprite;
+        }
+    }
+
+    public async Task<Texture2D> GetImageAsTexture2D(string filepath, string fileName, string extenion, CharacterSize size, CharacterTypeSO characterType)
+    {
+        if (!File.Exists(Uri.UnescapeDataString(new Uri(filepath).LocalPath)))
+        {
+            string sizeString = "";
+            switch (size)
+            {
+                case CharacterSize.Sixteen:
+                    sizeString = "16x16";
+                    break;
+                case CharacterSize.Thirtytwo:
+                    sizeString = "32x32";
+                    break;
+                case CharacterSize.Fortyeight:
+                    sizeString = "48x48";
+                    break;
+            }
+
+            Debug.LogWarning($"Can't find texture ({fileName}) at: {filepath} ({sizeString})");
+            //LastFailedToGetSpriteName = fileName;
+            return null;
+        }
+
+        using UnityWebRequest uwr = UnityWebRequestTexture.GetTexture(filepath);
+
+        await uwr.SendWebRequest();
+
+        if (uwr.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError(uwr.error);
+            return null;
+        }
+        else
+        {
+            // Get downloaded asset bundle
+            Texture2D texture = DownloadHandlerTexture.GetContent(uwr);
+
+            switch (size)
+            {
+                case CharacterSize.Sixteen:
+                    if (texture.width != characterType.SpriteSize_16x16.x || texture.height != characterType.SpriteSize_16x16.y)
+                    {
+                        Debug.Log("Texture (" + fileName + extenion + ") has an incorrect size and cannot be loaded (16x16) || Current Size " + texture.width + "x" + texture.height + " || Must be Size : " + characterType.SpriteSize_16x16.x + "x" + characterType.SpriteSize_16x16.y);
+                        return null;
+                    }
+                    break;
+                case CharacterSize.Thirtytwo:
+                    if (texture.width != characterType.SpriteSize_32x32.x || texture.height != characterType.SpriteSize_32x32.y)
+                    {
+                        Debug.Log("Texture (" + fileName + extenion + ") has an incorrect size and cannot be loaded (32x32) || Current Size " + texture.width + "x" + texture.height + " || Must be Size : " + characterType.SpriteSize_32x32.x + "x" + characterType.SpriteSize_32x32.y);
+                        return null;
+                    }
+                    break;
+                case CharacterSize.Fortyeight:
+                    if (texture.width != characterType.SpriteSize_48x48.x || texture.height != characterType.SpriteSize_48x48.y)
+                    {
+                        Debug.Log("Texture (" + fileName + extenion + ") has an incorrect size and cannot be loaded (48x48) || Current Size " + texture.width + "x" + texture.height + " || Must be Size : " + characterType.SpriteSize_48x48.x + "x" + characterType.SpriteSize_48x48.y);
+                        return null;
+                    }
+                    break;
+            }
+
+            return texture;
         }
     }
 }

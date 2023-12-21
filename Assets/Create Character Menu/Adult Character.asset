@@ -15,8 +15,8 @@ MonoBehaviour:
   <CharacterTypeName>k__BackingField: Adult
   <CharacterPreviewSpritesheet>k__BackingField: {fileID: 437519916, guid: 678972e60b3b838438ea737d023fcec3, type: 3}
   <SpriteSize_16x16>k__BackingField: {x: 896, y: 640}
-  <SpriteSize_32x32>k__BackingField: {x: 0, y: 0}
-  <SpriteSize_48x48>k__BackingField: {x: 0, y: 0}
+  <SpriteSize_32x32>k__BackingField: {x: 1792, y: 1280}
+  <SpriteSize_48x48>k__BackingField: {x: 2688, y: 1920}
   <CharacterPieces>k__BackingField:
   - CollectionName: Body
     spriteLocation: Bodies
