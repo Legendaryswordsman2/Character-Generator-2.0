@@ -7,10 +7,17 @@ using System.IO;
 using System.Threading.Tasks;
 using System;
 using Sirenix.Utilities;
+using Cysharp.Threading.Tasks;
 
 public class SaveCharacterManager : MonoBehaviour
 {
     [SerializeField] GameObject creatingCharacterOverlay;
+    [SerializeField] RectTransform background;
+    [SerializeField] GameObject saveCharacterContents;
+    [SerializeField] GameObject characterSavedContents;
+
+    [Space]
+
     [SerializeField] TMP_Text[] contentTexts;
 
     [Space]
@@ -18,6 +25,11 @@ public class SaveCharacterManager : MonoBehaviour
     [SerializeField] TMP_InputField fileNameInputField;
     [SerializeField] TMP_Dropdown sizeDropdown;
     [SerializeField] Button saveCharacterButton;
+
+    [Space]
+
+    [SerializeField] Vector2 defaultBackgroundSize;
+    [SerializeField] Vector2 backgroundCharacterSavedSize;
 
     //CharacterDropdownManager characterDropdownManager;
     CharacterPieceDatabase characterPieceDatabase;
@@ -40,6 +52,10 @@ public class SaveCharacterManager : MonoBehaviour
         OnPopupOpened?.Invoke(this, EventArgs.Empty);
         LeanTween.cancel(gameObject);
         transform.localScale = Vector2.zero;
+        background.sizeDelta = defaultBackgroundSize;
+
+        saveCharacterContents.SetActive(true);
+        characterSavedContents.SetActive(false);
 
         creatingCharacterOverlay.SetActive(false);
 
@@ -107,6 +123,9 @@ public class SaveCharacterManager : MonoBehaviour
         SaveCharacterToFile(finalTexture);
 
         savingCharacter = false;
+
+        creatingCharacterOverlay.SetActive(false);
+        OpenCharacterSavedPopup();
     }
 
     void SaveCharacterToFile(Texture2D texture)
@@ -128,6 +147,19 @@ public class SaveCharacterManager : MonoBehaviour
         File.WriteAllBytes(Directory.GetCurrentDirectory() + "/Saved Characters/" + fileNameInputField.text + ".png", bytes);
 
         ClosePopup();
+    }
+
+    async void OpenCharacterSavedPopup()
+    {
+        saveCharacterContents.SetActive(false);
+        LeanTween.size(background, backgroundCharacterSavedSize, 0.25f)
+            .setOnComplete(() =>
+            {
+                //characterSavedContents.SetActive(true);
+            });
+
+        await UniTask.Delay(200);
+        characterSavedContents.SetActive(true);
     }
 
     async Task<List<Texture2D>> GetPiecesToBeCombined()
@@ -173,7 +205,7 @@ public class SaveCharacterManager : MonoBehaviour
                         GetCurrentSizeAsStringFromDropdown(),
                         characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].ActiveSprite.name);
 
-                    Texture2D newTexture = await characterPieceGrabber.GetImageAsTexture2D(filePath + ".png",
+                    Texture2D newTexture = await characterPieceGrabber.GetImageAsTexture2D(new Uri(filePath).AbsoluteUri + ".png",
                         characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].ActiveSprite.name,
                         ".png", characterSize, characterPieceDatabase.ActiveCharacterType);
 
@@ -215,5 +247,16 @@ public class SaveCharacterManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
             ClosePopup();
+    }
+
+    public void OpenSavedCharactersFileLocation()
+    {
+        if (Directory.Exists(Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.SavedCharactersFolderName))
+        {
+            Debug.Log($"Opened file explorer to '{CharacterPieceDatabase.SavedCharactersFolderName}' folder");
+            Application.OpenURL(Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.SavedCharactersFolderName);
+        }
+        else
+            Debug.LogWarning($"Cannot open file explorer to '{CharacterPieceDatabase.SavedCharactersFolderName}' folder because that folder does not exist");
     }
 }

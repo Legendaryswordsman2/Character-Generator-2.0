@@ -15,6 +15,7 @@ public class CharacterPieceDatabase : MonoBehaviour
     [field: SerializeField] public CharacterTypeSO[] CharacterTypes { get; private set; }
 
     public const string CharacterPiecesFolderName = "Character Pieces";
+    public const string SavedCharactersFolderName = "Saved Characters";
 
     public event EventHandler<CharacterTypeSO> OnActiveCharacterTypeChanged;
 
