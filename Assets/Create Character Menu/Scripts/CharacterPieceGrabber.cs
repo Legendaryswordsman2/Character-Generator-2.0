@@ -35,6 +35,8 @@ public class CharacterPieceGrabber : MonoBehaviour
         }
     }
 
+    public string LastFailedToGetSpriteName { get; private set; }
+
     private void Awake() => Instance = this;
     private async void Start() => await Start_Task();
 
@@ -118,8 +120,22 @@ public class CharacterPieceGrabber : MonoBehaviour
     {
         if (!File.Exists(Uri.UnescapeDataString(new Uri(filepath).LocalPath)))
         {
-            Debug.LogWarning($"Can't find sprite ({fileName}) at: {filepath} ({size})");
-            //LastFailedToGetSpriteName = fileName;
+            string sizeString = "";
+            switch (size)
+            {
+                case CharacterSize.Sixteen:
+                    sizeString = "16x16";
+                    break;
+                case CharacterSize.Thirtytwo:
+                    sizeString = "32x32";
+                    break;
+                case CharacterSize.Fortyeight:
+                    sizeString = "48x48";
+                    break;
+            }
+
+            Debug.LogWarning($"Can't find sprite ({fileName}) at: {filepath} ({sizeString})");
+            LastFailedToGetSpriteName = fileName;
             return null;
         }
 
@@ -193,7 +209,7 @@ public class CharacterPieceGrabber : MonoBehaviour
             }
 
             Debug.LogWarning($"Can't find texture ({fileName}) at: {filepath} ({sizeString})");
-            //LastFailedToGetSpriteName = fileName;
+            LastFailedToGetSpriteName = fileName;
             return null;
         }
 

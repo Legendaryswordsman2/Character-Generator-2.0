@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using System.Threading.Tasks;
+using System;
+using Sirenix.Utilities;
 
 public class SaveCharacterManager : MonoBehaviour
 {
@@ -23,6 +25,10 @@ public class SaveCharacterManager : MonoBehaviour
 
     bool savingCharacter = false;
 
+    public event EventHandler<string> OnSpriteMissingErrorTriggered;
+
+    public event EventHandler OnPopupOpened;
+
     private void Start()
     {
         //characterDropdownManager = CharacterDropdownManager.Instance;
@@ -31,6 +37,7 @@ public class SaveCharacterManager : MonoBehaviour
     }
     public void OpenPopup()
     {
+        OnPopupOpened?.Invoke(this, EventArgs.Empty);
         LeanTween.cancel(gameObject);
         transform.localScale = Vector2.zero;
 
@@ -78,9 +85,10 @@ public class SaveCharacterManager : MonoBehaviour
 
         List<Texture2D> characterPiecesToBeCombined = await GetPiecesToBeCombined();
 
-        if (characterPiecesToBeCombined.Count <= 0)
+        if (characterPiecesToBeCombined.IsNullOrEmpty())
         {
             Debug.LogWarning("No character pieces to be combined");
+            savingCharacter = false;
             return;
         }
         else if (characterPiecesToBeCombined.Count == 1)
@@ -165,14 +173,27 @@ public class SaveCharacterManager : MonoBehaviour
                         GetCurrentSizeAsStringFromDropdown(),
                         characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].ActiveSprite.name);
 
-                    characterPiecesToBeCombined.Add(await characterPieceGrabber.GetImageAsTexture2D(filePath + ".png",
+                    Texture2D newTexture = await characterPieceGrabber.GetImageAsTexture2D(filePath + ".png",
                         characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].ActiveSprite.name,
-                        ".png", characterSize, characterPieceDatabase.ActiveCharacterType));
+                        ".png", characterSize, characterPieceDatabase.ActiveCharacterType);
+
+                    if (newTexture != null)
+                        characterPiecesToBeCombined.Add(newTexture);
+                    else
+                    {
+                        TriggerSpriteMissingError();
+                        return null;
+                    }
                 }
             }
         }
 
         return characterPiecesToBeCombined;
+    }
+
+    void TriggerSpriteMissingError()
+    {
+        OnSpriteMissingErrorTriggered?.Invoke(this, sizeDropdown.options[sizeDropdown.value].text + " version of sprite \"" + characterPieceGrabber.LastFailedToGetSpriteName + "\" is missing, can't create character");
     }
 
     string GetCurrentSizeAsStringFromDropdown()
