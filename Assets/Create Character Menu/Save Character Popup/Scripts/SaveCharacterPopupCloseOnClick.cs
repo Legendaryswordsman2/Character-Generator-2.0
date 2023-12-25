@@ -12,6 +12,6 @@ public class SaveCharacterPopupCloseOnClick : MonoBehaviour, IPointerClickHandle
         if (saveCharacterManager.gameObject.activeSelf)
             saveCharacterManager.ClosePopup();
         else if (infoMenuManager.gameObject.activeSelf)
-            infoMenuManager.CloseMenu();
+            infoMenuManager.OnCloseMenuCalled();
     }
 }

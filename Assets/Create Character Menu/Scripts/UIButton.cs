@@ -28,6 +28,12 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         defaultColor = image.color;
     }
 
+    private void OnEnable()
+    {
+        image.sprite = defaultSprite;
+        image.color = defaultColor;
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         image.sprite = highlightedSprite;
