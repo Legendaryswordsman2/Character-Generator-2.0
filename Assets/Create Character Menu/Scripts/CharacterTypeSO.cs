@@ -22,9 +22,14 @@ public class CharacterTypeSO : ScriptableObject
 
     [field: SerializeField] public CharacterPieceCollection[] CharacterPieces { get; private set; }
 
+    [field: Space]
+
+    [field: SerializeField] public List<CharacterBackup> CharacterHistory { get; set; }
+
     public void Init()
     {
         ClearSprites();
+        CharacterHistory.Clear();
         foreach (CharacterPieceCollection characterPiece in CharacterPieces)
         {
             characterPiece.DropdownIndex = 0;
@@ -86,6 +91,20 @@ public class CharacterTypeSO : ScriptableObject
             {
                 ActiveSprite = Sprites[index];
             }
+        }
+    }
+
+    [System.Serializable]
+    public class CharacterBackup
+    {
+        public Sprite CharacterPreviewSprite;
+
+        public int[] CharacterPieceIndexes;
+
+        public CharacterBackup(Sprite characterPreviewSprite, int[] characterPieceIndexes)
+        {
+            CharacterPreviewSprite = characterPreviewSprite;
+            CharacterPieceIndexes = characterPieceIndexes;
         }
     }
 }

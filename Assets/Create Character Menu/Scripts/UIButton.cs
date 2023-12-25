@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -39,7 +40,7 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         image.sprite = highlightedSprite;
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public virtual void OnPointerExit(PointerEventData eventData)
     {
         image.sprite = defaultSprite;
         StopAllCoroutines();
@@ -71,7 +72,7 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         }
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public virtual void OnPointerUp(PointerEventData eventData)
     {
         StopAllCoroutines();
         StartCoroutine(Routine());

@@ -85,4 +85,54 @@ public class SpriteManager : MonoBehaviour
     {
         return Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 100.0f);
     }
+
+    public static Texture2D CreateBlankTexture(int width, int height)
+    {
+        Texture2D blankTexture = new(width, height)
+        {
+            filterMode = FilterMode.Point,
+            wrapMode = TextureWrapMode.Clamp
+        };
+
+        // Create an array of Color32 with all pixels set to transparent
+        Color32[] blankColors = new Color32[width * height];
+        for (int i = 0; i < blankColors.Length; i++)
+        {
+            blankColors[i] = new Color32(0, 0, 0, 0); // Transparent color
+        }
+
+        // Set all pixels at once
+        blankTexture.SetPixels32(blankColors);
+
+        // Apply changes
+        blankTexture.Apply();
+
+        return blankTexture;
+    }
+
+    public static Texture2D ExtractTextureRegion(Texture2D sourceTexture, int startX, int startY, int width, int height)
+    {
+        Color32[] sourcePixels = sourceTexture.GetPixels32();
+        Color32[] regionPixels = new Color32[width * height];
+
+        for (int y = 0; y < height; y++)
+        {
+            for (int x = 0; x < width; x++)
+            {
+                int sourceIndex = (sourceTexture.height - 1 - (startY + y)) * sourceTexture.width + (startX + x);
+                int destinationIndex = (height - 1 - y) * width + x; // Reverse the order for the y-coordinate
+                regionPixels[destinationIndex] = sourcePixels[sourceIndex];
+            }
+        }
+
+        Texture2D extractedTexture = new(width, height)
+        {
+            filterMode = FilterMode.Point,
+            wrapMode = TextureWrapMode.Clamp
+        };
+        extractedTexture.SetPixels32(regionPixels);
+        extractedTexture.Apply();
+
+        return extractedTexture;
+    }
 }

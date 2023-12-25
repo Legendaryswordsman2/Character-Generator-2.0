@@ -23,6 +23,9 @@ public class CharacterDropdownManager : MonoBehaviour
 
     public bool CanRecreateCharacter = true;
 
+    public static event EventHandler OnBeforeCharacterRecreated;
+    public static event EventHandler OnAfterCharacterRecreated;
+
     private void Awake()
     {
         Instance = this;
@@ -58,11 +61,14 @@ public class CharacterDropdownManager : MonoBehaviour
         if (textureToBeCombined.Count <= 0) return;
 
         //Debug.Log("Recreating Character");
+        OnBeforeCharacterRecreated?.Invoke(this, EventArgs.Empty);
         SpriteManager.OverrideSprite(characterPieceDatabase.ActiveCharacterType.CharacterPreviewSpritesheet.texture, SpriteManager.CombineTextures(textureToBeCombined).texture);
 
         eventTriggeredThisFrame = true;
         await Task.Yield();
         eventTriggeredThisFrame = false;
+
+        OnAfterCharacterRecreated?.Invoke(this, EventArgs.Empty);
     }
 
     private void CharacterPieceGrabber_OnAllCharacterPiecesLoaded(object sender, EventArgs e)
@@ -125,6 +131,11 @@ public class CharacterDropdownManager : MonoBehaviour
             if (dropdowns[i].CharacterPiece.CanRandomize && dropdowns[i].CharacterPiece.Sprites.Count > 0)
                 dropdowns[i].Dropdown.value = UnityEngine.Random.Range(0, dropdowns[i].CharacterPiece.Sprites.Count);
         }
+    }
+
+    public void SetDropdownValue(int dropdownIndex, int value)
+    {
+        dropdowns[dropdownIndex].Dropdown.value = value;
     }
 
     private void OnDestroy()

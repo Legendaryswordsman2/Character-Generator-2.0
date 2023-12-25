@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6727494274945662597}
   - component: {fileID: 738682340426523782}
+  - component: {fileID: 2486633228606629217}
+  - component: {fileID: 2069153815553043074}
   m_Layer: 5
   m_Name: Character Sprite Preview
   m_TagString: Untagged
@@ -46,6 +48,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4647578414884126962}
   m_CullTransparentMesh: 1
+--- !u!114 &2486633228606629217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4647578414884126962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a3939251e416b4fb77058d4e590d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 2053366697139760189}
+  highlightedSprite: {fileID: 21300000, guid: a4c2b8ee406378f4a8a0075bb5fed4b8, type: 3}
+  pressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+  onClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2069153815553043074}
+        m_TargetAssemblyTypeName: HistoryTabCharacterPreview, Assembly-CSharp
+        m_MethodName: SelectCharacterPreview
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2069153815553043074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4647578414884126962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0ad8ef64e7f9f64ab136985efbf68b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterBackup:
+    rid: -2
+  historyTabManager: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!1 &7279108564357909557
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

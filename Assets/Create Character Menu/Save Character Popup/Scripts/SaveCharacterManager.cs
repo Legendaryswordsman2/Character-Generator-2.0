@@ -37,6 +37,8 @@ public class SaveCharacterManager : MonoBehaviour
 
     bool savingCharacter = false;
 
+    public static event EventHandler OnBeforeCharacterSaved;
+
     public event EventHandler<string> OnSpriteMissingErrorTriggered;
 
     public event EventHandler OnPopupOpened;
@@ -88,6 +90,8 @@ public class SaveCharacterManager : MonoBehaviour
 
     public async void SaveCharacter()
     {
+        OnBeforeCharacterSaved?.Invoke(this, EventArgs.Empty);
+
         savingCharacter = true;
 
         creatingCharacterOverlay.SetActive(true);
