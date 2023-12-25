@@ -1894,7 +1894,7 @@ PrefabInstance:
     - target: {fileID: 424818782076655062, guid: 543cbdbcfbc21ad43addbfb0102e9cc4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 9136178541143120858}
+      objectReference: {fileID: 0}
     - target: {fileID: 935747696375093925, guid: 543cbdbcfbc21ad43addbfb0102e9cc4, type: 3}
       propertyPath: m_text
       value: Source Code
@@ -2240,7 +2240,7 @@ PrefabInstance:
     - target: {fileID: 424818782076655062, guid: 543cbdbcfbc21ad43addbfb0102e9cc4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 9136178541143120858}
+      objectReference: {fileID: 0}
     - target: {fileID: 935747696375093925, guid: 543cbdbcfbc21ad43addbfb0102e9cc4, type: 3}
       propertyPath: m_text
       value: Stats
@@ -12780,7 +12780,7 @@ PrefabInstance:
     - target: {fileID: 424818782076655062, guid: 543cbdbcfbc21ad43addbfb0102e9cc4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 9136178541143120858}
+      objectReference: {fileID: 0}
     - target: {fileID: 935747696375093925, guid: 543cbdbcfbc21ad43addbfb0102e9cc4, type: 3}
       propertyPath: m_text
       value: Saved Characters
@@ -16771,7 +16771,7 @@ PrefabInstance:
     - target: {fileID: 424818782076655062, guid: 543cbdbcfbc21ad43addbfb0102e9cc4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 9136178541143120858}
+      objectReference: {fileID: 0}
     - target: {fileID: 2586819808720971832, guid: 543cbdbcfbc21ad43addbfb0102e9cc4, type: 3}
       propertyPath: m_Name
       value: Help Button
@@ -21115,7 +21115,6 @@ GameObject:
   - component: {fileID: 9136178540272098188}
   - component: {fileID: 9136178540272098189}
   - component: {fileID: 9136178540272098186}
-  - component: {fileID: 9136178540272098191}
   m_Layer: 5
   m_Name: Join Discord Button
   m_TagString: Untagged
@@ -21167,7 +21166,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9136178541143120858}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: HelpSubmenuManager, Assembly-CSharp
         m_MethodName: JoinDiscord
         m_Mode: 1
@@ -21236,30 +21235,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &9136178540272098191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9136178540272098184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &9136178540367152777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9136178540367152818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9136178540367152818
 GameObject:
   m_ObjectHideFlags: 0
@@ -21272,7 +21247,6 @@ GameObject:
   - component: {fileID: 9136178540367152822}
   - component: {fileID: 9136178540367152823}
   - component: {fileID: 9136178540367152820}
-  - component: {fileID: 9136178540367152777}
   m_Layer: 5
   m_Name: Previous Button
   m_TagString: Untagged
@@ -21324,7 +21298,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9136178541143120858}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: HelpSubmenuManager, Assembly-CSharp
         m_MethodName: PrevPage
         m_Mode: 1
@@ -21994,7 +21968,6 @@ GameObject:
   - component: {fileID: 9136178540805258485}
   - component: {fileID: 9136178540805258482}
   - component: {fileID: 9136178540805258483}
-  - component: {fileID: 9136178540805258484}
   m_Layer: 5
   m_Name: Next Button
   m_TagString: Untagged
@@ -22076,7 +22049,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9136178541143120858}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: HelpSubmenuManager, Assembly-CSharp
         m_MethodName: NextPage
         m_Mode: 1
@@ -22088,18 +22061,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &9136178540805258484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9136178540805258481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &9136178540805258485
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22377,7 +22338,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9136178541143120859}
-  - component: {fileID: 9136178541143120858}
   m_Layer: 5
   m_Name: Help Submenu
   m_TagString: Untagged
@@ -22385,18 +22345,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &9136178541143120858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9136178541143120856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &9136178541143120859
 RectTransform:
   m_ObjectHideFlags: 0
