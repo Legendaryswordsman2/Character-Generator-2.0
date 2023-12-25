@@ -84,4 +84,10 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             }
         }
     }
+
+    private void OnApplicationFocus(bool focus)
+    {
+        if (!focus)
+            OnPointerExit(new PointerEventData(EventSystem.current));
+    }
 }

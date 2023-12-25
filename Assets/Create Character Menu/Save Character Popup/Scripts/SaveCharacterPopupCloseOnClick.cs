@@ -6,8 +6,12 @@ using UnityEngine.EventSystems;
 public class SaveCharacterPopupCloseOnClick : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] SaveCharacterManager saveCharacterManager;
+    [SerializeField] InfoMenuManager infoMenuManager;
     public void OnPointerClick(PointerEventData eventData)
     {
-        saveCharacterManager.ClosePopup();
+        if (saveCharacterManager.gameObject.activeSelf)
+            saveCharacterManager.ClosePopup();
+        else if (infoMenuManager.gameObject.activeSelf)
+            infoMenuManager.CloseMenu();
     }
 }

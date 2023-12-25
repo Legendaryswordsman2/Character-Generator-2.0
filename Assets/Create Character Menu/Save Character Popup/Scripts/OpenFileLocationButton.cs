@@ -41,7 +41,7 @@ public class OpenFileLocationButton : MonoBehaviour, IPointerEnterHandler, IPoin
     {
         if (Directory.Exists(Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.SavedCharactersFolderName))
         {
-            Debug.Log($"Opened file explorer to '{CharacterPieceDatabase.SavedCharactersFolderName}' folder");
+            //Debug.Log($"Opened file explorer to '{CharacterPieceDatabase.SavedCharactersFolderName}' folder");
             Application.OpenURL(Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.SavedCharactersFolderName);
         }
         else

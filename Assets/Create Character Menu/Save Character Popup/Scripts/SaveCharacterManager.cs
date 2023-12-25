@@ -69,6 +69,7 @@ public class SaveCharacterManager : MonoBehaviour
         }
 
         transform.parent.gameObject.SetActive(true);
+        gameObject.SetActive(true);
 
         LeanTween.scale(gameObject, Vector2.one, 0.1f);
     }
@@ -81,6 +82,7 @@ public class SaveCharacterManager : MonoBehaviour
         LeanTween.scale(gameObject, Vector2.zero, 0.075f).setOnComplete(() =>
         {
             transform.parent.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         });
     }
 
