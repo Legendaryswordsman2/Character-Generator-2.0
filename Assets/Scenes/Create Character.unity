@@ -12211,27 +12211,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2056334057}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a07d9a3c9ee7bdf4399ed4ad0042f058, type: 3}
+  m_Script: {fileID: 11500000, guid: f75af75eabae6c346ab292674c2f0462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2056334060}
   highlightedSprite: {fileID: 21300000, guid: bf2fefc6a95f2aa459bdd09930fbc520, type: 3}
   pressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-  onClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 470128516}
-        m_TargetAssemblyTypeName: SaveCharacterManager, Assembly-CSharp
-        m_MethodName: OpenSavedCharactersFileLocation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &2056878033
 GameObject:
   m_ObjectHideFlags: 0

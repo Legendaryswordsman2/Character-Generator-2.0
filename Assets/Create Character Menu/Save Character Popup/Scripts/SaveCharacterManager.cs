@@ -248,15 +248,4 @@ public class SaveCharacterManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
             ClosePopup();
     }
-
-    public void OpenSavedCharactersFileLocation()
-    {
-        if (Directory.Exists(Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.SavedCharactersFolderName))
-        {
-            Debug.Log($"Opened file explorer to '{CharacterPieceDatabase.SavedCharactersFolderName}' folder");
-            Application.OpenURL(Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.SavedCharactersFolderName);
-        }
-        else
-            Debug.LogWarning($"Cannot open file explorer to '{CharacterPieceDatabase.SavedCharactersFolderName}' folder because that folder does not exist");
-    }
 }
