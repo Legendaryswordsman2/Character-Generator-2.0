@@ -52,6 +52,11 @@ public class CharacterPieceGrabber : MonoBehaviour
                 {
                     await LoadCharacterPiecesFromType(characterType);
                 }
+
+                foreach (CharacterTypeSO characterType in characterPieceDatabase.CharacterTypes)
+                {
+                    await LoadSaveCharacterHistoryFromType(characterType);
+                }
             }
             catch (Exception exception)
             {
@@ -104,15 +109,53 @@ public class CharacterPieceGrabber : MonoBehaviour
                 Sprite sprite = await GetImage(fileUrl, Path.GetFileNameWithoutExtension(file.Name), file.Extension, CharacterSize.Sixteen, characterType);
                 if (sprite == null) continue;
 
-                //if (sprite.texture.width != characterType.SpriteSize.x || sprite.texture.height != characterType.SpriteSize.y)
-                //{
-                //    Debug.Log("Sprite (" + sprite.name + file.Extension + ") has an incorrect size and cannot be loaded");
-                //    continue;
-                //}
-
                 item.Sprites.Add(sprite);
-                //characterPieceDatabase.AddCharacterPiece(sprite, type);
             }
+        }
+    }
+
+    async Task LoadSaveCharacterHistoryFromType(CharacterTypeSO characterType)
+    {
+        string filePath = "";
+
+        filePath = Path.Combine(Application.persistentDataPath, characterType.CharacterTypeName + " Character Save History");
+
+        if (!Directory.Exists(filePath))
+        {
+            Debug.LogWarning("Filepath does not exist: " + filePath);
+            return;
+        }
+
+        List<Sprite> loadedSprites = new();
+        List<int[]> characterbackupSaveData = SaveSystem.LoadFile<List<int[]>>("/" + characterType.CharacterTypeName + " Character Save History/" + characterType.CharacterTypeName + " Character Piece Values");
+
+        //Debug.Log(characterbackupSaveData.Count);
+
+        DirectoryInfo d = new(filePath);
+
+        foreach (var file in d.GetFiles("*.png"))
+        {
+            // file.FullName is the full path to the file
+            string fileUrl = new Uri(file.FullName).AbsoluteUri;
+            Sprite sprite = await GetImage(fileUrl, Path.GetFileNameWithoutExtension(file.Name), file.Extension);
+            if (sprite == null) continue;
+
+            loadedSprites.Add(sprite);
+            //item.
+            //item.Sprites.Add(sprite);
+        }
+        //Debug.Log(loadedSprites.Count);
+
+        int count;
+
+        if(characterbackupSaveData.Count > loadedSprites.Count)
+            count = characterbackupSaveData.Count;
+        else
+            count = loadedSprites.Count;
+
+        for (int i = 0; i < count; i++)
+        {
+            characterType.CharacterSaveHistory.Add(new CharacterTypeSO.CharacterBackup(loadedSprites[i], characterbackupSaveData[i]));
         }
     }
 
@@ -177,6 +220,41 @@ public class CharacterPieceGrabber : MonoBehaviour
                     }
                     break;
             }
+
+            Sprite sprite = Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 16f);
+
+            sprite.name = fileName;
+            sprite.texture.name = fileName;
+            sprite.texture.filterMode = FilterMode.Point;
+
+            OnNewSpriteLoaded?.Invoke(this, new OnNewSpriteLoadedEventArgs(sprite, extenion));
+
+            return sprite;
+        }
+    }
+    public async Task<Sprite> GetImage(string filepath, string fileName, string extenion)
+    {
+        if (!File.Exists(Uri.UnescapeDataString(new Uri(filepath).LocalPath)))
+        {
+
+            Debug.LogWarning($"Can't find sprite ({fileName}) at: {filepath}");
+            LastFailedToGetSpriteName = fileName;
+            return null;
+        }
+
+        using UnityWebRequest uwr = UnityWebRequestTexture.GetTexture(filepath);
+
+        await uwr.SendWebRequest();
+
+        if (uwr.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError(uwr.error);
+            return null;
+        }
+        else
+        {
+            // Get downloaded asset bundle
+            Texture2D texture = DownloadHandlerTexture.GetContent(uwr);
 
             Sprite sprite = Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 16f);
 
