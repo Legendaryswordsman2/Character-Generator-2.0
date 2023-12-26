@@ -41,7 +41,11 @@ public class HistoryTabManager : MonoBehaviour
             }
         }
 
-        if (!canContinue) return;
+        if (!canContinue)
+        {
+            RefreshCharacterList();
+            return;
+        }
 
         Sprite newSprite = SpriteManager.ConvertTextureToSprite(SpriteManager.ExtractTextureRegion(characterPieceDatabase.ActiveCharacterType.CharacterPreviewSpritesheet.texture, 48, 0, 16, 32));
 
@@ -68,11 +72,12 @@ public class HistoryTabManager : MonoBehaviour
         {
             if (characterPieceDatabase.ActiveCharacterType.CharacterHistory.Count - 1 < i)
             {
-                characterPreviewImages[i].CharacterPreviewImage.gameObject.SetActive(false);
+                characterPreviewImages[i].CharacterPreviewController.DIsableCharacterBackup();
+                //characterPreviewImages[i].CharacterPreviewImage.gameObject.SetActive(false);
                 continue;
             }
-            else
-                characterPreviewImages[i].CharacterPreviewImage.gameObject.SetActive(true);
+            //else
+            //characterPreviewImages[i].CharacterPreviewImage.gameObject.SetActive(true);
 
             characterPreviewImages[i].CharacterPreviewImage.sprite = characterPieceDatabase.ActiveCharacterType.CharacterHistory[i].CharacterPreviewSprite;
             characterPreviewImages[i].CharacterPreviewController.SetCharacterBackup(characterPieceDatabase.ActiveCharacterType.CharacterHistory[i]);

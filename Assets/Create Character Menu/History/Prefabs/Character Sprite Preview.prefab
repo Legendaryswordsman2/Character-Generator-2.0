@@ -90,6 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0ad8ef64e7f9f64ab136985efbf68b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterPreviewSprite: {fileID: 7279108564357909557}
+  button: {fileID: 2486633228606629217}
   characterBackup:
     rid: -2
   historyTabManager: {fileID: 0}

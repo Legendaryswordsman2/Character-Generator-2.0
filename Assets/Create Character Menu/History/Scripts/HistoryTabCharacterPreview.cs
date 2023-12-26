@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HistoryTabCharacterPreview : MonoBehaviour
 {
+    [SerializeField] GameObject characterPreviewSprite;
+    [SerializeField] HistoryTabCharacterPreviewButton button;
+
+    [Space]
+
     [SerializeReference] CharacterTypeSO.CharacterBackup characterBackup;
 
     [Space]
@@ -13,6 +19,14 @@ public class HistoryTabCharacterPreview : MonoBehaviour
     public void SetCharacterBackup(CharacterTypeSO.CharacterBackup backup)
     {
         characterBackup = backup;
+        characterPreviewSprite.SetActive(true);
+        button.enabled = true;
+    }
+
+    public void DIsableCharacterBackup()
+    {
+        characterPreviewSprite.SetActive(false);
+        button.enabled = false;
     }
     public void SelectCharacterPreview()
     {
