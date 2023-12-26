@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using Cysharp.Threading.Tasks;
 using UnityEditor;
+using Sirenix.Utilities;
 
 public enum CharacterSize { Sixteen, Thirtytwo, Fortyeight }
 public enum LoadFailedType { DirectoryMissing, UnknownError }
@@ -129,6 +130,8 @@ public class CharacterPieceGrabber : MonoBehaviour
         List<Sprite> loadedSprites = new();
         List<int[]> characterbackupSaveData = SaveSystem.LoadFile<List<int[]>>("/" + characterType.CharacterTypeName + " Character Save History/" + characterType.CharacterTypeName + " Character Piece Values");
 
+        if (characterbackupSaveData.IsNullOrEmpty()) return;
+
         //Debug.Log(characterbackupSaveData.Count);
 
         DirectoryInfo d = new(filePath);
@@ -148,10 +151,10 @@ public class CharacterPieceGrabber : MonoBehaviour
 
         int count;
 
-        if(characterbackupSaveData.Count > loadedSprites.Count)
-            count = characterbackupSaveData.Count;
-        else
+        if (characterbackupSaveData.Count > loadedSprites.Count)
             count = loadedSprites.Count;
+        else
+            count = characterbackupSaveData.Count;
 
         for (int i = 0; i < count; i++)
         {

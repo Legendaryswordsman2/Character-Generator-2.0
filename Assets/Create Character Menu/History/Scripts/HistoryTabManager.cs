@@ -47,7 +47,7 @@ public class HistoryTabManager : MonoBehaviour
         }
 
         if (characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory.Count >= characterPreviewImages.Length)
-            characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory.Remove(characterPieceDatabase.ActiveCharacterType.CharacterModificationHistory[^1]);
+            characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory.Remove(characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory[^1]);
 
         characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory.Insert(0, new CharacterTypeSO.CharacterBackup(newSprite, characterPieceIndexes));
 
