@@ -123,7 +123,7 @@ public class CharacterPieceGrabber : MonoBehaviour
 
         if (!Directory.Exists(filePath))
         {
-            Debug.LogWarning("Filepath does not exist: " + filePath);
+            //Debug.LogWarning("Filepath does not exist: " + filePath);
             return;
         }
 
