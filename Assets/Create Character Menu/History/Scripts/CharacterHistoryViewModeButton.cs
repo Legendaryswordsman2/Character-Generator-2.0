@@ -19,6 +19,17 @@ public class CharacterHistoryViewModeButton : UIButton
         HistoryTabManager.OnHistoryViewModeChanged += HistoryTabManager_OnHistoryViewModeChanged;
     }
 
+    protected override void OnEnable()
+    {
+        image.color = defaultColor;
+        if (historyViewMode == HistoryTabManager.HistoryViewMode)
+        {
+            image.sprite = highlightedSprite;
+        }
+        else
+            image.sprite = defaultSprite;
+    }
+
     private void HistoryTabManager_OnHistoryViewModeChanged(object sender, System.EventArgs e)
     {
         if (historyViewMode == HistoryTabManager.HistoryViewMode)

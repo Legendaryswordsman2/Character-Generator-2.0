@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +11,9 @@ public class HistoryTabManager : MonoBehaviour
 
     [Space]
 
-    [SerializeField] CharacterBackupPreview[] characterPreviewImages;
+    [SerializeField] Transform characterPreviewsParent;
+
+    [SerializeField] List<CharacterBackupPreview> characterPreviewImages;
 
     CharacterPieceDatabase characterPieceDatabase;
     CharacterDropdownManager characterDropdownManager;
@@ -46,7 +49,7 @@ public class HistoryTabManager : MonoBehaviour
             characterPieceIndexes[i] = characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].DropdownIndex;
         }
 
-        if (characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory.Count >= characterPreviewImages.Length)
+        if (characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory.Count >= characterPreviewImages.Count)
             characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory.Remove(characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory[^1]);
 
         characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory.Insert(0, new CharacterTypeSO.CharacterBackup(newSprite, characterPieceIndexes));
@@ -88,7 +91,7 @@ public class HistoryTabManager : MonoBehaviour
             characterPieceIndexes[i] = characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].DropdownIndex;
         }
 
-        if (characterPieceDatabase.ActiveCharacterType.CharacterModificationHistory.Count >= characterPreviewImages.Length)
+        if (characterPieceDatabase.ActiveCharacterType.CharacterModificationHistory.Count >= characterPreviewImages.Count)
             characterPieceDatabase.ActiveCharacterType.CharacterModificationHistory.Remove(characterPieceDatabase.ActiveCharacterType.CharacterModificationHistory[^1]);
 
         characterPieceDatabase.ActiveCharacterType.CharacterModificationHistory.Insert(0, new CharacterTypeSO.CharacterBackup(newSprite, characterPieceIndexes));
@@ -101,7 +104,7 @@ public class HistoryTabManager : MonoBehaviour
         switch (HistoryViewMode)
         {
             case HistoryViewMode.Modifications:
-                for (int i = 0; i < characterPreviewImages.Length; i++)
+                for (int i = 0; i < characterPreviewImages.Count; i++)
                 {
                     if (characterPieceDatabase.ActiveCharacterType.CharacterModificationHistory.Count - 1 < i)
                     {
@@ -114,7 +117,7 @@ public class HistoryTabManager : MonoBehaviour
                 }
                 break;
             case HistoryViewMode.Saved:
-                for (int i = 0; i < characterPreviewImages.Length; i++)
+                for (int i = 0; i < characterPreviewImages.Count; i++)
                 {
                     if (characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory.Count - 1 < i)
                     {
@@ -190,10 +193,31 @@ public class HistoryTabManager : MonoBehaviour
         }
     }
 
+    private void OnValidate()
+    {
+        if (characterPreviewsParent == null) return;
+
+        characterPreviewImages.Clear();
+
+        foreach (Transform child in characterPreviewsParent)
+        {
+            if(child.TryGetComponent(out HistoryTabCharacterPreview characterPreviewButton))
+            {
+                characterPreviewImages.Add(new CharacterBackupPreview(characterPreviewButton, child.GetChild(1).GetComponent<Image>()));
+            }
+        }
+    }
+
     [System.Serializable]
     class CharacterBackupPreview
     {
         public Image CharacterPreviewImage;
         public HistoryTabCharacterPreview CharacterPreviewController;
+
+        public CharacterBackupPreview(HistoryTabCharacterPreview characterPreviewController, Image characterPreviewImage) 
+        { 
+            CharacterPreviewController = characterPreviewController;
+            CharacterPreviewImage = characterPreviewImage;
+        }
     }
 }
