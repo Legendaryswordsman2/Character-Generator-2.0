@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum HistoryViewMode { Modifications, Saved }
 public class HistoryTabManager : MonoBehaviour
 {
-    [SerializeField] Image characterImage;
+    [field: SerializeField] public HistoryViewMode HistoryViewMode { get; private set; }
 
     [Space]
 
@@ -14,12 +16,41 @@ public class HistoryTabManager : MonoBehaviour
 
     bool canTrackHistory = true;
 
+    public event EventHandler OnHistoryViewModeChanged;
+
     public void Init()
     {
         characterPieceDatabase = CharacterPieceDatabase.Instance;
         characterDropdownManager = CharacterDropdownManager.Instance;
 
         CharacterDropdownManager.OnAfterCharacterRecreated += CharacterDropdownManager_OnAfterCharacterRecreated;
+        SaveCharacterManager.OnAfterCharacterSaved += SaveCharacterManager_OnAfterCharacterSaved;
+    }
+
+    private void Start()
+    {
+        OnHistoryViewModeChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void SaveCharacterManager_OnAfterCharacterSaved(object sender, System.EventArgs e)
+    {
+        if (!canTrackHistory) return;
+
+        Sprite newSprite = SpriteManager.ConvertTextureToSprite(SpriteManager.ExtractTextureRegion(characterPieceDatabase.ActiveCharacterType.CharacterPreviewSpritesheet.texture, 48, 0, 16, 32));
+
+        int[] characterPieceIndexes = new int[characterPieceDatabase.ActiveCharacterType.CharacterPieces.Length];
+
+        for (int i = 0; i < characterPieceDatabase.ActiveCharacterType.CharacterPieces.Length; i++)
+        {
+            characterPieceIndexes[i] = characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].DropdownIndex;
+        }
+
+        if (characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory.Count >= characterPreviewImages.Length)
+            characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory.Remove(characterPieceDatabase.ActiveCharacterType.CharacterModificationHistory[^1]);
+
+        characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory.Insert(0, new CharacterTypeSO.CharacterBackup(newSprite, characterPieceIndexes));
+
+        RefreshCharacterList();
     }
 
     private void CharacterDropdownManager_OnAfterCharacterRecreated(object sender, System.EventArgs e)
@@ -27,13 +58,13 @@ public class HistoryTabManager : MonoBehaviour
         if (!canTrackHistory) return;
 
         bool canContinue = false;
-        if (characterPieceDatabase.ActiveCharacterType.CharacterHistory.Count < 1)
+        if (characterPieceDatabase.ActiveCharacterType.CharacterModificationHistory.Count < 1)
             canContinue = true;
         else
         {
-            for (int i = 0; i < characterPieceDatabase.ActiveCharacterType.CharacterHistory[0].CharacterPieceIndexes.Length; i++)
+            for (int i = 0; i < characterPieceDatabase.ActiveCharacterType.CharacterModificationHistory[0].CharacterPieceIndexes.Length; i++)
             {
-                if (characterPieceDatabase.ActiveCharacterType.CharacterHistory[0].CharacterPieceIndexes[i] != characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].DropdownIndex)
+                if (characterPieceDatabase.ActiveCharacterType.CharacterModificationHistory[0].CharacterPieceIndexes[i] != characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].DropdownIndex)
                 {
                     canContinue = true;
                     break;
@@ -49,8 +80,6 @@ public class HistoryTabManager : MonoBehaviour
 
         Sprite newSprite = SpriteManager.ConvertTextureToSprite(SpriteManager.ExtractTextureRegion(characterPieceDatabase.ActiveCharacterType.CharacterPreviewSpritesheet.texture, 48, 0, 16, 32));
 
-        characterImage.sprite = newSprite;
-
         int[] characterPieceIndexes = new int[characterPieceDatabase.ActiveCharacterType.CharacterPieces.Length];
 
         for (int i = 0; i < characterPieceDatabase.ActiveCharacterType.CharacterPieces.Length; i++)
@@ -58,29 +87,44 @@ public class HistoryTabManager : MonoBehaviour
             characterPieceIndexes[i] = characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].DropdownIndex;
         }
 
-        if (characterPieceDatabase.ActiveCharacterType.CharacterHistory.Count >= characterPreviewImages.Length)
-            characterPieceDatabase.ActiveCharacterType.CharacterHistory.Remove(characterPieceDatabase.ActiveCharacterType.CharacterHistory[^1]);
+        if (characterPieceDatabase.ActiveCharacterType.CharacterModificationHistory.Count >= characterPreviewImages.Length)
+            characterPieceDatabase.ActiveCharacterType.CharacterModificationHistory.Remove(characterPieceDatabase.ActiveCharacterType.CharacterModificationHistory[^1]);
 
-        characterPieceDatabase.ActiveCharacterType.CharacterHistory.Insert(0, new CharacterTypeSO.CharacterBackup(newSprite, characterPieceIndexes));
+        characterPieceDatabase.ActiveCharacterType.CharacterModificationHistory.Insert(0, new CharacterTypeSO.CharacterBackup(newSprite, characterPieceIndexes));
 
         RefreshCharacterList();
     }
 
     void RefreshCharacterList()
     {
-        for (int i = 0; i < characterPreviewImages.Length; i++)
+        switch (HistoryViewMode)
         {
-            if (characterPieceDatabase.ActiveCharacterType.CharacterHistory.Count - 1 < i)
-            {
-                characterPreviewImages[i].CharacterPreviewController.DIsableCharacterBackup();
-                //characterPreviewImages[i].CharacterPreviewImage.gameObject.SetActive(false);
-                continue;
-            }
-            //else
-            //characterPreviewImages[i].CharacterPreviewImage.gameObject.SetActive(true);
+            case HistoryViewMode.Modifications:
+                for (int i = 0; i < characterPreviewImages.Length; i++)
+                {
+                    if (characterPieceDatabase.ActiveCharacterType.CharacterModificationHistory.Count - 1 < i)
+                    {
+                        characterPreviewImages[i].CharacterPreviewController.DIsableCharacterBackup();
+                        continue;
+                    }
 
-            characterPreviewImages[i].CharacterPreviewImage.sprite = characterPieceDatabase.ActiveCharacterType.CharacterHistory[i].CharacterPreviewSprite;
-            characterPreviewImages[i].CharacterPreviewController.SetCharacterBackup(characterPieceDatabase.ActiveCharacterType.CharacterHistory[i]);
+                    characterPreviewImages[i].CharacterPreviewImage.sprite = characterPieceDatabase.ActiveCharacterType.CharacterModificationHistory[i].CharacterPreviewSprite;
+                    characterPreviewImages[i].CharacterPreviewController.SetCharacterBackup(characterPieceDatabase.ActiveCharacterType.CharacterModificationHistory[i]);
+                }
+                break;
+            case HistoryViewMode.Saved:
+                for (int i = 0; i < characterPreviewImages.Length; i++)
+                {
+                    if (characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory.Count - 1 < i)
+                    {
+                        characterPreviewImages[i].CharacterPreviewController.DIsableCharacterBackup();
+                        continue;
+                    }
+
+                    characterPreviewImages[i].CharacterPreviewImage.sprite = characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory[i].CharacterPreviewSprite;
+                    characterPreviewImages[i].CharacterPreviewController.SetCharacterBackup(characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory[i]);
+                }
+                break;
         }
     }
 
@@ -108,9 +152,20 @@ public class HistoryTabManager : MonoBehaviour
         CharacterDropdownManager.OnAfterCharacterRecreated -= CharacterDropdownManager_OnAfterCharacterRecreated1;
     }
 
+    public void ChangeHistoryViewMode(HistoryViewMode newMode)
+    {
+        if (newMode == HistoryViewMode) return;
+
+        HistoryViewMode = newMode;
+        OnHistoryViewModeChanged?.Invoke(this, EventArgs.Empty);
+        RefreshCharacterList();
+
+    }
+
     private void OnDestroy()
     {
         CharacterDropdownManager.OnAfterCharacterRecreated -= CharacterDropdownManager_OnAfterCharacterRecreated;
+        SaveCharacterManager.OnAfterCharacterSaved -= SaveCharacterManager_OnAfterCharacterSaved;
     }
 
     [System.Serializable]

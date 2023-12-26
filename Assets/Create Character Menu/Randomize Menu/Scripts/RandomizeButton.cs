@@ -34,26 +34,15 @@ public class RandomizeButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        RandomizeCharacter();
+    }
+
+    public void RandomizeCharacter()
+    {
         characterDropdownManager.CanRecreateCharacter = false;
         characterDropdownManager.RandomizeAllDropdowns();
-        //for (int i = 0; i < characterPieceDatabase.ActiveCharacterType.CharacterPieces.Length; i++)
-        //{
-        //    characterDropdownManager.CharacterPiecesDropdownData[i].Randomize();
-        //}
         characterDropdownManager.CanRecreateCharacter = true;
 
         characterDropdownManager.RecreateCharacter();
-
-
-
-
-        //characterDropdownManager.CanRecreateCharacter = false;
-        //for (int i = 0; i < characterDropdownManager.CharacterPiecesDropdownData.Length; i++)
-        //{
-        //    characterDropdownManager.CharacterPiecesDropdownData[i].Randomize();
-        //}
-        //characterDropdownManager.CanRecreateCharacter = true;
-
-        //characterDropdownManager.RecreateCharacter();
     }
 }

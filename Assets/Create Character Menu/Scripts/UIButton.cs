@@ -9,21 +9,21 @@ using UnityEngine.UI;
 
 public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
 {
-    [SerializeField] Image image;
+    [SerializeField]protected Image image;
 
     [Space]
 
-    [SerializeField] Sprite highlightedSprite;
-    [SerializeField] Color pressedColor;
+    [SerializeField] protected Sprite highlightedSprite;
+    [SerializeField] protected Color pressedColor;
 
     [Space]
 
     [SerializeField] UnityEvent onClick;
 
-    Sprite defaultSprite;
-    Color defaultColor;
+    protected Sprite defaultSprite;
+    protected Color defaultColor;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         defaultSprite = image.sprite;
         defaultColor = image.color;
@@ -47,12 +47,12 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         OnPointerUp(eventData);
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public virtual void OnPointerClick(PointerEventData eventData)
     {
         onClick.Invoke();
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public virtual void OnPointerDown(PointerEventData eventData)
     {
         StopAllCoroutines();
         StartCoroutine(Routine());
@@ -89,6 +89,8 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
+
+            image.color = defaultColor;
         }
     }
 

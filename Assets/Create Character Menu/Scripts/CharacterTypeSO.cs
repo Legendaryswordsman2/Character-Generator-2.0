@@ -24,12 +24,14 @@ public class CharacterTypeSO : ScriptableObject
 
     [field: Space]
 
-    [field: SerializeField] public List<CharacterBackup> CharacterHistory { get; set; }
+    [field: SerializeField] public List<CharacterBackup> CharacterModificationHistory { get; set; }
+    [field: SerializeField] public List<CharacterBackup> CharacterSaveHistory { get; set; }
 
     public void Init()
     {
         ClearSprites();
-        CharacterHistory.Clear();
+        CharacterModificationHistory.Clear();
+        CharacterSaveHistory.Clear();
         foreach (CharacterPieceCollection characterPiece in CharacterPieces)
         {
             characterPiece.DropdownIndex = 0;

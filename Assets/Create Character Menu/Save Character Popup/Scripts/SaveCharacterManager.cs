@@ -38,6 +38,7 @@ public class SaveCharacterManager : MonoBehaviour
     bool savingCharacter = false;
 
     public static event EventHandler OnBeforeCharacterSaved;
+    public static event EventHandler OnAfterCharacterSaved;
 
     public event EventHandler<string> OnSpriteMissingErrorTriggered;
 
@@ -129,6 +130,8 @@ public class SaveCharacterManager : MonoBehaviour
         SaveCharacterToFile(finalTexture);
 
         savingCharacter = false;
+
+        OnAfterCharacterSaved?.Invoke(this, EventArgs.Empty);
 
         creatingCharacterOverlay.SetActive(false);
         OpenCharacterSavedPopup();

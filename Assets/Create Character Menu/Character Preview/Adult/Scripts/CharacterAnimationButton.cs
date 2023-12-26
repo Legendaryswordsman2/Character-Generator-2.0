@@ -65,6 +65,11 @@ public class CharacterAnimationButton : MonoBehaviour, IPointerEnterHandler, IPo
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        SetCharacterAnimation();
+    }
+
+    public void SetCharacterAnimation()
+    {
         if (characterPreviewAnimation != null && characterPreviewAnimationManager != null)
             characterPreviewAnimationManager.SetCharacterAnimation(characterPreviewAnimation);
     }
