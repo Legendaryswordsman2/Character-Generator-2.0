@@ -3394,7 +3394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68207ae0e3eb66749a04e0729d6de14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  historyViewMode: 0
+  <HistoryViewMode>k__BackingField: 0
   characterPreviewImages:
   - CharacterPreviewImage: {fileID: 1921144401}
     CharacterPreviewController: {fileID: 1310896675}

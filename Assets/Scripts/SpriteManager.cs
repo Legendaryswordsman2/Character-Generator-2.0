@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -134,5 +135,21 @@ public class SpriteManager : MonoBehaviour
         extractedTexture.Apply();
 
         return extractedTexture;
+    }
+
+    public static void SaveTextureToFile(Texture2D texture, string filePath, string fileName)
+    {
+        if (texture == null)
+        {
+            Debug.LogWarning("Can't save texture, texture is null");
+            return;
+        }
+
+        byte[] bytes = texture.EncodeToPNG();
+
+        if (!Directory.Exists(Application.persistentDataPath + "/" + filePath))
+            Directory.CreateDirectory(Application.persistentDataPath + "/" + filePath);
+
+        File.WriteAllBytes(Application.persistentDataPath + "/" + filePath + "/" + fileName + ".png", bytes);
     }
 }

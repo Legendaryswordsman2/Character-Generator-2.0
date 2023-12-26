@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -166,6 +167,27 @@ public class HistoryTabManager : MonoBehaviour
     {
         CharacterDropdownManager.OnAfterCharacterRecreated -= CharacterDropdownManager_OnAfterCharacterRecreated;
         SaveCharacterManager.OnAfterCharacterSaved -= SaveCharacterManager_OnAfterCharacterSaved;
+
+        foreach (CharacterTypeSO characterType in characterPieceDatabase.CharacterTypes)
+        {
+            List<int[]> characterbackupSaveData = new();
+
+            for (int i = 0; i < characterType.CharacterSaveHistory.Count; i++)
+            {
+                characterbackupSaveData.Add(characterType.CharacterSaveHistory[i].CharacterPieceIndexes);
+                SpriteManager.SaveTextureToFile(characterType.CharacterSaveHistory[i].CharacterPreviewSprite.texture, characterType.CharacterTypeName + " Character Save History", "Character " + (i + 1));
+            }
+
+            //for (int i = 0; i < characterbackupSaveData.Count; i++)
+            //{
+            //    for (int i2 = 0; i2 < characterbackupSaveData[i].Length; i2++)
+            //    {
+            //        Debug.Log(characterbackupSaveData[i][i2]);
+            //    }
+            //}
+            if(characterbackupSaveData.Count > 0)
+            SaveSystem.SaveFile(characterType.CharacterTypeName + " Character Save History", characterType.CharacterTypeName + " Character Piece Values", characterbackupSaveData);
+        }
     }
 
     [System.Serializable]
