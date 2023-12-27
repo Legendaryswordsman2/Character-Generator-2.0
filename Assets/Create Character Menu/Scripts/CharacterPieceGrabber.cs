@@ -8,6 +8,8 @@ using UnityEngine.Networking;
 using Cysharp.Threading.Tasks;
 using UnityEditor;
 using Sirenix.Utilities;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 public enum CharacterSize { Sixteen, Thirtytwo, Fortyeight }
 public enum LoadFailedType { DirectoryMissing, UnknownError }
@@ -136,7 +138,12 @@ public class CharacterPieceGrabber : MonoBehaviour
 
         DirectoryInfo d = new(filePath);
 
-        foreach (var file in d.GetFiles("*.png"))
+        var pngFiles = d.GetFiles("*.png")
+    .OrderBy(f =>
+        int.Parse(Regex.Match(f.Name, @"\d+").Value)
+    );
+
+        foreach (var file in pngFiles)
         {
             // file.FullName is the full path to the file
             string fileUrl = new Uri(file.FullName).AbsoluteUri;
