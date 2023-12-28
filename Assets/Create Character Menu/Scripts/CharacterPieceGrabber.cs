@@ -10,6 +10,7 @@ using UnityEditor;
 using Sirenix.Utilities;
 using System.Linq;
 using System.Text.RegularExpressions;
+using UnityEngine.SceneManagement;
 
 public enum CharacterSize { Sixteen, Thirtytwo, Fortyeight }
 public enum LoadFailedType { DirectoryMissing, UnknownError }
@@ -40,8 +41,24 @@ public class CharacterPieceGrabber : MonoBehaviour
 
     public string LastFailedToGetSpriteName { get; private set; }
 
+    public bool AllCharacterPiecesLoaded { get; private set; } = false;
+
     private void Awake() => Instance = this;
-    private async void Start() => await Start_Task();
+    private async void Start()
+    {
+        SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
+        await Start_Task();
+    }
+
+    private async void SceneManager_activeSceneChanged(Scene arg0, Scene arg1)
+    {
+        await UniTask.NextFrame();
+        if (AllCharacterPiecesLoaded)
+        {
+            Debug.Log("Calling Character Pieces Loaded Event");
+            OnAllCharacterPiecesLoaded?.Invoke(this, EventArgs.Empty);
+        }
+    }
 
     async Task Start_Task()
     {
@@ -69,6 +86,7 @@ public class CharacterPieceGrabber : MonoBehaviour
             }
 
             Debug.Log("Successfully loaded all sprites with a total load time of: " + Time.realtimeSinceStartup);
+            AllCharacterPiecesLoaded = true;
             OnAllCharacterPiecesLoaded?.Invoke(this, EventArgs.Empty);
 
         }
@@ -342,5 +360,10 @@ public class CharacterPieceGrabber : MonoBehaviour
 
             return texture;
         }
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.activeSceneChanged -= SceneManager_activeSceneChanged;
     }
 }

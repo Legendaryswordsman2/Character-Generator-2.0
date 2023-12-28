@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4598038696850065577}
   - component: {fileID: 1512363982426592737}
   - component: {fileID: 3161076294681307159}
+  - component: {fileID: 7934090080288217272}
   m_Layer: 0
   m_Name: Essential Managers
   m_TagString: Untagged
@@ -58,20 +59,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e104910e943604086473947ea01322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <ActiveCharacterType>k__BackingField: {fileID: 0}
   <CharacterTypes>k__BackingField:
   - {fileID: 11400000, guid: 0e76e29a3b6ac67499232d23375b5634, type: 2}
   - {fileID: 11400000, guid: 5cbf8e0dc0515f74fa6fb39067542df4, type: 2}
-  <CharacterPieces>k__BackingField:
-  - CollectionName: 0
-    Sprites: []
-  - CollectionName: 1
-    Sprites: []
-  - CollectionName: 2
-    Sprites: []
-  - CollectionName: 3
-    Sprites: []
-  - CollectionName: 4
-    Sprites: []
+--- !u!114 &7934090080288217272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5663108366259865676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cca3a0e138200254dabd4f11f8f0468b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7855467165638925481
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Create Character.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Try Character.unity
+    guid: 56a25091609a2454e978ad14458875b7
   m_configObjects: {}
