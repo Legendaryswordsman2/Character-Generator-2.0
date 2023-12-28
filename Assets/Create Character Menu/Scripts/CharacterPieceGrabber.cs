@@ -41,7 +41,7 @@ public class CharacterPieceGrabber : MonoBehaviour
 
     public string LastFailedToGetSpriteName { get; private set; }
 
-    public bool AllCharacterPiecesLoaded { get; private set; } = false;
+    public static bool AllCharacterPiecesLoaded { get; private set; } = false;
 
     private void Awake() => Instance = this;
     private async void Start()

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System;
 using Sirenix.Utilities;
 using Cysharp.Threading.Tasks;
+using LootLocker.Requests;
 
 public class SaveCharacterManager : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class SaveCharacterManager : MonoBehaviour
     [SerializeField] RectTransform background;
     [SerializeField] GameObject saveCharacterContents;
     [SerializeField] GameObject characterSavedContents;
+
+    [Space]
+
+    [SerializeField] TMP_Text personalStatsText;
+    [SerializeField] TMP_Text globalStatsText;
 
     [Space]
 
@@ -36,6 +42,9 @@ public class SaveCharacterManager : MonoBehaviour
     CharacterPieceGrabber characterPieceGrabber;
 
     bool savingCharacter = false;
+    int charactersGeneratedPersonal;
+    int charactersGeneratedGlobal;
+    bool doneGrabbingServerData = false;
 
     public static event EventHandler OnBeforeCharacterSaved;
     public static event EventHandler OnAfterCharacterSaved;
@@ -43,6 +52,7 @@ public class SaveCharacterManager : MonoBehaviour
     public event EventHandler<string> OnSpriteMissingErrorTriggered;
 
     public event EventHandler OnPopupOpened;
+
 
     private void Start()
     {
@@ -128,16 +138,10 @@ public class SaveCharacterManager : MonoBehaviour
         }
 
         SaveCharacterToFile(finalTexture);
-
-        savingCharacter = false;
-
-        OnAfterCharacterSaved?.Invoke(this, EventArgs.Empty);
-
-        creatingCharacterOverlay.SetActive(false);
-        OpenCharacterSavedPopup();
+        UpdateScores();
     }
 
-    void SaveCharacterToFile(Texture2D texture)
+    async void SaveCharacterToFile(Texture2D texture)
     {
         if (texture == null)
         {
@@ -155,7 +159,139 @@ public class SaveCharacterManager : MonoBehaviour
 
         File.WriteAllBytes(Directory.GetCurrentDirectory() + "/Saved Characters/" + fileNameInputField.text + ".png", bytes);
 
-        ClosePopup();
+        if (LootlockerAuthenticationManager.LoggedIn)
+        {
+            await UniTask.WaitUntil(() => doneGrabbingServerData == true);
+
+            personalStatsText.text = "You've saved " + charactersGeneratedPersonal.ToString("N0") + " characters total.";
+            globalStatsText.text = charactersGeneratedGlobal.ToString("N0") + " characters have been saved globally.";
+
+            savingCharacter = false;
+
+            OnAfterCharacterSaved?.Invoke(this, EventArgs.Empty);
+
+            creatingCharacterOverlay.SetActive(false);
+            OpenCharacterSavedPopup();
+        }
+        else
+        {
+            personalStatsText.text = "";
+            globalStatsText.text = "";
+
+            savingCharacter = false;
+
+            OnAfterCharacterSaved?.Invoke(this, EventArgs.Empty);
+
+            creatingCharacterOverlay.SetActive(false);
+            OpenCharacterSavedPopup();
+        }
+    }
+
+    async void UpdateScores()
+    {
+        doneGrabbingServerData = false;
+
+        if (LootlockerAuthenticationManager.LoggedIn)
+        {
+            List<Task> tasks = new()
+            {
+               UpdateGlobalScore(),
+               UpdatePersonalScore()
+            };
+
+            await Task.WhenAll(tasks);
+
+            doneGrabbingServerData = true;
+        }
+
+        async Task UpdateGlobalScore()
+        {
+            int score = 0;
+
+            bool finished = false;
+
+            bool succesful = true;
+            LootLockerSDKManager.GetScoreList("19386", 1, 0, (response) =>
+            {
+                if (response.success)
+                {
+                    score = response.items[0].score;
+                }
+                else
+                {
+                    Debug.LogWarning("Failed to fetch leaderbaord data: " + response.errorData.message);
+                    succesful = false;
+                }
+
+                finished = true;
+            });
+
+            await UniTask.WaitUntil(() => finished);
+
+            if (!succesful) return;
+
+            bool done = false;
+
+            // Add to global score
+            LootLockerSDKManager.SubmitScore("155", score + 1, "19386", (response) =>
+            {
+                if (response.success)
+                {
+                    charactersGeneratedGlobal = score + 1;
+                    //Debug.Log(score + " Global");
+                }
+                else
+                {
+                    Debug.Log("Failed" + response.errorData.message);
+                }
+
+                done = true;
+            });
+
+            await UniTask.WaitUntil(() => done);
+        }
+
+        async Task UpdatePersonalScore()
+        {
+            int score = 0;
+
+            bool finished = false;
+
+            bool succesful = true;
+            LootLockerSDKManager.GetMemberRank("19387", PlayerPrefs.GetString("PlayerID"), (response) =>
+            {
+                if (response.success)
+                    score = response.score;
+                else
+                {
+                    Debug.LogWarning("Failed to fetch leaderbaord data: " + response.errorData.message);
+                    succesful = false;
+                }
+
+                finished = true;
+            });
+
+            await UniTask.WaitUntil(() => finished);
+
+            if (!succesful) return;
+
+            bool done = false;
+
+            LootLockerSDKManager.SubmitScore(PlayerPrefs.GetString("PlayerID"), score + 1, "19387", (response) =>
+            {
+                if (response.success)
+                {
+                    charactersGeneratedPersonal = score + 1;
+                    //Debug.Log(score + " Pesonal");
+                }
+                else
+                    Debug.LogWarning("Unable to upload personal score: " + response.errorData.message);
+
+                done = true;
+            });
+
+            await UniTask.WaitUntil(() => done);
+        }
     }
 
     async void OpenCharacterSavedPopup()

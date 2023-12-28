@@ -5798,6 +5798,8 @@ MonoBehaviour:
   background: {fileID: 213255439}
   saveCharacterContents: {fileID: 455842921}
   characterSavedContents: {fileID: 928217821}
+  personalStatsText: {fileID: 227514963}
+  globalStatsText: {fileID: 1581672672}
   contentTexts:
   - {fileID: 3798328174605831883}
   - {fileID: 7199625009978712268}
@@ -14923,7 +14925,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '(Global) Characters Generated:'
+  m_text: '(Global) Characters Generated: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3190c2dc25d1d1f459436292e357087d, type: 2}
   m_sharedMaterial: {fileID: -7744078375417507747, guid: 3190c2dc25d1d1f459436292e357087d, type: 2}
@@ -16224,7 +16226,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: X Characters have been saved globally
+  m_text: X characters have been saved globally
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac71e4a300f8610489ead953bf6efd28, type: 2}
   m_sharedMaterial: {fileID: -7744078375417507747, guid: ac71e4a300f8610489ead953bf6efd28, type: 2}
@@ -28352,7 +28354,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '(Personal) Characters Generated:'
+  m_text: '(Personal) Characters Generated: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3190c2dc25d1d1f459436292e357087d, type: 2}
   m_sharedMaterial: {fileID: -7744078375417507747, guid: 3190c2dc25d1d1f459436292e357087d, type: 2}
@@ -29928,6 +29930,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9136178541215615748}
+  - component: {fileID: 9136178541215615750}
   m_Layer: 5
   m_Name: Stats Submenu
   m_TagString: Untagged
@@ -29935,6 +29938,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &9136178541215615750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9136178541215615749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559f4c3031ac70e4c9b2face5256240f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  personalStats: {fileID: 9136178540034009451}
+  globalStats: {fileID: 1499545265}
 --- !u!224 &9136178541413836584
 RectTransform:
   m_ObjectHideFlags: 0
