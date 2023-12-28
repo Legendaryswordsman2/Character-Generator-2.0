@@ -23,6 +23,8 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     protected Sprite defaultSprite;
     protected Color defaultColor;
 
+    bool highlighted = false;
+
     protected virtual void Awake()
     {
         defaultSprite = image.sprite;
@@ -38,12 +40,14 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public virtual void OnPointerEnter(PointerEventData eventData)
     {
         image.sprite = highlightedSprite;
+        highlighted = true;
     }
 
     public virtual void OnPointerExit(PointerEventData eventData)
     {
         image.sprite = defaultSprite;
         StopAllCoroutines();
+        highlighted = false;
         OnPointerUp(eventData);
     }
 
@@ -96,7 +100,7 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     protected virtual void OnApplicationFocus(bool focus)
     {
-        if (!focus)
+        if (!focus && !highlighted)
             OnPointerExit(new PointerEventData(EventSystem.current));
     }
 }
