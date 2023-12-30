@@ -211,7 +211,7 @@ public class SaveCharacterManager : MonoBehaviour
             bool finished = false;
 
             bool succesful = true;
-            LootLockerSDKManager.GetScoreList("19386", 1, 0, (response) =>
+            LootLockerSDKManager.GetScoreList("total_characters_generated", 1, 0, (response) =>
             {
                 if (response.success)
                 {
@@ -233,7 +233,7 @@ public class SaveCharacterManager : MonoBehaviour
             bool done = false;
 
             // Add to global score
-            LootLockerSDKManager.SubmitScore("155", score + 1, "19386", (response) =>
+            LootLockerSDKManager.SubmitScore("155", score + 1, "total_characters_generated", (response) =>
             {
                 if (response.success)
                 {
@@ -258,7 +258,7 @@ public class SaveCharacterManager : MonoBehaviour
             bool finished = false;
 
             bool succesful = true;
-            LootLockerSDKManager.GetMemberRank("19387", PlayerPrefs.GetString("PlayerID"), (response) =>
+            LootLockerSDKManager.GetMemberRank("characters_generated", PlayerPrefs.GetString("PlayerID"), (response) =>
             {
                 if (response.success)
                     score = response.score;
@@ -277,7 +277,7 @@ public class SaveCharacterManager : MonoBehaviour
 
             bool done = false;
 
-            LootLockerSDKManager.SubmitScore(PlayerPrefs.GetString("PlayerID"), score + 1, "19387", (response) =>
+            LootLockerSDKManager.SubmitScore(PlayerPrefs.GetString("PlayerID"), score + 1, "characters_generated", (response) =>
             {
                 if (response.success)
                 {
