@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Exterior
+    uniqueID: 1269336167
+    locked: 0
+  - name: Floor And Walls
+    uniqueID: 198511391
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 3694137835
     locked: 0

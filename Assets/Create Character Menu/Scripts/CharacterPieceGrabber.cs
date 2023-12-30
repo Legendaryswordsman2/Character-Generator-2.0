@@ -47,6 +47,7 @@ public class CharacterPieceGrabber : MonoBehaviour
     private async void Start()
     {
         SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
+        if(SceneManager.GetActiveScene().buildIndex == 0)
         await Start_Task();
     }
 
