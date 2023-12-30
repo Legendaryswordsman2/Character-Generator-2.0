@@ -163,7 +163,7 @@ public class SaveCharacterManager : MonoBehaviour
         {
             await UniTask.WaitUntil(() => doneGrabbingServerData == true);
 
-            personalStatsText.text = "You've saved " + charactersGeneratedPersonal.ToString("N0") + " characters total.";
+            personalStatsText.text = "You've saved " + charactersGeneratedPersonal.ToString("N0") + " character(s) total.";
             globalStatsText.text = charactersGeneratedGlobal.ToString("N0") + " characters have been saved globally.";
 
             savingCharacter = false;

@@ -47,8 +47,8 @@ public class CharacterPieceGrabber : MonoBehaviour
     private async void Start()
     {
         SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
-        if(SceneManager.GetActiveScene().buildIndex == 0)
-        await Start_Task();
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+            await Start_Task();
     }
 
     private async void SceneManager_activeSceneChanged(Scene arg0, Scene arg1)
@@ -59,6 +59,8 @@ public class CharacterPieceGrabber : MonoBehaviour
             Debug.Log("Calling Character Pieces Loaded Event");
             OnAllCharacterPiecesLoaded?.Invoke(this, EventArgs.Empty);
         }
+        else if (SceneManager.GetActiveScene().buildIndex == 0)
+            await Start_Task();
     }
 
     async Task Start_Task()
