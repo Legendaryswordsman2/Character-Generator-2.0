@@ -5,9 +5,15 @@ using UnityEngine.Events;
 
 public class ScriptInitializer : MonoBehaviour
 {
-    [SerializeField] UnityEvent onStart;
+    [SerializeField] UnityEvent OnStartEvent;
+    [SerializeField] UnityEvent OnDestroyEvent;
     private void Start()
     {
-        onStart.Invoke();
+        OnStartEvent.Invoke();
+    }
+
+    private void OnDestroy()
+    {
+        OnDestroyEvent.Invoke();
     }
 }

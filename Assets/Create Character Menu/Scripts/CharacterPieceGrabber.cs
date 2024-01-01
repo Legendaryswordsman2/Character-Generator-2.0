@@ -54,6 +54,7 @@ public class CharacterPieceGrabber : MonoBehaviour
     private async void SceneManager_activeSceneChanged(Scene arg0, Scene arg1)
     {
         await UniTask.NextFrame();
+        //await UniTask.Delay(1000);
         if (AllCharacterPiecesLoaded)
         {
             //Debug.Log("Calling Character Pieces Loaded Event");

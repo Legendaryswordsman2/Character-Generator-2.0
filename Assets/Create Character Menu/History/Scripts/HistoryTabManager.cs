@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -108,7 +109,7 @@ public class HistoryTabManager : MonoBehaviour
                 {
                     if (characterPieceDatabase.ActiveCharacterType.CharacterModificationHistory.Count - 1 < i)
                     {
-                        characterPreviewImages[i].CharacterPreviewController.DIsableCharacterBackup();
+                        characterPreviewImages[i].CharacterPreviewController.DisableCharacterBackup();
                         continue;
                     }
 
@@ -121,7 +122,7 @@ public class HistoryTabManager : MonoBehaviour
                 {
                     if (characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory.Count - 1 < i)
                     {
-                        characterPreviewImages[i].CharacterPreviewController.DIsableCharacterBackup();
+                        characterPreviewImages[i].CharacterPreviewController.DisableCharacterBackup();
                         continue;
                     }
 
@@ -166,7 +167,7 @@ public class HistoryTabManager : MonoBehaviour
 
     }
 
-    private void OnDestroy()
+    public void OnDestroyEventCalled()
     {
         CharacterDropdownManager.OnAfterCharacterRecreated -= CharacterDropdownManager_OnAfterCharacterRecreated;
         SaveCharacterManager.OnAfterCharacterSaved -= SaveCharacterManager_OnAfterCharacterSaved;
@@ -201,7 +202,7 @@ public class HistoryTabManager : MonoBehaviour
 
         foreach (Transform child in characterPreviewsParent)
         {
-            if(child.TryGetComponent(out HistoryTabCharacterPreview characterPreviewButton))
+            if (child.TryGetComponent(out HistoryTabCharacterPreview characterPreviewButton))
             {
                 characterPreviewImages.Add(new CharacterBackupPreview(characterPreviewButton, child.GetChild(1).GetComponent<Image>()));
             }

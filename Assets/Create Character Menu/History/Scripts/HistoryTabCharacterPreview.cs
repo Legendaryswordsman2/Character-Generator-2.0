@@ -19,11 +19,12 @@ public class HistoryTabCharacterPreview : MonoBehaviour
     public void SetCharacterBackup(CharacterTypeSO.CharacterBackup backup)
     {
         characterBackup = backup;
+        //Debug.Log(gameObject, gameObject);
         characterPreviewSprite.SetActive(true);
         button.enabled = true;
     }
 
-    public void DIsableCharacterBackup()
+    public void DisableCharacterBackup()
     {
         characterPreviewSprite.SetActive(false);
         button.enabled = false;

@@ -11,6 +11,8 @@ public class CharacterTypeSO : ScriptableObject
     [field: SerializeField] public string CharacterTypeName { get; private set; }
 
     [field: SerializeField] public Sprite CharacterPreviewSpritesheet { get; private set; }
+    [field: SerializeField] public RuntimeAnimatorController CharacterController { get; private set; }
+    [field: SerializeField] public float PlayerCharacterSpeed { get; private set; } = 6.5f;
 
     [field: Space]
 

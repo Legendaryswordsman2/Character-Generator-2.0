@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterMovementController : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 6.5f;
+    [field: SerializeField] public float MoveSpeed { get; set; } = 6.5f;
 
     [SerializeField] bool canMove = true;
     public bool CanMove { get { return canMove; } set { canMove = value; } }
@@ -35,6 +35,6 @@ public class CharacterMovementController : MonoBehaviour
     private void FixedUpdate()
     {
         if (canMove)
-            rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime * movement.normalized);
+            rb.MovePosition(rb.position + MoveSpeed * Time.fixedDeltaTime * movement.normalized);
     }
 }

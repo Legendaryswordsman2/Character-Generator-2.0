@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <CharacterTypeName>k__BackingField: Adult
   <CharacterPreviewSpritesheet>k__BackingField: {fileID: 437519916, guid: 678972e60b3b838438ea737d023fcec3, type: 3}
+  <CharacterController>k__BackingField: {fileID: 9100000, guid: e88444ff96b7b8d46954a0fb1c6988f6, type: 2}
+  <PlayerCharacterSpeed>k__BackingField: 6.5
   <SpriteSize_16x16>k__BackingField: {x: 896, y: 640}
   <SpriteSize_32x32>k__BackingField: {x: 1792, y: 1280}
   <SpriteSize_48x48>k__BackingField: {x: 2688, y: 1920}
@@ -48,4 +50,9 @@ MonoBehaviour:
     <NADefault>k__BackingField: 1
     Sprites: []
     <ActiveSprite>k__BackingField: {fileID: 0}
-  <CharacterHistory>k__BackingField: []
+  <CharacterModificationHistory>k__BackingField:
+  - CharacterPreviewSprite: {fileID: 0}
+    CharacterPieceIndexes: 0400000002000000780000008100000000000000
+  - CharacterPreviewSprite: {fileID: 0}
+    CharacterPieceIndexes: 0000000000000000000000000000000000000000
+  <CharacterSaveHistory>k__BackingField: []
