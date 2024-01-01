@@ -28,6 +28,11 @@ public class SetupMessage : MonoBehaviour
         textFrames[3] = titleText.text + "...";
 
         anim = GetComponent<Animator>();
+
+        if (CharacterPieceGrabber.AllCharacterPiecesLoaded)
+            titleText.enabled = false;
+        else
+            titleText.enabled = true;
     }
 
     private void OnEnable()

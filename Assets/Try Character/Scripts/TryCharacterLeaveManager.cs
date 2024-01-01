@@ -6,13 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class TryCharacterLeaveManager : MonoBehaviour
 {
-    public static event EventHandler OnBeforeSceneChanged;
+    public static event EventHandler<float> OnBeforeSceneChanged;
+
+    bool switchingScenes = false;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !switchingScenes)
         {
-            OnBeforeSceneChanged?.Invoke(this, EventArgs.Empty);
-            SceneManager.LoadScene(0);
+            switchingScenes = true;
+            StartCoroutine(Delay());
+            IEnumerator Delay()
+            {
+                OnBeforeSceneChanged?.Invoke(this, 0.5f);
+                yield return new WaitForSeconds(0.5f);
+                SceneManager.LoadScene(0);
+            }
         }
     }
 }

@@ -24,6 +24,10 @@ public class CharacterDropdownManager : MonoBehaviour
 
     public bool CanRecreateCharacter = true;
 
+    [Space]
+
+    [SerializeField] Transform topPOS;
+
     public static event EventHandler OnBeforeCharacterRecreated;
     public static event EventHandler OnAfterCharacterRecreated;
 
@@ -32,6 +36,13 @@ public class CharacterDropdownManager : MonoBehaviour
         Instance = this;
 
         CharacterPieceGrabber.OnAllCharacterPiecesLoaded += CharacterPieceGrabber_OnAllCharacterPiecesLoaded;
+
+        TryCharacterButtonManager.MoveAllUIOffScreen += TryCharacterButtonManager_MoveAllUIOffScreen;
+    }
+
+    private void TryCharacterButtonManager_MoveAllUIOffScreen(object sender, float time)
+    {
+        LeanTween.moveY(gameObject, topPOS.position.y, time);
     }
 
     public void OnDropdownUpdated()
@@ -142,6 +153,8 @@ public class CharacterDropdownManager : MonoBehaviour
     private void OnDestroy()
     {
         CharacterPieceGrabber.OnAllCharacterPiecesLoaded -= CharacterPieceGrabber_OnAllCharacterPiecesLoaded;
+
+        TryCharacterButtonManager.MoveAllUIOffScreen -= TryCharacterButtonManager_MoveAllUIOffScreen;
 
         if (characterPieceDatabase != null)
             characterPieceDatabase.OnActiveCharacterTypeChanged -= CharacterPieceDatabase_OnActiveCharacterTypeChanged;

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterPreviewAnimationManager : MonoBehaviour
 {
@@ -25,10 +26,15 @@ public class CharacterPreviewAnimationManager : MonoBehaviour
 
     public event EventHandler<CharacterPreviewAnimationSetSO> OnAnimationChanged;
 
-    //private void Start()
-    //{
-    //    SetCharacterAnimation(defaultCharacterAnimation);
-    //}
+    private void Start()
+    {
+        TryCharacterButtonManager.MoveAllUIOffScreen += TryCharacterButtonManager_MoveAllUIOffScreen;
+    }
+
+    private void TryCharacterButtonManager_MoveAllUIOffScreen(object sender, float time)
+    {
+        LeanTween.scale(gameObject, Vector2.zero, time);
+    }
 
     public void SetCharacterAnimation(CharacterPreviewAnimationSetSO newAnimation)
     {
@@ -47,5 +53,10 @@ public class CharacterPreviewAnimationManager : MonoBehaviour
         characterLeftGO.SetActive(characterLeftAnimator.runtimeAnimatorController != null);
 
         OnAnimationChanged?.Invoke(this, CurrentCharacterAnimation);
+    }
+
+    private void OnDestroy()
+    {
+        TryCharacterButtonManager.MoveAllUIOffScreen -= TryCharacterButtonManager_MoveAllUIOffScreen;
     }
 }

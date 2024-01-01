@@ -28,9 +28,25 @@ public class TabManager : MonoBehaviour
 
     [SerializeField] GameObject defaultTab;
 
+    [Space]
+
+    [SerializeField] Transform bottomPOS;
+
     private void Start()
     {
         if (defaultTab != null)
             ActiveTab = defaultTab;
+
+        TryCharacterButtonManager.MoveAllUIOffScreen += TryCharacterButtonManager_MoveAllUIOffScreen;
+    }
+
+    private void TryCharacterButtonManager_MoveAllUIOffScreen(object sender, float time)
+    {
+        LeanTween.moveY(gameObject, bottomPOS.position.y, time);
+    }
+
+    private void OnDestroy()
+    {
+        TryCharacterButtonManager.MoveAllUIOffScreen -= TryCharacterButtonManager_MoveAllUIOffScreen;
     }
 }

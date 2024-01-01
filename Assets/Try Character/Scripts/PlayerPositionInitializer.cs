@@ -21,8 +21,10 @@ public class PlayerPositionInitializer : MonoBehaviour
         TryCharacterLeaveManager.OnBeforeSceneChanged += TryCharacterLeaveManager_OnBeforeSceneChanged;
     }
 
-    private void TryCharacterLeaveManager_OnBeforeSceneChanged(object sender, System.EventArgs e)
+    private void TryCharacterLeaveManager_OnBeforeSceneChanged(object sender, float time)
     {
+        characterMovementController.CanMove = false;
+
         savedPosition = transform.position;
 
         float horizontal = animator.GetFloat("Horizontal");
