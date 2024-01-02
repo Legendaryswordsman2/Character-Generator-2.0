@@ -140,7 +140,7 @@ public class CharacterDropdownManager : MonoBehaviour
     {
         for (int i = 0; i < dropdowns.Length; i++)
         {
-            if (dropdowns[i].CharacterPiece.CanRandomize && dropdowns[i].CharacterPiece.Sprites.Count > 0)
+            if (dropdowns[i].gameObject.activeSelf && dropdowns[i].CharacterPiece.CanRandomize && dropdowns[i].CharacterPiece.Sprites.Count > 0)
                 dropdowns[i].Dropdown.value = UnityEngine.Random.Range(0, dropdowns[i].CharacterPiece.Sprites.Count);
         }
     }
