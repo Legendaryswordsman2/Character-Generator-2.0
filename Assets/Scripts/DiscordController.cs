@@ -14,22 +14,21 @@ public class DiscordController : MonoBehaviour
 
     [SerializeField] long applicationID;
 
-    [Space]
-
-    //[SerializeField] string details;
-    [SerializeField] string state;
-
-    //[Space]
+    long startTime;
 
     private void Awake()
     {
         try
         {
+            startTime = System.DateTimeOffset.Now.ToUnixTimeMilliseconds();
+
             discord = new Discord.Discord(applicationID, (ulong)Discord.CreateFlags.NoRequireDiscord);
             userManager = discord.GetUserManager();
             userManager.OnCurrentUserUpdate += UserManager_OnCurrentUserUpdate;
 
             StartCoroutine(UpdateDiscordActivity());
+
+            SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
         }
         catch
         {
@@ -38,10 +37,26 @@ public class DiscordController : MonoBehaviour
         }
     }
 
+    private void SceneManager_activeSceneChanged(Scene arg0, Scene arg1)
+    {
+        StartCoroutine(UpdateDiscordActivity());
+    }
 
     IEnumerator UpdateDiscordActivity()
     {
         var activityManager = discord.GetActivityManager();
+
+        string state = null;
+
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 0:
+                state = "Making Characters";
+                break;
+            case 1:
+                state = "Trying Characters";
+                break;
+        }
 
         Discord.Activity activity;
         activity = new Discord.Activity
@@ -55,7 +70,7 @@ public class DiscordController : MonoBehaviour
 
             Timestamps =
             {
-                Start = System.DateTimeOffset.Now.ToUnixTimeMilliseconds()
+                Start = startTime
             }
         };
 
@@ -97,6 +112,7 @@ public class DiscordController : MonoBehaviour
     private void OnDestroy()
     {
         userManager.OnCurrentUserUpdate -= UserManager_OnCurrentUserUpdate;
+        SceneManager.activeSceneChanged -= SceneManager_activeSceneChanged;
 
 #if UNITY_EDITOR
         discord?.Dispose();
