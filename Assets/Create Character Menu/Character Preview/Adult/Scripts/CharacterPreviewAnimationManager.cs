@@ -26,6 +26,13 @@ public class CharacterPreviewAnimationManager : MonoBehaviour
 
     public event EventHandler<CharacterPreviewAnimationSetSO> OnAnimationChanged;
 
+    CanvasGroup canvasGroup;
+
+    private void Awake()
+    {
+        canvasGroup = GetComponent<CanvasGroup>();
+    }
+
     private void Start()
     {
         TryCharacterButtonManager.MoveAllUIOffScreen += TryCharacterButtonManager_MoveAllUIOffScreen;
@@ -34,6 +41,7 @@ public class CharacterPreviewAnimationManager : MonoBehaviour
     private void TryCharacterButtonManager_MoveAllUIOffScreen(object sender, float time)
     {
         LeanTween.scale(gameObject, Vector2.zero, time);
+        LeanTween.alphaCanvas(canvasGroup, 0, time / 2);
     }
 
     public void SetCharacterAnimation(CharacterPreviewAnimationSetSO newAnimation)

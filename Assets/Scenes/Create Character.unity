@@ -1138,6 +1138,7 @@ GameObject:
   - component: {fileID: 180747903}
   - component: {fileID: 180747904}
   - component: {fileID: 180747905}
+  - component: {fileID: 180747906}
   m_Layer: 5
   m_Name: Character Previews
   m_TagString: Untagged
@@ -1214,6 +1215,18 @@ MonoBehaviour:
   characterDownGO: {fileID: 1785486370}
   characterUpGO: {fileID: 520589997}
   characterLeftGO: {fileID: 290207673}
+--- !u!225 &180747906
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180747902}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &213255438
 GameObject:
   m_ObjectHideFlags: 0

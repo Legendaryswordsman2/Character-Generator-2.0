@@ -12,10 +12,10 @@ public class HotkeyManager : MonoBehaviour
     {
         if (!CharacterPieceGrabber.AllCharacterPiecesLoaded) return;
 
-        if (Input.GetKeyDown(KeyCode.S) && !saveCharacterManager.gameObject.activeSelf)
+        if (Input.GetKeyDown(KeyCode.S) && !saveCharacterManager.gameObject.activeSelf && !infoMenuManager.gameObject.activeSelf)
             saveCharacterManager.OpenPopup();
 
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) && !saveCharacterManager.gameObject.activeSelf)
         {
             if (infoMenuManager.gameObject.activeSelf)
                 infoMenuManager.CloseMenu();
