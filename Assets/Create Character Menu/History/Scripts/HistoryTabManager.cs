@@ -41,6 +41,27 @@ public class HistoryTabManager : MonoBehaviour
     {
         if (!canTrackHistory) return;
 
+        bool canContinue = false;
+        if (characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory.Count < 1)
+            canContinue = true;
+        else
+        {
+            for (int i = 0; i < characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory[0].CharacterPieceIndexes.Length; i++)
+            {
+                if (characterPieceDatabase.ActiveCharacterType.CharacterSaveHistory[0].CharacterPieceIndexes[i] != characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].DropdownIndex)
+                {
+                    canContinue = true;
+                    break;
+                }
+            }
+        }
+
+        if (!canContinue)
+        {
+            RefreshCharacterList();
+            return;
+        }
+
         Sprite newSprite = SpriteManager.ConvertTextureToSprite(SpriteManager.ExtractTextureRegion(characterPieceDatabase.ActiveCharacterType.CharacterPreviewSpritesheet.texture, 48, 0, 16, 32));
 
         int[] characterPieceIndexes = new int[characterPieceDatabase.ActiveCharacterType.CharacterPieces.Length];

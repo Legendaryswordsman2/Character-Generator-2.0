@@ -10,6 +10,8 @@ public class HotkeyManager : MonoBehaviour
 
     private void Update()
     {
+        if (!CharacterPieceGrabber.AllCharacterPiecesLoaded) return;
+
         if (Input.GetKeyDown(KeyCode.S) && !saveCharacterManager.gameObject.activeSelf)
             saveCharacterManager.OpenPopup();
 
