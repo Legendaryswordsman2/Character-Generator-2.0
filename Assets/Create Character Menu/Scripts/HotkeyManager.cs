@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class HotkeyManager : MonoBehaviour
 {
@@ -23,7 +25,7 @@ public class HotkeyManager : MonoBehaviour
                 infoMenuManager.OpenMenu();
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && !saveCharacterManager.gameObject.activeSelf && !infoMenuManager.gameObject.activeSelf)
             randomizeButton.RandomizeCharacter();
     }
 }
