@@ -39,13 +39,19 @@ public class OpenFileLocationButton : MonoBehaviour, IPointerEnterHandler, IPoin
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (Directory.Exists(Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.SavedCharactersFolderName))
+        try
         {
-            //Debug.Log($"Opened file explorer to '{CharacterPieceDatabase.SavedCharactersFolderName}' folder");
+            if (!Directory.Exists(Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.SavedCharactersFolderName))
+                Directory.CreateDirectory(Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.SavedCharactersFolderName);
+
             Application.OpenURL(Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.SavedCharactersFolderName);
         }
-        else
-            Debug.LogWarning($"Cannot open file explorer to '{CharacterPieceDatabase.SavedCharactersFolderName}' folder because that folder does not exist");
+        catch (System.Exception exception)
+        {
+            Debug.LogWarning($"Cannot open file explorer to '{CharacterPieceDatabase.SavedCharactersFolderName}': {exception}");
+        }
+
+        //Debug.LogWarning($"Cannot open file explorer to '{CharacterPieceDatabase.SavedCharactersFolderName}' folder because that folder does not exist");
     }
 
     public void OnPointerDown(PointerEventData eventData)
