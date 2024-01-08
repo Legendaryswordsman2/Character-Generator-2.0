@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class NPCSpawner : MonoBehaviour
 {
+    public static NPCSpawner Instance;
+
     [SerializeField] float minSpawnDelay = 8;
     [SerializeField] float maxSpawnDelay = 10;
 
@@ -14,7 +16,16 @@ public class NPCSpawner : MonoBehaviour
 
     [Space]
 
+    [SerializeField] RuntimeAnimatorController[] npcVariants;
+
+    [Space]
+
     [SerializeField] NPC npcPrefab;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -31,6 +42,11 @@ public class NPCSpawner : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
 
         StartCoroutine(SpawnRoutine(spawnPoint));
+    }
+
+    public RuntimeAnimatorController GetNPCVariant()
+    {
+        return npcVariants[Random.Range(0, npcVariants.Length)];
     }
 
     [System.Serializable]

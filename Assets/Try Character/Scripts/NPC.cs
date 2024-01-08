@@ -7,6 +7,13 @@ public class NPC : MonoBehaviour
 {
     [SerializeField] AIPath aiPath;
     [SerializeField] AIDestinationSetter destinationSetter;
+    [SerializeField] Animator animator;
+
+    private void Start()
+    {
+        animator.runtimeAnimatorController = NPCSpawner.Instance.GetNPCVariant();
+    }
+
     public void SetEndDestination(Transform endTarget)
     {
         destinationSetter.target = endTarget;
