@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CharacterMovementController : MonoBehaviour
 {
+    public static CharacterMovementController Instance;
+
     [field: SerializeField] public float MoveSpeed { get; set; } = 6.5f;
 
     [SerializeField] bool canMove = true;
@@ -16,6 +18,8 @@ public class CharacterMovementController : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
+
         rb = GetComponent<Rigidbody2D>();
     }
 

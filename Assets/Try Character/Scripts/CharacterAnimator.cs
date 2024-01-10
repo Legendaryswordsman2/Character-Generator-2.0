@@ -5,12 +5,16 @@ using UnityEngine;
 public enum LookDirection { Up, Down, Left, Right }
 public class CharacterAnimator : MonoBehaviour
 {
+    public static CharacterAnimator Instance;
+
     [SerializeField] CharacterMovementController playerMovement;
 
     Animator anim;
 
     private void Awake()
     {
+        Instance = this;
+
         anim = GetComponent<Animator>();
 
         if (playerMovement == null)
@@ -47,6 +51,16 @@ public class CharacterAnimator : MonoBehaviour
                 anim.SetFloat("Vertical", 0);
                 break;
         }
+    }
+
+    public void PlayAnimation(string name)
+    {
+        anim.Play(name);
+    }
+
+    public void SetTrigger(string name)
+    {
+        anim.SetTrigger(name);
     }
 
     private void Update()
