@@ -9,6 +9,7 @@ public class HotkeyManager : MonoBehaviour
     [SerializeField] SaveCharacterManager saveCharacterManager;
     [SerializeField] InfoMenuManager infoMenuManager;
     [SerializeField] RandomizeButton randomizeButton;
+    [SerializeField] TryCharacterButtonManager tryCharacterButtonManager;
 
     private void Update()
     {
@@ -27,5 +28,8 @@ public class HotkeyManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && !saveCharacterManager.gameObject.activeSelf && !infoMenuManager.gameObject.activeSelf)
             randomizeButton.RandomizeCharacter();
+
+        if (Input.GetKeyDown(KeyCode.C) && !saveCharacterManager.gameObject.activeSelf && !infoMenuManager.gameObject.activeSelf)
+            tryCharacterButtonManager.LoadTryCharacterScene();
     }
 }

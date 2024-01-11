@@ -15,19 +15,12 @@ public class TryCharacterButtonManager : MonoBehaviour
 
     public static event EventHandler<float> MoveAllUIOffScreen;
     public static event EventHandler<float> ZoomBackground;
-    public void LoadTryCharacterScene()
+    public async void LoadTryCharacterScene()
     {
-        StartCoroutine(Delay());
-        IEnumerator Delay()
-        {
-            //OnBeforeTryCharacterSceneLoaded?.Invoke(this, delayBeforeTransition);
-
-            MoveAllUIOffScreen?.Invoke(this, moveAllUIOffScreenTime);
-            yield return new WaitForSeconds(moveAllUIOffScreenTime);
-            ZoomBackground?.Invoke(this, zoomBackgroundTime);
-            yield return new WaitForSeconds(zoomBackgroundTime);
-            SceneManager.LoadScene(1);
-        }
-
+        MoveAllUIOffScreen?.Invoke(this, moveAllUIOffScreenTime);
+        await UniTask.WaitForSeconds(moveAllUIOffScreenTime);
+        ZoomBackground?.Invoke(this, zoomBackgroundTime);
+        await UniTask.WaitForSeconds(zoomBackgroundTime);
+        SceneManager.LoadScene(1);
     }
 }

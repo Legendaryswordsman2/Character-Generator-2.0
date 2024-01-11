@@ -3,11 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SetupMessage : MonoBehaviour
 {
     [SerializeField] TMP_Text titleText;
     [SerializeField] TMP_Text detailsText;
+
+    [Space]
+
+    [SerializeField] Slider progressBar;
 
     string[] textFrames = new string[4];
 
@@ -30,9 +35,16 @@ public class SetupMessage : MonoBehaviour
         anim = GetComponent<Animator>();
 
         if (CharacterPieceGrabber.AllCharacterPiecesLoaded)
+        {
             titleText.enabled = false;
+            progressBar.gameObject.SetActive(false);
+        }
         else
+        {
             titleText.enabled = true;
+            progressBar.value = 0;
+            progressBar.gameObject.SetActive(true);
+        }
     }
 
     private void OnEnable()
@@ -45,6 +57,9 @@ public class SetupMessage : MonoBehaviour
     private void CharacterPieceGrabber_OnNewSpriteLoaded(object sender, CharacterPieceGrabber.OnNewSpriteLoadedEventArgs e)
     {
         detailsText.text = e.Sprite.name + e.Extention;
+
+        progressBar.maxValue = CharacterPieceGrabber.totalSpritesInBatch;
+        progressBar.value = CharacterPieceGrabber.loadedSpritesFromBatch;
     }
 
     private void OnDisable()
@@ -58,6 +73,7 @@ public class SetupMessage : MonoBehaviour
         isActive = false;
         titleText.text = "";
         detailsText.text = "";
+        progressBar.gameObject.SetActive(false);
         anim.SetTrigger("Trigger");
     }
 

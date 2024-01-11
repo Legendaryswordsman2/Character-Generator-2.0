@@ -43,6 +43,9 @@ public class CharacterPieceGrabber : MonoBehaviour
 
     public static bool AllCharacterPiecesLoaded { get; private set; } = false;
 
+    public static int totalSpritesInBatch;
+    public static int loadedSpritesFromBatch;
+
     private void Awake() => Instance = this;
     private async void Start()
     {
@@ -70,6 +73,7 @@ public class CharacterPieceGrabber : MonoBehaviour
         {
             if (!PerformErrorChecks()) return;
 
+            DateTime startTime = DateTime.Now;
             try
             {
                 foreach (CharacterTypeSO characterType in characterPieceDatabase.CharacterTypes)
@@ -89,7 +93,7 @@ public class CharacterPieceGrabber : MonoBehaviour
                 throw;
             }
 
-            Debug.Log("Successfully loaded all sprites with a total load time of: " + Time.realtimeSinceStartup);
+            Debug.Log("Successfully loaded all sprites with a total load time of: " + (DateTime.Now - startTime).TotalSeconds + " seconds");
             AllCharacterPiecesLoaded = true;
             OnAllCharacterPiecesLoaded?.Invoke(this, EventArgs.Empty);
 
@@ -127,7 +131,12 @@ public class CharacterPieceGrabber : MonoBehaviour
 
             DirectoryInfo d = new(filePath);
 
-            foreach (var file in d.GetFiles("*.png"))
+            FileInfo[] files = d.GetFiles("*.png");
+
+            totalSpritesInBatch = files.Length;
+            loadedSpritesFromBatch = 0;
+
+            foreach (var file in files)
             {
                 // file.FullName is the full path to the file
                 string fileUrl = new Uri(file.FullName).AbsoluteUri;
@@ -259,6 +268,8 @@ public class CharacterPieceGrabber : MonoBehaviour
             sprite.texture.name = fileName;
             sprite.texture.filterMode = FilterMode.Point;
 
+            loadedSpritesFromBatch++;
+
             OnNewSpriteLoaded?.Invoke(this, new OnNewSpriteLoadedEventArgs(sprite, extenion));
 
             return sprite;
@@ -268,7 +279,6 @@ public class CharacterPieceGrabber : MonoBehaviour
     {
         if (!File.Exists(Uri.UnescapeDataString(new Uri(filepath).LocalPath)))
         {
-
             Debug.LogWarning($"Can't find sprite ({fileName}) at: {filepath}");
             LastFailedToGetSpriteName = fileName;
             return null;
@@ -288,6 +298,7 @@ public class CharacterPieceGrabber : MonoBehaviour
             // Get downloaded asset bundle
             Texture2D texture = DownloadHandlerTexture.GetContent(uwr);
 
+            //Sprite sprite = Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 16f);
             Sprite sprite = Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 16f);
 
             sprite.name = fileName;
