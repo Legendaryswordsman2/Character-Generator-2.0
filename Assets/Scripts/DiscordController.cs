@@ -32,7 +32,9 @@ public class DiscordController : MonoBehaviour
         }
         catch
         {
+#if UNITY_EDITOR
             Debug.Log("Unable to connect to discord (Discord is likely not open or installed)");
+#endif
             Destroy(this);
         }
     }
@@ -111,7 +113,9 @@ public class DiscordController : MonoBehaviour
 
     private void OnDestroy()
     {
-        userManager.OnCurrentUserUpdate -= UserManager_OnCurrentUserUpdate;
+        if (userManager != null)
+            userManager.OnCurrentUserUpdate -= UserManager_OnCurrentUserUpdate;
+
         SceneManager.activeSceneChanged -= SceneManager_activeSceneChanged;
 
 #if UNITY_EDITOR
