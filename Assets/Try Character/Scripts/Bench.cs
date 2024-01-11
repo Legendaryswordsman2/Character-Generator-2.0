@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Bench : MonoBehaviour
 {
+    [SerializeField] CharacterTypeSO benchActiveCharacterType;
+
+    [Space]
+
     [SerializeField] Transform sitPOS;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] BoxCollider2D collisionCollider;
@@ -30,11 +34,17 @@ public class Bench : MonoBehaviour
     {
         characterMovementController = CharacterMovementController.Instance;
         characterAnimator = CharacterAnimator.Instance;
+
+        if(CharacterPieceDatabase.Instance.ActiveCharacterType != benchActiveCharacterType)
+        {
+            canvasGroup.gameObject.SetActive(false);
+            enabled = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Player")) return;
+        if (!collision.CompareTag("Player") || !enabled) return;
 
         isInRange = true;
         spriteRenderer.material = outlineMaterial;
@@ -45,7 +55,7 @@ public class Bench : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Player")) return;
+        if (!collision.CompareTag("Player") || !enabled) return;
 
         isInRange = false;
         spriteRenderer.material = defaultMaterial;

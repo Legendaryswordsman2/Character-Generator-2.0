@@ -542,6 +542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7743c0f4dc05fe147876b51a00fcf326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  benchActiveCharacterType: {fileID: 11400000, guid: 0e76e29a3b6ac67499232d23375b5634, type: 2}
   sitPOS: {fileID: 2059738903241561495}
   spriteRenderer: {fileID: 3782765744169348779}
   collisionCollider: {fileID: 8224162437922102909}
