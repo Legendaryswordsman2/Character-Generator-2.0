@@ -21,7 +21,7 @@ public class HotkeyManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I) && !saveCharacterManager.gameObject.activeSelf)
         {
             if (infoMenuManager.gameObject.activeSelf)
-                infoMenuManager.CloseMenu();
+                infoMenuManager.OnCloseMenuCalled();
             else
                 infoMenuManager.OpenMenu();
         }
