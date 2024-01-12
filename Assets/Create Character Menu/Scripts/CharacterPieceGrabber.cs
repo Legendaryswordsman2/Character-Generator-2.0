@@ -174,6 +174,9 @@ public class CharacterPieceGrabber : MonoBehaviour
         int.Parse(Regex.Match(f.Name, @"\d+").Value)
     );
 
+        totalSpritesInBatch = pngFiles.Count();
+        loadedSpritesFromBatch = 0;
+
         foreach (var file in pngFiles)
         {
             // file.FullName is the full path to the file
