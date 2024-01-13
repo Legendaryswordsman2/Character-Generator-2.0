@@ -7684,7 +7684,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'To the left of the character tab you can select the character type, the
     default is adult. The second option is a child. Children contain all the same
-    character peices an adult has except accessories.
+    character pieces an adult has except accessories.
 
 
     To the right of the tab
@@ -12981,8 +12981,8 @@ MonoBehaviour:
 
 
     Once saved, you''ll be shown statistics about how many characters
-    have been created and a button will be shown which when clicked will show you
-    where your character was saved.'
+    have been created and a button will be shown which when clicked will show where
+    your character was saved.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d48c442ac2c0a92499d19fe7b5740d5f, type: 2}
   m_sharedMaterial: {fileID: -3041312605146793814, guid: d48c442ac2c0a92499d19fe7b5740d5f, type: 2}
@@ -17065,7 +17065,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'At the top of the screen are dropdowns. Each dropdown allows you to modify
-    a different part of the character (Body, Eyes, Outfit, etc)
+    a different part of the character (Body, Eyes, Outfit, Etc).
 
 
     In the middle
@@ -17615,7 +17615,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Page 4 - Animation tab
+  m_text: Page 4 - Animation Tab
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3190c2dc25d1d1f459436292e357087d, type: 2}
   m_sharedMaterial: {fileID: -7744078375417507747, guid: 3190c2dc25d1d1f459436292e357087d, type: 2}
@@ -17829,7 +17829,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Page 2 - Familiarize yourself
+  m_text: Page 2 - Familiarize Yourself
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3190c2dc25d1d1f459436292e357087d, type: 2}
   m_sharedMaterial: {fileID: -7744078375417507747, guid: 3190c2dc25d1d1f459436292e357087d, type: 2}
@@ -18574,14 +18574,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'This tab contains a list of the last 30 character modifications and saved
-    characters. The default view shows your previous character edits. Everytime you
-    change any peice of your character it will be logged here. Clicking on any previous
-    character will revert your character to that version
+    characters. The default view shows your previous character edits. Every time
+    you change any piece of your character it will be logged here. Clicking on any
+    previous character will revert your character to that version.
 
 
-    At the bottom of the
-    tab  you can change the view mode, the "Modifications" mode is the default mode
-    which was previously explained. The "Saved" mode shows you your last 30 saved
+    At the bottom
+    of the tab  you can change the view mode, the "Modifications" mode is the default
+    mode which was previously explained. The "Saved" mode shows your last 30 saved
     characters.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d48c442ac2c0a92499d19fe7b5740d5f, type: 2}
@@ -18723,7 +18723,7 @@ MonoBehaviour:
     - Open Save Popup: ''S''
 
     -
-    Open Info popup: ''I''
+    Open Info Popup: ''I''
 
     - Randomize Character: ''R''
 
