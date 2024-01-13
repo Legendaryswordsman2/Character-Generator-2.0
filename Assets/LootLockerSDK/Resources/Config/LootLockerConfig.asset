@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: LootLockerConfig
   m_EditorClassIdentifier: 
   apiKey: prod_90d9b8ef577947e5b6f093c2560de3d7
-  token: 4a7b312e9bb3d73f31c9ef93e1b4752271b7112b
+  token: 14607651a75fac15f4f7c174b442f239b5d18d7e
   adminToken: 
   refreshToken: 
   domainKey: 
   gameID: 0
-  game_version: 1.0.0
+  game_version: 2.0
   sdk_version: 
   deviceID: 0ff2b3fe-1365-41b3-94af-11f19f82e0a2
   url: https://api.lootlocker.io/v1

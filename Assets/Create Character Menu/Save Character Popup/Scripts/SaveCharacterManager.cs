@@ -151,13 +151,13 @@ public class SaveCharacterManager : MonoBehaviour
 
         byte[] bytes = texture.EncodeToPNG();
 
-        if (!Directory.Exists(Directory.GetCurrentDirectory() + "/Saved Characters"))
-            Directory.CreateDirectory(Directory.GetCurrentDirectory() + "/Saved Characters");
+        if (!Directory.Exists(CharacterPieceDatabase.SavedCharactersDirectory))
+            Directory.CreateDirectory(CharacterPieceDatabase.SavedCharactersDirectory);
 
         if (fileNameInputField.text == "")
             fileNameInputField.text = "Unnamed Character";
 
-        File.WriteAllBytes(Directory.GetCurrentDirectory() + "/Saved Characters/" + fileNameInputField.text + ".png", bytes);
+        File.WriteAllBytes(CharacterPieceDatabase.SavedCharactersDirectory + "/" + fileNameInputField.text + ".png", bytes);
 
         if (LootlockerAuthenticationManager.LoggedIn)
         {

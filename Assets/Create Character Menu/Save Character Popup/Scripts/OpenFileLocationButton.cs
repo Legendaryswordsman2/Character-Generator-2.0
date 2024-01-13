@@ -41,10 +41,10 @@ public class OpenFileLocationButton : MonoBehaviour, IPointerEnterHandler, IPoin
     {
         try
         {
-            if (!Directory.Exists(Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.SavedCharactersFolderName))
-                Directory.CreateDirectory(Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.SavedCharactersFolderName);
+            if (!Directory.Exists(CharacterPieceDatabase.SavedCharactersDirectory))
+                Directory.CreateDirectory(CharacterPieceDatabase.SavedCharactersDirectory);
 
-            Application.OpenURL(Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.SavedCharactersFolderName);
+            Application.OpenURL(CharacterPieceDatabase.SavedCharactersDirectory);
         }
         catch (System.Exception exception)
         {

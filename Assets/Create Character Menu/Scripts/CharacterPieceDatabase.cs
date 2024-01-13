@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,11 +17,15 @@ public class CharacterPieceDatabase : MonoBehaviour
 
     public const string CharacterPiecesFolderName = "Character Pieces";
     public const string SavedCharactersFolderName = "Saved Characters";
+    public static string SavedCharactersDirectory { get; private set; }
 
     public event EventHandler<CharacterTypeSO> OnActiveCharacterTypeChanged;
 
     private void Awake()
     {
+        SavedCharactersDirectory = Application.persistentDataPath + "/" + SavedCharactersFolderName;
+        //SavedCharactersDirectory = Directory.GetCurrentDirectory() + "/" + SavedCharactersFolderName;
+
         foreach (CharacterTypeSO characterType in CharacterTypes)
         {
             characterType.Init();
