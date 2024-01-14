@@ -56,7 +56,7 @@ public class DiscordController : MonoBehaviour
                 state = "Making Characters";
                 break;
             case 1:
-                state = "Trying Characters";
+                state = "Exploring a Simulated World";
                 break;
         }
 
