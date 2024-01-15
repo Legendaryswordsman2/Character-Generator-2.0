@@ -54,12 +54,12 @@ public class LootlockerAuthenticationManager : MonoBehaviour
         bool done = false;
         LootLockerSDKManager.SetPlayerName(newName, (response) =>
         {
-            if (response.success)
-            {
-                Debug.Log("Successfuly set player name: " + newName);
-            }
-            else
-                Debug.Log("Failed to set player name: " + response.errorData.message);
+            //if (response.success)
+            //{
+            //    Debug.Log("Successfuly set player name: " + newName);
+            //}
+            //else
+                //Debug.Log("Failed to set player name: " + response.errorData.message);
 
             done = true;
         });

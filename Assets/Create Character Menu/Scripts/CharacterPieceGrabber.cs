@@ -93,7 +93,7 @@ public class CharacterPieceGrabber : MonoBehaviour
                 throw;
             }
 
-            Debug.Log("Successfully loaded all sprites with a total load time of: " + (DateTime.Now - startTime).TotalSeconds + " seconds");
+            //Debug.Log("Successfully loaded all sprites with a total load time of: " + (DateTime.Now - startTime).TotalSeconds + " seconds");
             AllCharacterPiecesLoaded = true;
             OnAllCharacterPiecesLoaded?.Invoke(this, EventArgs.Empty);
 
