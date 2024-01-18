@@ -175,8 +175,8 @@ public class SaveCharacterManager : MonoBehaviour
         }
         else
         {
-            personalStatsText.text = "(Offline) Can't load personal stats";
-            globalStatsText.text = "(Offline) Can't load global stats";
+            personalStatsText.text = "(Offline) Can't load personal stats.";
+            globalStatsText.text = "(Offline) Can't load global stats.";
 
             savingCharacter = false;
 
