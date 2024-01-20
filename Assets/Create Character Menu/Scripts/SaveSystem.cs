@@ -9,13 +9,11 @@ public class SaveSystem
     const string extention = ".json";
     public static void SaveFile<T>(string filePath, string fileName, T objectToWrite)
     {
-        string json;
-        //if (useNewSaveSystem)
-        json = JsonConvert.SerializeObject(objectToWrite);
-        //else
-        //    json = JsonUtility.ToJson(objectToWrite);
+        string json = JsonConvert.SerializeObject(objectToWrite);
 
-        File.WriteAllTextAsync(Application.persistentDataPath + "/" + filePath + "/" + fileName + extention, json);
+        Path.Combine(Application.persistentDataPath, filePath, fileName + extention);
+
+        File.WriteAllTextAsync(Path.Combine(Application.persistentDataPath, filePath, fileName + extention), json);
     }
 
     public static T LoadFile<T>(string filePath)

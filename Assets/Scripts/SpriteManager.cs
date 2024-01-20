@@ -147,9 +147,11 @@ public class SpriteManager : MonoBehaviour
 
         byte[] bytes = texture.EncodeToPNG();
 
-        if (!Directory.Exists(Application.persistentDataPath + "/" + filePath))
-            Directory.CreateDirectory(Application.persistentDataPath + "/" + filePath);
+        string path = Path.Combine(Application.persistentDataPath, filePath);
 
-        File.WriteAllBytes(Application.persistentDataPath + "/" + filePath + "/" + fileName + ".png", bytes);
+        if (!Directory.Exists(path))
+            Directory.CreateDirectory(path);
+
+        File.WriteAllBytes(Path.Combine(path, fileName + ".png"), bytes);
     }
 }

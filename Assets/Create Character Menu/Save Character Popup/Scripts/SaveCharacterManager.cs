@@ -157,7 +157,7 @@ public class SaveCharacterManager : MonoBehaviour
         if (fileNameInputField.text == "")
             fileNameInputField.text = "Unnamed Character";
 
-        File.WriteAllBytes(CharacterPieceDatabase.SavedCharactersDirectory + "/" + fileNameInputField.text + ".png", bytes);
+        File.WriteAllBytes(Path.Combine(CharacterPieceDatabase.SavedCharactersDirectory, fileNameInputField.text + ".png"), bytes);
 
         if (LootlockerAuthenticationManager.LoggedIn)
         {

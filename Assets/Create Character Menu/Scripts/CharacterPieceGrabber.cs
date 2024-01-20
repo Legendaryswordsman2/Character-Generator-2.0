@@ -106,9 +106,10 @@ public class CharacterPieceGrabber : MonoBehaviour
 
     bool PerformErrorChecks()
     {
-        if (!Directory.Exists(Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.CharacterPiecesFolderName))
+        string characterPiecesDirectory = Path.Combine(Directory.GetCurrentDirectory(), CharacterPieceDatabase.CharacterPiecesFolderName);
+        if (!Directory.Exists(characterPiecesDirectory))
         {
-            Debug.LogError("Directory does not exist: " + Directory.GetCurrentDirectory() + "/" + CharacterPieceDatabase.CharacterPiecesFolderName);
+            Debug.LogError("Directory does not exist: " + characterPiecesDirectory);
             OnFailedToLoadCharacterPieces?.Invoke(this, LoadFailedType.DirectoryMissing);
             return false;
         }
