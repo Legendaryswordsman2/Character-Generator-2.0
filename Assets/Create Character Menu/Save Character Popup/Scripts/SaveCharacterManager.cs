@@ -32,6 +32,7 @@ public class SaveCharacterManager : MonoBehaviour
     [SerializeField] TMP_Dropdown sizeDropdown;
     [SerializeField] TMP_Dropdown animationDropdown;
     [SerializeField] AnimationDataDropdown animationDataDropdown;
+    [SerializeField] TMP_InputField paddingInputField;
     [SerializeField] Button saveCharacterButton;
 
     [Space]
@@ -162,6 +163,12 @@ public class SaveCharacterManager : MonoBehaviour
         }
 
         //finalTexture = SpriteManager.ExtractTextureRegion(finalTexture, 0, 32, 383, 32);
+
+        if (int.TryParse(paddingInputField.text, out int padding) && padding > 0)
+        {
+            int characterSize = GetCurrentSizeFromDropdown();
+            finalTexture = SpriteManager.AddPaddingToTexture(finalTexture, padding, characterSize);
+        }
 
         SaveCharacterToFile(finalTexture);
         UpdateScores();
@@ -411,6 +418,21 @@ public class SaveCharacterManager : MonoBehaviour
                 return "48x48";
             default:
                 return "";
+        }
+    }
+
+    int GetCurrentSizeFromDropdown()
+    {
+        switch (sizeDropdown.value)
+        {
+            case 0:
+                return 16;
+            case 1:
+                return 32;
+            case 2:
+                return 48;
+            default:
+                return 0;
         }
     }
 
