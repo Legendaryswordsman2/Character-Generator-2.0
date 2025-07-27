@@ -154,4 +154,44 @@ public class SpriteManager : MonoBehaviour
 
         File.WriteAllBytes(Path.Combine(path, fileName + ".png"), bytes);
     }
+
+
+    public static Texture2D AddPaddingToTexture(Texture2D texture, int padding, int characterSize)
+    {
+        int verticalSize = characterSize * 2;
+        int rows = texture.height / verticalSize;
+        int columns = texture.width / characterSize;
+        int newWidth = texture.width + (columns-1) * padding;
+        int newHeight = texture.height + (rows-1) * padding;
+        var paddedTexture = new Texture2D(newWidth, newHeight)
+        {
+            filterMode = FilterMode.Point,
+            wrapMode = TextureWrapMode.Clamp
+        };
+        paddedTexture.SetPixels32(new Color32[newWidth * newHeight]);
+
+        for (int y = 0; y < rows; y++)
+        {
+            int sourceY = y * verticalSize;
+            int destinationX = 0;
+            int destinationY = y * (verticalSize + padding);
+
+            for (int x = 0; x < columns; x++)
+            {
+                int sourceX = x * characterSize;
+                var pixels = texture.GetPixels(sourceX, sourceY, characterSize, verticalSize);
+                paddedTexture.SetPixels(destinationX, destinationY, characterSize, verticalSize, pixels);
+
+                // This exception is to keep the shopping cart from getting split from padding
+                if (y == 11 && x >= 24 && x % 2 == 0)
+                    destinationX += characterSize;
+                else
+                    destinationX += characterSize + padding;
+            }
+        }
+
+        paddedTexture.Apply();
+
+        return paddedTexture;
+    }
 }
