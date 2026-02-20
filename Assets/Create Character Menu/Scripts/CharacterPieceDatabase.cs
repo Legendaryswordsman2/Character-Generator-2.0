@@ -45,20 +45,43 @@ public class CharacterPieceDatabase : MonoBehaviour
             return true;
         }
 
-        string[] candidatePaths = new[]
+        var candidatePaths = new List<string>
         {
             Path.Combine(Directory.GetCurrentDirectory(), CharacterPiecesFolderName),
             Path.Combine(Application.dataPath, CharacterPiecesFolderName),
             Path.Combine(Application.dataPath, "Create Character Menu", CharacterPiecesFolderName),
             Path.Combine(Application.streamingAssetsPath, CharacterPiecesFolderName),
+            Path.Combine(Application.persistentDataPath, CharacterPiecesFolderName),
         };
 
+        // In player builds (especially macOS .app), Data is inside the app bundle.
+        // Add parent locations so "Character Pieces" can live next to the app or inside Contents.
+        string dataParent = Path.GetDirectoryName(Application.dataPath);
+        if (!string.IsNullOrWhiteSpace(dataParent))
+        {
+            candidatePaths.Add(Path.Combine(dataParent, CharacterPiecesFolderName));
+
+            string contentsParent = Path.GetDirectoryName(dataParent);
+            if (!string.IsNullOrWhiteSpace(contentsParent))
+            {
+                candidatePaths.Add(Path.Combine(contentsParent, CharacterPiecesFolderName));
+            }
+        }
+
+        var checkedPaths = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         foreach (string candidatePath in candidatePaths)
         {
-            if (Directory.Exists(candidatePath))
+            if (string.IsNullOrWhiteSpace(candidatePath))
+                continue;
+
+            string normalizedPath = Path.GetFullPath(candidatePath);
+            if (!checkedPaths.Add(normalizedPath))
+                continue;
+
+            if (Directory.Exists(normalizedPath))
             {
-                CharacterPiecesDirectory = candidatePath;
-                resolvedPath = candidatePath;
+                CharacterPiecesDirectory = normalizedPath;
+                resolvedPath = normalizedPath;
                 return true;
             }
         }

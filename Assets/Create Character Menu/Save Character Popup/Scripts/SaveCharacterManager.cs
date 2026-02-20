@@ -21,6 +21,8 @@ public class SaveCharacterManager : MonoBehaviour
 
     [SerializeField] TMP_Text personalStatsText;
     [SerializeField] TMP_Text globalStatsText;
+    [SerializeField] GameObject optionalStatusContainer;
+    [SerializeField] TMP_Text optionalStatusText;
 
     [Space]
 
@@ -47,6 +49,14 @@ public class SaveCharacterManager : MonoBehaviour
     int charactersGeneratedPersonal;
     int charactersGeneratedGlobal;
     bool doneGrabbingServerData = false;
+    bool globalLeaderboardConfigured = true;
+    bool personalLeaderboardConfigured = true;
+    bool globalLeaderboardMissingLogged = false;
+    bool personalLeaderboardMissingLogged = false;
+
+    const string GlobalLeaderboardKey = "total_characters_generated";
+    const string PersonalLeaderboardKey = "characters_generated";
+    const string GlobalCounterMemberId = "global_counter";
 
     public static event EventHandler OnBeforeCharacterSaved;
     public static event EventHandler OnAfterCharacterSaved;
@@ -61,6 +71,7 @@ public class SaveCharacterManager : MonoBehaviour
         //characterDropdownManager = CharacterDropdownManager.Instance;
         characterPieceDatabase = CharacterPieceDatabase.Instance;
         characterPieceGrabber = CharacterPieceGrabber.Instance;
+        charactersGeneratedPersonal = GetSavedCharactersCountOnDisk();
     }
     public void OpenPopup()
     {
@@ -71,6 +82,7 @@ public class SaveCharacterManager : MonoBehaviour
 
         saveCharacterContents.SetActive(true);
         characterSavedContents.SetActive(false);
+        SetOptionalStatus(string.Empty);
 
         creatingCharacterOverlay.SetActive(false);
 
@@ -183,14 +195,34 @@ public class SaveCharacterManager : MonoBehaviour
         if (fileNameInputField.text == "")
             fileNameInputField.text = "Unnamed Character";
 
-        File.WriteAllBytes(Path.Combine(CharacterPieceDatabase.SavedCharactersDirectory, fileNameInputField.text + ".png"), bytes);
+        string savedFilePath = Path.Combine(CharacterPieceDatabase.SavedCharactersDirectory, fileNameInputField.text + ".png");
+        File.WriteAllBytes(savedFilePath, bytes);
+        charactersGeneratedPersonal = GetSavedCharactersCountOnDisk();
 
         if (LootlockerAuthenticationManager.LoggedIn)
         {
-            await UniTask.WaitUntil(() => doneGrabbingServerData == true);
+            int completedTask = await UniTask.WhenAny(
+                UniTask.WaitUntil(() => doneGrabbingServerData),
+                UniTask.Delay(2500));
 
             personalStatsText.text = "You've saved " + charactersGeneratedPersonal.ToString("N0") + " character(s) total.";
             globalStatsText.text = charactersGeneratedGlobal.ToString("N0") + " characters have been saved globally.";
+
+            if (completedTask == 0)
+            {
+                if (!personalLeaderboardConfigured && !globalLeaderboardConfigured)
+                    SetOptionalStatus("Optional online stats are not configured.");
+                else if (!personalLeaderboardConfigured)
+                    SetOptionalStatus("Optional personal stats are not configured.");
+                else if (!globalLeaderboardConfigured)
+                    SetOptionalStatus("Optional global stats are not configured.");
+                else
+                    SetOptionalStatus(string.Empty);
+            }
+            else
+            {
+                SetOptionalStatus("Optional online stats sync is taking longer than expected.");
+            }
 
             savingCharacter = false;
 
@@ -201,8 +233,9 @@ public class SaveCharacterManager : MonoBehaviour
         }
         else
         {
-            personalStatsText.text = "(Offline) Can't load personal stats.";
-            globalStatsText.text = "(Offline) Can't load global stats.";
+            personalStatsText.text = "You've saved " + charactersGeneratedPersonal.ToString("N0") + " character(s) total.";
+            globalStatsText.text = charactersGeneratedGlobal.ToString("N0") + " characters have been saved globally.";
+            SetOptionalStatus("Optional online stats are unavailable while offline.");
 
             savingCharacter = false;
 
@@ -219,33 +252,55 @@ public class SaveCharacterManager : MonoBehaviour
 
         if (LootlockerAuthenticationManager.LoggedIn)
         {
-            List<Task> tasks = new()
+            try
             {
-               UpdateGlobalScore(),
-               UpdatePersonalScore()
-            };
+                List<Task> tasks = new()
+                {
+                   UpdateGlobalScore(),
+                   UpdatePersonalScore()
+                };
 
-            await Task.WhenAll(tasks);
-
-            doneGrabbingServerData = true;
+                await Task.WhenAll(tasks);
+            }
+            finally
+            {
+                doneGrabbingServerData = true;
+            }
         }
 
         async Task UpdateGlobalScore()
         {
+            if (!globalLeaderboardConfigured) return;
+
             int score = 0;
 
             bool finished = false;
 
             bool succesful = true;
-            LootLockerSDKManager.GetScoreList("total_characters_generated", 1, 0, (response) =>
+            LootLockerSDKManager.GetScoreList(GlobalLeaderboardKey, 1, 0, (response) =>
             {
                 if (response.success)
                 {
-                    score = response.items[0].score;
+                    if (response.items != null && response.items.Length > 0)
+                        score = response.items[0].score;
+                    else
+                        score = 0;
                 }
                 else
                 {
-                    Debug.LogWarning("Failed to fetch leaderbaord data: " + response.errorData.message);
+                    if (IsLeaderboardMissing(response.errorData?.message))
+                    {
+                        globalLeaderboardConfigured = false;
+                        if (!globalLeaderboardMissingLogged)
+                        {
+                            Debug.LogWarning($"Leaderboard '{GlobalLeaderboardKey}' is not configured in LootLocker. Global stats will be disabled.");
+                            globalLeaderboardMissingLogged = true;
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Failed to fetch leaderboard data: " + response.errorData.message);
+                    }
                     succesful = false;
                 }
 
@@ -259,7 +314,7 @@ public class SaveCharacterManager : MonoBehaviour
             bool done = false;
 
             // Add to global score
-            LootLockerSDKManager.SubmitScore("155", score + 1, "total_characters_generated", (response) =>
+            LootLockerSDKManager.SubmitScore(GlobalCounterMemberId, score + 1, GlobalLeaderboardKey, (response) =>
             {
                 if (response.success)
                 {
@@ -268,7 +323,19 @@ public class SaveCharacterManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Failed" + response.errorData.message);
+                    if (IsLeaderboardMissing(response.errorData?.message))
+                    {
+                        globalLeaderboardConfigured = false;
+                        if (!globalLeaderboardMissingLogged)
+                        {
+                            Debug.LogWarning($"Leaderboard '{GlobalLeaderboardKey}' is not configured in LootLocker. Global stats will be disabled.");
+                            globalLeaderboardMissingLogged = true;
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Unable to upload global score: " + response.errorData.message);
+                    }
                 }
 
                 done = true;
@@ -279,18 +346,32 @@ public class SaveCharacterManager : MonoBehaviour
 
         async Task UpdatePersonalScore()
         {
+            if (!personalLeaderboardConfigured) return;
+
             int score = 0;
 
             bool finished = false;
 
             bool succesful = true;
-            LootLockerSDKManager.GetMemberRank("characters_generated", PlayerPrefs.GetString("PlayerID"), (response) =>
+            LootLockerSDKManager.GetMemberRank(PersonalLeaderboardKey, PlayerPrefs.GetString("PlayerID"), (response) =>
             {
                 if (response.success)
                     score = response.score;
                 else
                 {
-                    Debug.LogWarning("Failed to fetch leaderbaord data: " + response.errorData.message);
+                    if (IsLeaderboardMissing(response.errorData?.message))
+                    {
+                        personalLeaderboardConfigured = false;
+                        if (!personalLeaderboardMissingLogged)
+                        {
+                            Debug.LogWarning($"Leaderboard '{PersonalLeaderboardKey}' is not configured in LootLocker. Personal stats will be disabled.");
+                            personalLeaderboardMissingLogged = true;
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Failed to fetch leaderboard data: " + response.errorData.message);
+                    }
                     succesful = false;
                 }
 
@@ -303,7 +384,7 @@ public class SaveCharacterManager : MonoBehaviour
 
             bool done = false;
 
-            LootLockerSDKManager.SubmitScore(PlayerPrefs.GetString("PlayerID"), score + 1, "characters_generated", (response) =>
+            LootLockerSDKManager.SubmitScore(PlayerPrefs.GetString("PlayerID"), score + 1, PersonalLeaderboardKey, (response) =>
             {
                 if (response.success)
                 {
@@ -311,12 +392,63 @@ public class SaveCharacterManager : MonoBehaviour
                     //Debug.Log(score + " Pesonal");
                 }
                 else
-                    Debug.LogWarning("Unable to upload personal score: " + response.errorData.message);
+                {
+                    if (IsLeaderboardMissing(response.errorData?.message))
+                    {
+                        personalLeaderboardConfigured = false;
+                        if (!personalLeaderboardMissingLogged)
+                        {
+                            Debug.LogWarning($"Leaderboard '{PersonalLeaderboardKey}' is not configured in LootLocker. Personal stats will be disabled.");
+                            personalLeaderboardMissingLogged = true;
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Unable to upload personal score: " + response.errorData.message);
+                    }
+                }
 
                 done = true;
             });
 
             await UniTask.WaitUntil(() => done);
+        }
+    }
+
+    static bool IsLeaderboardMissing(string message)
+    {
+        if (string.IsNullOrWhiteSpace(message))
+            return false;
+
+        return message.IndexOf("leaderboard does not exist", StringComparison.OrdinalIgnoreCase) >= 0;
+    }
+
+    void SetOptionalStatus(string message)
+    {
+        bool hasMessage = !string.IsNullOrWhiteSpace(message);
+
+        if (optionalStatusContainer != null)
+            optionalStatusContainer.SetActive(hasMessage);
+
+        if (optionalStatusText != null)
+            optionalStatusText.text = hasMessage ? message : string.Empty;
+    }
+
+    int GetSavedCharactersCountOnDisk()
+    {
+        if (string.IsNullOrWhiteSpace(CharacterPieceDatabase.SavedCharactersDirectory))
+            return 0;
+
+        if (!Directory.Exists(CharacterPieceDatabase.SavedCharactersDirectory))
+            return 0;
+
+        try
+        {
+            return Directory.GetFiles(CharacterPieceDatabase.SavedCharactersDirectory, "*.png", SearchOption.TopDirectoryOnly).Length;
+        }
+        catch
+        {
+            return 0;
         }
     }
 
