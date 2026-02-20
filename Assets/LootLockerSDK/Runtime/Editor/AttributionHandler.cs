@@ -40,7 +40,7 @@ namespace LootLocker.Admin
                 // Re-enable logging
                 LootLockerConfig.current.currentDebugLevel = LootLockerConfig.DebugLevel.All;
 
-                LootLockerServerApi.Reset();
+                LootLockerServerApi.ResetInstance();
                 if (response.success)
                 {
                     // Send attribution event

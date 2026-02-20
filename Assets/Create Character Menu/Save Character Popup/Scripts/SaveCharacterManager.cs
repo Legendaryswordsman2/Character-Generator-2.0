@@ -364,14 +364,17 @@ public class SaveCharacterManager : MonoBehaviour
         {
             // Load other size of sprites
 
-            string filePath = "";
-
             for (int i = 0; i < characterPieceDatabase.ActiveCharacterType.CharacterPieces.Length; i++)
             {
                 if (characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].ActiveSprite != null)
                 {
-                    filePath = Path.Combine(Directory.GetCurrentDirectory(),
-                        CharacterPieceDatabase.CharacterPiecesFolderName,
+                    if (!CharacterPieceDatabase.TryResolveCharacterPiecesDirectory(out string characterPiecesDirectory))
+                    {
+                        OnSpriteMissingErrorTriggered?.Invoke(this, "Character Pieces folder is missing.");
+                        return null;
+                    }
+
+                    string filePath = Path.Combine(characterPiecesDirectory,
                         characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].spriteLocation,
                         GetCurrentSizeAsStringFromDropdown(),
                         characterPieceDatabase.ActiveCharacterType.CharacterPieces[i].ActiveSprite.name);

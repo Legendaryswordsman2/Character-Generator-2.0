@@ -106,10 +106,12 @@ public class CharacterPieceGrabber : MonoBehaviour
 
     bool PerformErrorChecks()
     {
-        string characterPiecesDirectory = Path.Combine(Directory.GetCurrentDirectory(), CharacterPieceDatabase.CharacterPiecesFolderName);
-        if (!Directory.Exists(characterPiecesDirectory))
+        if (!CharacterPieceDatabase.TryResolveCharacterPiecesDirectory(out string characterPiecesDirectory))
         {
-            Debug.LogError("Directory does not exist: " + characterPiecesDirectory);
+            Debug.LogError(
+                "Character Pieces directory not found. Expected folder name: \"" +
+                CharacterPieceDatabase.CharacterPiecesFolderName +
+                "\". Checked project root, Assets, Assets/Create Character Menu and StreamingAssets.");
             OnFailedToLoadCharacterPieces?.Invoke(this, LoadFailedType.DirectoryMissing);
             return false;
         }
@@ -120,9 +122,13 @@ public class CharacterPieceGrabber : MonoBehaviour
     {
         foreach (var item in characterType.CharacterPieces)
         {
-            string filePath = "";
+            if (!CharacterPieceDatabase.TryResolveCharacterPiecesDirectory(out string characterPiecesDirectory))
+            {
+                OnFailedToLoadCharacterPieces?.Invoke(this, LoadFailedType.DirectoryMissing);
+                return;
+            }
 
-            filePath = Path.Combine(Directory.GetCurrentDirectory(), CharacterPieceDatabase.CharacterPiecesFolderName, item.spriteLocation, "16x16");
+            string filePath = Path.Combine(characterPiecesDirectory, item.spriteLocation, "16x16");
 
             if (!Directory.Exists(filePath))
             {

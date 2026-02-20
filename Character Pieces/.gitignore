@@ -1,0 +1,7 @@
+# Keep folder structure but do not commit sprites
+*.png
+*.PNG
+
+# Keep directories tracked via placeholders
+!.gitignore
+!.gitkeep

@@ -18,12 +18,14 @@ public class CharacterPieceDatabase : MonoBehaviour
     public const string CharacterPiecesFolderName = "Character Pieces";
     public const string SavedCharactersFolderName = "Saved Characters";
     public static string SavedCharactersDirectory { get; private set; }
+    public static string CharacterPiecesDirectory { get; private set; }
 
     public event EventHandler<CharacterTypeSO> OnActiveCharacterTypeChanged;
 
     private void Awake()
     {
         SavedCharactersDirectory = Path.Combine(Application.persistentDataPath, SavedCharactersFolderName);
+        TryResolveCharacterPiecesDirectory(out _);
 
         foreach (CharacterTypeSO characterType in CharacterTypes)
         {
@@ -33,6 +35,36 @@ public class CharacterPieceDatabase : MonoBehaviour
         ActiveCharacterType = CharacterTypes[0];
 
         Instance = this;
+    }
+
+    public static bool TryResolveCharacterPiecesDirectory(out string resolvedPath)
+    {
+        if (!string.IsNullOrWhiteSpace(CharacterPiecesDirectory) && Directory.Exists(CharacterPiecesDirectory))
+        {
+            resolvedPath = CharacterPiecesDirectory;
+            return true;
+        }
+
+        string[] candidatePaths = new[]
+        {
+            Path.Combine(Directory.GetCurrentDirectory(), CharacterPiecesFolderName),
+            Path.Combine(Application.dataPath, CharacterPiecesFolderName),
+            Path.Combine(Application.dataPath, "Create Character Menu", CharacterPiecesFolderName),
+            Path.Combine(Application.streamingAssetsPath, CharacterPiecesFolderName),
+        };
+
+        foreach (string candidatePath in candidatePaths)
+        {
+            if (Directory.Exists(candidatePath))
+            {
+                CharacterPiecesDirectory = candidatePath;
+                resolvedPath = candidatePath;
+                return true;
+            }
+        }
+
+        resolvedPath = string.Empty;
+        return false;
     }
 
     public void SetActiveCharacterType(CharacterTypeSO characterType)
