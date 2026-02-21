@@ -1,4 +1,5 @@
 using LootLocker.Requests;
+using LootLocker;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,12 @@ public class LootlockerAuthenticationManager : MonoBehaviour
     public static bool LoggedIn { get; private set; } = false;
     private void Awake()
     {
+        if (string.IsNullOrWhiteSpace(LootLockerConfig.current?.apiKey))
+        {
+            Debug.LogWarning("LootLocker API key is missing. Skipping guest session login.");
+            return;
+        }
+
         StartCoroutine(Login());
     }
 

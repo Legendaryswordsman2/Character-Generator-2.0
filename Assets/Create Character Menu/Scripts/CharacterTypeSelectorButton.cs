@@ -120,6 +120,7 @@ public class CharacterTypeSelectorButton : MonoBehaviour, IPointerEnterHandler, 
 
     private void OnDestroy()
     {
-        characterPieceDatabase.OnActiveCharacterTypeChanged -= CharacterPieceDatabase_OnActiveCharacterTypeChanged;
+        if (characterPieceDatabase != null)
+            characterPieceDatabase.OnActiveCharacterTypeChanged -= CharacterPieceDatabase_OnActiveCharacterTypeChanged;
     }
 }

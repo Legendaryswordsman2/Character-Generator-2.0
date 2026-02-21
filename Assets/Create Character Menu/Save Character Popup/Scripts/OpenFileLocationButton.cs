@@ -1,6 +1,7 @@
 using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using UnityEngine;
 using UnityEngine.Events;
@@ -44,11 +45,27 @@ public class OpenFileLocationButton : MonoBehaviour, IPointerEnterHandler, IPoin
             if (!Directory.Exists(CharacterPieceDatabase.SavedCharactersDirectory))
                 Directory.CreateDirectory(CharacterPieceDatabase.SavedCharactersDirectory);
 
-            Application.OpenURL(CharacterPieceDatabase.SavedCharactersDirectory);
+            string targetPath = CharacterPieceDatabase.SavedCharactersDirectory;
+
+#if UNITY_STANDALONE_OSX || UNITY_EDITOR_OSX
+            Process.Start("open", $"\"{targetPath}\"");
+#elif UNITY_STANDALONE_WIN || UNITY_EDITOR_WIN
+            Process.Start("explorer.exe", $"\"{targetPath}\"");
+#else
+            Application.OpenURL(new System.Uri(targetPath).AbsoluteUri);
+#endif
         }
         catch (System.Exception exception)
         {
-            Debug.LogWarning($"Cannot open file explorer to '{CharacterPieceDatabase.SavedCharactersFolderName}': {exception}");
+            UnityEngine.Debug.LogWarning($"Cannot open file explorer to '{CharacterPieceDatabase.SavedCharactersFolderName}': {exception}");
+            try
+            {
+                Application.OpenURL(new System.Uri(CharacterPieceDatabase.SavedCharactersDirectory).AbsoluteUri);
+            }
+            catch
+            {
+                // Ignore secondary fallback exception
+            }
         }
 
         //Debug.LogWarning($"Cannot open file explorer to '{CharacterPieceDatabase.SavedCharactersFolderName}' folder because that folder does not exist");
